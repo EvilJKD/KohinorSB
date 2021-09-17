@@ -1,5 +1,70 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container-fluid.mt-2
+    #carouselExampleFade.carousel.slide.carousel-fade(data-bs-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='images/dummy.jpg' alt='...')
+        .carousel-item
+          img.d-block.w-100(src='images/dummy.jpg' alt='...')
+        .carousel-item
+          img.d-block.w-100(src='images/dummy.jpg' alt='...')
+      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleFade' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button' data-bs-target='#carouselExampleFade' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+  
+  .container-fluid.m-2
+    .row
+      .col-md-6
+        h3
+          |Todos tus procesos en un solo sistema
+        p
+          |Kohinor Smart Business integra todas las areas de tu empresa con soluciones enfocadas a Business Inteligence.
+          ul
+            li Automatización de procesos.
+
+            li Disponibilidad de informacion en un mismo sistema.
+
+            li Eficiente manejo de información, permitiendo ahorro de tiempo y costes.
+      .col-md-6
+        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+        button.btn.btn-success(type='button')
+          | Más Información
+
+  .container-fluid.m-2
+    .row
+      .col-md-6
+          img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+          
+      .col-md-6
+        
+        p
+          |Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
+        p
+          b Grupo Powersoft
+  
+  .container-fluid
+    .row
+      .col-md-12
+        h3
+          | Grupo Powersoft
+        p
+          | Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
+    .row
+      .col-md-4
+        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+      .col-md-4
+        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+      .col-md-4
+        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+    .row.mt-5
+      .col-md-4
+        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+      .col-md-4
+        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+      .col-md-4
+        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
