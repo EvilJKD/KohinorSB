@@ -5,8 +5,7 @@ block content
         
         .row 
             .col-md-10
-                h3 
-                    |Hi User,
+                h3 hi #{pageUser.user}
                 p 
                     |Your Plan
         .row.bg-blue
@@ -15,11 +14,7 @@ block content
             .col-md-9
                 h4 
                     |Kohinor SB
-                
-                p 
-                    | Starter plan
-                p 
-                    | Faster response
+                p #{pageUser.plan} plan
         
             .col-md-3
                 p 
@@ -35,36 +30,27 @@ block content
             .col-md-4
                 h4 
                     |Date
-                
-                p 
-                    | ----/--/--
-                p 
-                    | ----/--/--
-                p 
-                    | ----/--/--
-                p 
-                    | ----/--/--
+                each ticket in ticket_menu
+                    .card   
+                        .card-block 
+                            p= ticket.Date
             .col-md-4
                 h4 
                     | Topic
-                p 
-                    | -----
-                p 
-                    | -----
-                p 
-                    | -----    
-               
+                each ticket in ticket_menu
+                    .card   
+                        .card-block 
+                            p= ticket.Topic 
             .col-md-4
                 h4 
                     |Status
-                
-                p 
-                    | solved
-                p 
-                    | solved
-                p 
-                    | solved
-            
+                each ticket in ticket_menu
+                    .card   
+                        .card-block 
+                            p= ticket.Status
+        .row 
+            p 
+                |    
         .row    
             .col-md-4
                 p 

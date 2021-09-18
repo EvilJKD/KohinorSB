@@ -28,54 +28,44 @@ block content
             .col-md-2
                 h4 
                     |Date
-                
-                p 
-                    | ----/--/--
-                p 
-                    | ----/--/--
-                p 
-                    | ----/--/--
-                p 
-                    | ----/--/--
+                each ticket in ticketWin
+                    .card   
+                        .card-block 
+                            p= ticket.Date
             .col-md-2
                 h4 
                     | Name
-                p 
-                    | -----
-                p 
-                    | -----
-                p 
-                    | -----    
-               
-            .col-md-4
+                each ticket in ticketWin
+                    .card   
+                        .card-block 
+                            p= ticket.Name
+            .col-md-1
+                h4 
+                    |Topic
+                each ticket in ticketWin
+                    .card   
+                        .card-block 
+                            p= ticket.Topic   
+            .col-md-3
                 h4 
                     |Descripcion
-                
-                p 
-                    | solved
-                p 
-                    | solved
-                p 
-                    | solved
+                each ticket in ticketWin
+                    .card   
+                        .card-block 
+                            p= ticket.Descripcion
             .col-md-2
                 h4 
                     |Responsable
-                
-                p 
-                    | solved
-                p 
-                    | solved
-                p 
-                    | solved
+                each ticket in ticketWin
+                    .card   
+                        .card-block 
+                            p= ticket.Responsable
             .col-md-2
                 h4 
                     |Status
-                
-                p 
-                    | solved
-                p 
-                    | solved
-                p 
-                    | solved
+                each ticket in ticketWin
+                    .card   
+                        .card-block 
+                            p= ticket.Status
         
 
