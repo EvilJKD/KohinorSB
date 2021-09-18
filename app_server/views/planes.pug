@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .container-fluid.mt-2
+        .row
+            h2.text-center 
+                |Kohinor SB
+            h3.text-center 
+                |Planes
+            p 
+                |Conoce el sistema que cambiará tu empresa, innovando y optimizando sus áreas de trabajo
+    .container.content-row   
+        .row 
+            each element in planes 
+                .col-md-4 
+                    .card.h-100
+                        .card-block
+                            h4.card-title.bg-success.p-4 #{element.name}
+                            h6.card-subtitle #{element.description}
+                            button.btn.btn-secondary(type='button') Lo quiero 
+
+    .container-fluid.mt-4 
+        .row.bg-primary
+            h2
+                |Versiones de KOHINOR Smart Business
+        .row 
+            img.img-fluid.card-img-top(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+            h4 Para saber más información acerca de nuestros planes contáctanos.
+            button.btn.btn-secondary(type='button') CONÓCENOS

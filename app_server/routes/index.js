@@ -9,6 +9,7 @@ const crtlLogin = require('../controllers/login');
 const crtlRegistro = require('../controllers/registro');
 const crtlOvrview = require('../controllers/overview');
 const crtlTicket = require('../controllers/ticket');
+const crtlPlanes = require('../controllers/planes');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
@@ -20,5 +21,6 @@ router.get('/login', crtlLogin.login);
 router.get('/registro', crtlRegistro.registro);
 router.get('/overview', crtlOvrview.overview);
 router.get('/ticket', crtlTicket.ticket);
+router.get('/planes', crtlPlanes.planes);
 
 module.exports = router;
