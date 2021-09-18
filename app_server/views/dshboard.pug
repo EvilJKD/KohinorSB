@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js")
+    script(src='https://kit.fontawesome.com/2159748a39.js' crossorigin='anonymous')
+
+  body
+
+    header
+      // Fixed navbar
+      header.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow
+        a.navbar-brand.col-md-3.col-lg-2.me-0.px-3(href='#') Kohinor
+        button.navbar-toggler.position-absolute.d-md-none.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#sidebarMenu' aria-controls='sidebarMenu' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        input.form-control.form-control-dark.w-100(type='text' placeholder='Search' aria-label='Search')
+        .navbar-nav
+            .nav-item.text-nowrap
+            a.nav-link.px-3(href='/') Sign out
+            .container-fluid
+  .row-md-13
+    nav#sidebarMenu.col-md-3.col-lg-2.d-md-block.bg-light.sidebar.collapse
+    .row    
+      .col-md-2
+        .position-sticky.pt-3
+          .txtTitulo
+              h2.mt-5 
+                  |KOHINOR
+              p 
+                  |Main Menu
+          ul.nav.flex-column
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='/overview')
+                span(data-feather='home')
+                |               Overview
+            li.nav-item
+              a.nav-link(href='/ticket')
+                span(data-feather='file')
+                |               Tickets
+      .col-md-10
+        block content
+
+
