@@ -31,18 +31,18 @@ block content
         .col-md-2 
             h2.text-center  
                 |Cantidad 
-        .col-md-2
+        .col-md-1
             h2.text-left  
                 |Precio
     .row.bg-dark
         p 
             |    
 
-    .container.content-row   
-        .col-md-10 
+    .row   
+        .col-md-8 
             each element in carrito 
                     .row 
-                        .col-md-5
+                        .col-md-7
                             .card.h-100
                                 .card-block
                                     h4.card-title.bg-success.p-4 #{element.producto}
@@ -54,6 +54,8 @@ block content
                             .card.h-100
                                 .card-block
                                     p.text-center.card-subtitle #{element.precio}
+        .col-md-3
+            img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
                            
 
     
