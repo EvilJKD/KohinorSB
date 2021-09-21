@@ -1,0 +1,82 @@
+extends dshboard
+
+block content
+    .container-fluid
+        
+        .row 
+            .col-md-10
+                h3 hi #{pageUser.user}
+        .row 
+            .col-md-10
+                h3 
+                    |Tickets
+        .row    
+            .col-md-4
+                h4 
+                    |Date
+                each ticket in ticket_menu
+                    .card   
+                        .card-block 
+                            p= ticket.Date
+            .col-md-4
+                h4 
+                    | Topic
+                each ticket in ticket_menu
+                    .card   
+                        .card-block 
+                            p= ticket.Topic 
+            .col-md-4
+                h4 
+                    |Status
+                each ticket in ticket_menu
+                    .card   
+                        .card-block 
+                            p= ticket.Status
+        .row 
+            p 
+                |    
+        .row 
+            .col-md-1 
+                h2.text-left  
+                    |Date
+            .col-md-3 
+                h2.text-center  
+                    |Company 
+            .col-md-3
+                h2.text-left  
+                    |Status
+        .row.bg-dark
+            p 
+                |    
+
+        .row   
+            .col-md-8 
+                each element in usrCompany 
+                    .row 
+                        .col-md-2
+                            .card-block
+                                 p.card-title.bg-success.p-4 #{element.Date}
+                        .col-md-3 
+                            .card-block
+                                p.text-center.bg-success.p-4 #{element.Company}
+                        .col-md-2
+                            .card-block
+                                p.text-center.bg-success.p-4 #{element.Status}
+            .col-md-3
+                 each element in pageUser
+                    .row 
+                        .col-md-5
+                            .card.h-20
+                                .card-block
+                                    p.text-center.bg-success.p-4 #{element.new}
+                                    h3.card-subtitle New Users
+                            p
+                            .card.h-20   
+                                .card-block
+                                    p.text-center.bg-success.p-4 #{element.purchases}
+                                    h3.card-subtitle Purchases
+                            p
+                            .card.h-20
+                                .card-block
+                                    p.text-center.bg-success.p-4 #{element.balance}
+                                    h3.card-subtitle Balance
