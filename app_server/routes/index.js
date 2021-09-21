@@ -11,6 +11,8 @@ const crtlOvrview = require('../controllers/overview');
 const crtlTicket = require('../controllers/ticket');
 const crtlPlanes = require('../controllers/planes');
 const crtlCarrito = require('../controllers/carrito');
+const crtlFactura = require('../controllers/factura');
+const crtlConfirmar = require('../controllers/confirmar');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
@@ -24,5 +26,7 @@ router.get('/overview', crtlOvrview.overview);
 router.get('/ticket', crtlTicket.ticket);
 router.get('/planes', crtlPlanes.planes);
 router.get('/carrito', crtlCarrito.carrito);
+router.get('/factura',crtlFactura.factura);
+router.get('/confirmar', crtlConfirmar.confirmar);
 
 module.exports = router;
