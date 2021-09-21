@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    .row 
+        .col-md-4 
+            h2.text-center  
+                |Revisar orden
+        .col-md-4 
+            h2.text-center  
+                |Direccion 
+        .col-md-4
+            h2.text-center  
+                |Confirmar Pedido
+
+    .container-fluid.mt-3
+        .row
+            h2.text-center 
+                |Kohinor SB
+            h3.text-center 
+                |Tarifas
+            p
+
+    .container.mt-5.mb-5.d-flex.justify-content-center
+        .card.px-1.py-4
+            .card-body
+            .d-flex.flex-row  
+            .row 
+                img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+
+            .row.mt-4
+                .col-sm-6
+                    a.btn.btn-primary.form-control(href="") Debit/Credit Card
+                .col-sm-6
+                    a.btn.btn-primary.form-control(href="") Paypal
+            
+            .row
+                .col-sm-12
+                .form-group.m-1
+                    input.form-control(type='text' placeholder='Card Number')
+            .row
+                .col-sm-6
+                    .form-group
+                        .input-group
+                        input.form-control(type='text' placeholder='MM/YY')
+
+                .col-sm-6
+                    .form-group
+                        .input-group
+                        input.form-control(type='text' placeholder='Security code')
+
+            .row
+                .col-sm-12
+                .form-group.m-1
+                    .input-group
+                    input.form-control(type='text' placeholder='Name')
+
+            .row
+                .col-sm-12
+                    a.btn.btn-primary.form-control(href="") COMPRAR AHORA
+            
+            
+    
+            

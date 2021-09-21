@@ -11,7 +11,12 @@ const crtlOvrview = require('../controllers/overview');
 const crtlTicket = require('../controllers/ticket');
 const crtlPlanes = require('../controllers/planes');
 const crtlCarrito = require('../controllers/carrito');
+<<<<<<< HEAD
 const crtlit_usrs = require('../controllers/it_usrs');
+=======
+const crtlFactura = require('../controllers/factura');
+const crtlConfirmar = require('../controllers/confirmar');
+>>>>>>> 04dbd3613245a382b601f76a95a185dd4670a495
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
@@ -25,7 +30,12 @@ router.get('/overview', crtlOvrview.overview);
 router.get('/ticket', crtlTicket.ticket);
 router.get('/planes', crtlPlanes.planes);
 router.get('/carrito', crtlCarrito.carrito);
+<<<<<<< HEAD
 router.get('/it_usrs', crtlit_usrs.it_usrs);
 
+=======
+router.get('/factura',crtlFactura.factura);
+router.get('/confirmar', crtlConfirmar.confirmar);
+>>>>>>> 04dbd3613245a382b601f76a95a185dd4670a495
 
 module.exports = router;

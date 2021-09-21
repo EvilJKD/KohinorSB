@@ -1,0 +1,68 @@
+extends layout
+
+block content
+    .row 
+        .col-md-4 
+            h2.text-center  
+                |Revisar orden
+        .col-md-4 
+            h2.text-center  
+                |Direccion 
+        .col-md-4
+            h2.text-center  
+                |Confirmar Pedido
+
+    .container-fluid.mt-3
+        .row
+            h2.text-center 
+                |Kohinor SB
+            h3.text-center 
+                |Tarifas
+            p
+
+    .container.mt-5.mb-5.d-flex.justify-content-center
+        .card.px-1.py-4
+            .card-body
+            .d-flex.flex-row  
+            .row
+                .col-sm-12
+                .form-group.m-1
+                    input.form-control(type='text' placeholder='Name')
+                    input.form-control(type='text' placeholder='Last Name')
+            .row
+                .col-sm-12
+                .form-group.m-1
+                    .input-group
+                    input.form-control(type='text' placeholder='Email')
+                    .input-group
+                    input.form-control(type='text' placeholder='Telf')
+            .row
+                .col-sm-12
+                .form-group.m-1
+                    .input-group
+                    input.form-control(type='text' placeholder='Calle y Numero')
+                    .input-group.col-sm-6
+                    input.form-control(type='text' placeholder='Codigo Postal')
+                    .input-group.col-sm-6
+                    input.form-control(type='text' placeholder='Ciudad')
+            .row
+                .col-sm-12
+                .form-group.m-1
+                    .input-group
+                    select.form-control(type='text')
+                        each country in countries
+                            option= country
+                                
+                    .input-group
+                    select.form-control(type='text')
+                        each state in states
+                            option= state
+            .row
+                .col-sm-6
+                    a.btn.btn-primary.form-control(href="") Atras
+                .col-sm-6
+                    a.btn.btn-primary.form-control(href="../confirmar") Confirm
+        .card.px-1.py-4
+            img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+    
+            
