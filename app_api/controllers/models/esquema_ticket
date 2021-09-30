@@ -1,0 +1,29 @@
+const ticketsSchema = new mongoose.Schema({
+    aunto: {
+        type: String,
+        required: true
+    },
+    fecha:{
+        type: Date,
+        'default': Date.now
+    },
+    status:{
+        type: String,
+        enum: ['Enviado', 'Pendiente', 'En Proceso', 'Procesado'],
+        required: true
+    }
+})
+const cuentaSchema = new mongoose.Schema({
+    usuario: {
+        type: {type: mongoose.Schema.ObjectId, ref: "Usuario"},
+        required: true
+    },
+    listaModulos:{
+        type: [{type: mongoose.Schema.ObjectId, ref: "Modulo"}],
+        required: true
+    },
+    listaTickets: {
+        type: [{type: mongoose.Schema.ObjectId, ref: "Ticket"}],
+        required: true
+    }
+});
