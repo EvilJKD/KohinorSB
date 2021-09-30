@@ -2,6 +2,8 @@
 
 require('./esquema_users');
 require('./esquema_module');
+require('./esquema_ticket');
+require('./esquema_factura');
 
 const mongoose = require('mongoose'); //incorporar mongoose al proyecto
 const readline = require('readline'); //incorporar readline al proycto

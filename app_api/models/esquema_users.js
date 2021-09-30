@@ -24,10 +24,10 @@ const usuariosSchema =  new mongoose.Schema({
 const Usuario = new mongoose.model('user',usuariosSchema); //copliar el esquema en un modelo
 
 const user = new Usuario({
-    nombre: 'Clark',
-    apellido: 'Kent',
-    email: 'clark_kent@hotmail.com',
-    contraseña: 'superman1'
+    nombre: 'Ash',
+    apellido: 'Ketchum',
+    email: 'poketrainer01@hotmail.com',
+    contraseña: 'pikachu4life'
 });
 //user.save();
 module.exports = Usuario;

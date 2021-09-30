@@ -1,5 +1,8 @@
+const mongoose = require('mongoose');
+const Usuario = mongoose.model('user');
+
 const ticketsSchema = new mongoose.Schema({
-    aunto: {
+    asunto: {
         type: String,
         required: true
     },
@@ -11,15 +14,19 @@ const ticketsSchema = new mongoose.Schema({
         type: String,
         enum: ['Enviado', 'Pendiente', 'En Proceso', 'Procesado'],
         required: true
+    },
+    usuario:{
+        type: mongoose.Schema.ObjectId,
+        required: true,
     }
-})
-
-
-const Modulo = new mongoose.model('modulo',moduleSchema); //copliar el esquema en un modelo
-
-const modulo = new Modulo({
-    nombre: 'Puntos de Venta',
-    descripcion: 'Manejo de la información generada en el sitio físico de venta directa a los Clientes. Facilita el cobro inmediato en efectivo, cheque, tarjeta de crédito.',
-    img: 'dummy.jpg',
-    precio: 5
 });
+
+const Ticket = new mongoose.model('ticket',ticketsSchema); //copliar el esquema en un modelo
+
+const ticket = new Ticket({
+    asunto: "Falla en el servicio",
+    status: "Enviado",
+    usuario: '61562e0f9bd990db46b200af'
+});
+
+//ticket.save();

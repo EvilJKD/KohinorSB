@@ -17,24 +17,24 @@ const facturaSchema =  new mongoose.Schema({
         required:true
     },
     ciudad: {
-        type: Number,
+        type: String,
         required:true
     },
     provincia: {
-        type: Number,
+        type: String,
         required:true
     },
     pais: {
-        type: Number,
+        type: String,
         required:true
     },
     listaModulos: {
-        type: [{type: mongoose.Schema.ObjectId, ref: "Modulo"}],
+        type: [mongoose.Schema.ObjectId],
         required:true
     },
 
     usuario:{
-        type: {type: mongoose.Schema.ObjectId, ref: "Usuario"},
+        type: mongoose.Schema.ObjectId,
         required:true
     }
 
@@ -43,8 +43,14 @@ const facturaSchema =  new mongoose.Schema({
 const Factura = new mongoose.model('factura',facturaSchema); //copliar el esquema en un modelo
 
 const factura = new Factura({
-    nombre: 'Puntos de Venta',
-    descripcion: 'Manejo de la información generada en el sitio físico de venta directa a los Clientes. Facilita el cobro inmediato en efectivo, cheque, tarjeta de crédito.',
-    img: '',
-    precio: 5
+    telefono: "0912345678",
+    direccion: "5th Ave",
+    codPostal: "18932",
+    ciudad: "New York",
+    provincia: "NY",
+    pais: "Estados Unidos",
+    listaModulos: ["61562e9b53abf3120cd7fbac"],
+    usuario: "61562d72dcf954049525116e"
 });
+
+//factura.save()
