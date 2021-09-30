@@ -1,4 +1,4 @@
-const { model, modelNames } = require("mongoose");
+const mongoose = require('mongoose');
 
 //Schema Usuarios
 const usuariosSchema =  new mongoose.Schema({
@@ -29,5 +29,5 @@ const user = new Usuario({
     email: 'clark_kent@hotmail.com',
     contraseña: 'superman1'
 });
-
+//user.save();
 module.exports = Usuario;

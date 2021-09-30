@@ -1,32 +1,25 @@
-
-//Schema Modulo
-const moduleSchema =  new mongoose.Schema({
-    nombre: {
-        type: String,
-        required:true
-    },
-    descripcion: {
+const ticketsSchema = new mongoose.Schema({
+    aunto: {
         type: String,
         required: true
     },
-    img: {
+    fecha:{
+        type: Date,
+        'default': Date.now
+    },
+    status:{
         type: String,
-        required:true
-    },
-    precio: {
-        type: Number,
-        required:true
-    },
+        enum: ['Enviado', 'Pendiente', 'En Proceso', 'Procesado'],
+        required: true
+    }
+})
 
-});
 
 const Modulo = new mongoose.model('modulo',moduleSchema); //copliar el esquema en un modelo
 
 const modulo = new Modulo({
     nombre: 'Puntos de Venta',
     descripcion: 'Manejo de la información generada en el sitio físico de venta directa a los Clientes. Facilita el cobro inmediato en efectivo, cheque, tarjeta de crédito.',
-    img: '',
+    img: 'dummy.jpg',
     precio: 5
 });
-
-module.exports = Modulo;
