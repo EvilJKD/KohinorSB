@@ -1,6 +1,7 @@
 // Mpdelos
 
 require('./esquema_users');
+require('./esquema_module');
 
 const mongoose = require('mongoose'); //incorporar mongoose al proyecto
 const readline = require('readline'); //incorporar readline al proycto

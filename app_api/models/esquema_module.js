@@ -1,4 +1,4 @@
-
+const mongoose = require('mongoose');
 //Schema Modulo
 const moduleSchema =  new mongoose.Schema({
     nombre: {
@@ -29,4 +29,5 @@ const modulo = new Modulo({
     precio: 5
 });
 
+//modulo.save();
 module.exports = Modulo;
