@@ -59,7 +59,7 @@ let dbURI = 'mongodb://localhost/db_kohinor'; // string de conexion
 if(process.env.NODE_ENV === 'production'){ //evaluo si la coneccion sera local o remota
     dbURI = process.env.MONGODB_URI;
 }
-    mongoose.connect(dbURI, {useNewUrlParser: true} ); //metodo de conexion
+mongoose.connect(dbURI, {useNewUrlParser: true} ); //metodo de conexion
  
 //mensajes de los eventos de conexion
 mongoose.connection.on('connected', () => {
