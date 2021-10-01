@@ -16,7 +16,7 @@ const ticketsSchema = new mongoose.Schema({
         required: true
     },
     usuario:{
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.Schema.ObjectId, ref: 'user',
         required: true,
     }
 });

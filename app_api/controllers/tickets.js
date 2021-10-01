@@ -15,6 +15,7 @@ const ticketList = (req, res) => {
     tickets 
         .find()//obtener todos los documentos de la coleccion
         //.select('nombre apellido')
+        .populate('usuario')
         .exec((err, objetoTicket)=> {
             if(!objetoTicket || objetoTicket.length == 0){
                 console.log(`No existen documentos en la coleccion ${tickets}`);
@@ -39,6 +40,7 @@ const ticketList = (req, res) => {
 const ticketRead = (req, res) => {
     tickets 
         .findById(req.params.ticketid)
+        .populate('usuario')
         .exec((err, objetoTicket)=> {
             if(!objetoTicket){
                 console.log(`Ticket con ticketid: ${req.params.ticketid} no encontrado`);

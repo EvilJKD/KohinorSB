@@ -21,7 +21,7 @@ const moduloList = (req, res) => {
                 return res//responde el mensaje en formato json y status http 404
                     .status(404)
                     .json({
-                        "Mensaje": "Factura no encontrado"
+                        "Mensaje": "Modulo no encontrado"
                     });   
             } else if (err){
                 console.log(`Se encontro error en la coleccion ${modulos}`);
@@ -38,14 +38,14 @@ const moduloList = (req, res) => {
 //buscar un usuario con userid
 const moduloRead = (req, res) => {
     modulos 
-        .findById(req.params.facturaid)
+        .findById(req.params.moduloid)
         .exec((err, objetoModulo)=> {
             if(!objetoModulo){
-                console.log(`Factura con facturaid: ${req.params.facturaid} no encontrado`);
+                console.log(`Modulo con moduloid: ${req.params.moduloid} no encontrado`);
                 return res
                     .status(404)
                     .json({
-                        "Mensaje": "Factura no encontrado"
+                        "Mensaje": "Modulo no encontrado"
                     });   
             } else if (err){
                 return res

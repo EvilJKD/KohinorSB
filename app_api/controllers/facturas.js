@@ -1,7 +1,6 @@
 // uso mongoose y modelo para acceder a la DB
 const mongoose = require('mongoose'); // incorporo mongoose a la rest api
 const facturas = mongoose.model('factura'); // el modelo me permite interactuar con la coleccion facturas
-
 //controladores
 
 const facturaCreate=(req,res)=>{
@@ -12,9 +11,8 @@ const facturaCreate=(req,res)=>{
 
 //listar todos los documentos de la coleccion
 const facturaList = (req, res) => {
-    facturas 
-        .find()//obtener todos los documentos de la coleccion
-        //.select('nombre apellido')
+    facturas.find({})
+        .populate('usuario').populate('listaModulos')
         .exec((err, objetoFactura)=> {
             if(!objetoFactura || objetoFactura.length == 0){
                 console.log(`No existen documentos en la coleccion ${facturas}`);
@@ -39,6 +37,7 @@ const facturaList = (req, res) => {
 const facturaRead = (req, res) => {
     facturas 
         .findById(req.params.facturaid)
+        .populate('usuario').populate('listaModulos')
         .exec((err, objetoFactura)=> {
             if(!objetoFactura){
                 console.log(`Factura con facturaid: ${req.params.facturaid} no encontrado`);
