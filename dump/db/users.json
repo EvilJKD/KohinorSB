@@ -1,0 +1,5 @@
+{"_id":{"$oid":"61562d72dcf954049525116e"},"nombre":"Clark","apellido":"Kent","email":"clark_kent@hotmail.com","contraseña":"superman1","__v":0}
+{"_id":{"$oid":"61562dbc2d509619caca4855"},"nombre":"Peter","apellido":"Porker","email":"puerquitoConTeleranat@hotmail.com","contraseña":"tocino231","__v":0}
+{"_id":{"$oid":"61562dedde1d64c594a40b83"},"nombre":"Bob","apellido":"Esponja","email":"bobesponja@hotmail.com","contraseña":"garymivida","__v":0}
+{"_id":{"$oid":"61562e0f9bd990db46b200af"},"nombre":"Leonardo","apellido":"Tortuga","email":"ninjaleo@hotmail.com","contraseña":"pizzaykatana","__v":0}
+{"_id":{"$oid":"61562e415475b73130e67815"},"nombre":"Ash","apellido":"Ketchum","email":"poketrainer01@hotmail.com","contraseña":"pikachu4life","__v":0}

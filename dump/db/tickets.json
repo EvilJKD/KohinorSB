@@ -1,0 +1,6 @@
+{"_id":{"$oid":"61562f1df499568d7da92af8"},"asunto":"Falla en el servicio","status":"Enviado","usuario":{"$oid":"61562d72dcf954049525116e"},"fecha":{"$date":"2021-09-30T21:41:49.938Z"},"__v":0}
+{"_id":{"$oid":"61562f3eca67132aac772673"},"asunto":"Falla en el servicio","status":"Enviado","usuario":{"$oid":"61562dbc2d509619caca4855"},"fecha":{"$date":"2021-09-30T21:42:22.559Z"},"__v":0}
+{"_id":{"$oid":"61562f46603cf1be3dba38c9"},"asunto":"Falla en el servicio","status":"Enviado","usuario":{"$oid":"61562e0f9bd990db46b200af"},"fecha":{"$date":"2021-09-30T21:42:30.372Z"},"__v":0}
+{"_id":{"$oid":"61563053ec0023daaa065acc"},"asunto":"Falla en el servicio","status":"Enviado","usuario":{"$oid":"61562e0f9bd990db46b200af"},"fecha":{"$date":"2021-09-30T21:46:59.412Z"},"__v":0}
+{"_id":{"$oid":"61563080f72c536de3a5fb09"},"asunto":"Falla en el servicio","status":"Enviado","usuario":{"$oid":"61562e0f9bd990db46b200af"},"fecha":{"$date":"2021-09-30T21:47:44.162Z"},"__v":0}
+{"_id":{"$oid":"615630e24c9ccbbb23a1188a"},"asunto":"Falla en el servicio","status":"Enviado","usuario":{"$oid":"61562e0f9bd990db46b200af"},"fecha":{"$date":"2021-09-30T21:49:22.234Z"},"__v":0}

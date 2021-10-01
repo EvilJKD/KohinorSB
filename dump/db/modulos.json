@@ -1,0 +1,4 @@
+{"_id":{"$oid":"61562e917e41dd5e7f5541cf"},"nombre":"Puntos de Venta","descripcion":"Manejo de la información generada en el sitio físico de venta directa a los Clientes. Facilita el cobro inmediato en efectivo, cheque, tarjeta de crédito.","img":"dummy.jpg","precio":5,"__v":0}
+{"_id":{"$oid":"61562e9b53abf3120cd7fbac"},"nombre":"Puntos de Venta 2","descripcion":"Manejo de la información generada en el sitio físico de venta directa a los Clientes. Facilita el cobro inmediato en efectivo, cheque, tarjeta de crédito.","img":"dummy.jpg","precio":10,"__v":0}
+{"_id":{"$oid":"61562eb4641eab4ee6fd51c4"},"nombre":"Modulo Cash","descripcion":"Manejo de datos","img":"dummy.jpg","precio":37,"__v":0}
+{"_id":{"$oid":"61562ec7f032507fc919242d"},"nombre":"Modulo Cash PREMIUM","descripcion":"Manejo de datos + sistema integrado","img":"dummy.jpg","precio":50,"__v":0}
