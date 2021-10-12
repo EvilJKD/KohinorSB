@@ -14,6 +14,7 @@ const crtlCarrito = require('../controllers/carrito');
 const crtlit_usrs = require('../controllers/it_usrs');
 const crtlFactura = require('../controllers/factura');
 const crtlConfirmar = require('../controllers/confirmar');
+const crtlDshboard = require('../controllers/dshboard');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
@@ -30,5 +31,6 @@ router.get('/carrito', crtlCarrito.carrito);
 router.get('/it_usrs', crtlit_usrs.it_usrs);
 router.get('/factura',crtlFactura.factura);
 router.get('/confirmar', crtlConfirmar.confirmar);
+router.get('/dshboard', crtlDshboard.dshboard);
 
 module.exports = router;

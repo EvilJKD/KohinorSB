@@ -35,12 +35,10 @@ const procShutdown = (msg, db_kohinor, db_log) => {
 //Heroku : SIGTERM
 
 // Evento SIGINT - win32
-process.on('SIGINT', ()=> {
-    procShutdown('Aplicacion cerrada por windows', () =>{
-        process.exit(0)}, logDB.close(()=>{
-            console.log('Mongoose log cerrado');
-        })
-    );
+process.on('SIGINT', () => {
+    procShutdown('Aplicacion cerrada por windows', () => {
+        process.exirst(0);
+    });
 });
 
 // Evento SIGUSR2 - nodemon

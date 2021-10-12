@@ -2,46 +2,642 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='CoreUI/css/style.css')
     meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
-    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css")
-    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js")
-    script(src='https://kit.fontawesome.com/2159748a39.js' crossorigin='anonymous')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    link(href='CoreUI/vendors/coreui/chartjs/css/coreui-chartjs.css' rel='stylesheet')
+    link(href='CoreUI/css/style2.css' rel='stylesheet')
+    link(href='CoreUI/vendors/coreui/icons/css/brand.min.css' rel='stylesheet')
+    link(href='CoreUI/vendors/coreui/icons/css/flag.min.css' rel='stylesheet')
+    link(href='CoreUI/vendors/coreui/icons/css/free.min.css' rel='stylesheet')
+    link(href='Content/StyleSheet1.css' rel='stylesheet')
+
+    script(src='CoreUI/vendors/coreui/coreui/js/coreui.bundle.min.js')
+
+
+    script(src='CoreUI/vendors/coreui/icons/js/svgxuse.min.js')
+ 
+    script(src='CoreUI/vendors/coreui/chartjs/js/coreui-chartjs.bundle.js')
+    script(src='CoreUI/vendors/coreui/utils/js/coreui-utils.js')
+    script(src='/CoreUI/js/main.js')
 
   body
+      
+    button#btnModalError.btn.btn-danger.mb-1(style='display: none;' type='button' data-toggle='modal' data-target='#ModalError') Danger modal
+    |     
+    #sidebar.c-sidebar.c-sidebar-dark.c-sidebar-fixed.c-sidebar-lg-show
+      .c-sidebar-brand.d-lg-down-none
+ 
+        span.c-sidebar-brand-full(onclick='openNav()')
+          img(src='Icon/Menu125/powersoft.png' width='118' height='46' style='cursor: pointer;')
+        |           
+        span.c-sidebar-brand-minimized(onclick='openNav()')
+          img(src='Icon/Menu125/kohinor.png' width='46' height='46')
+      ul.c-sidebar-nav
+        li.c-sidebar-nav-item
+          a.c-sidebar-nav-link(href='w_Escritorio.aspx')
+            i.c-sidebar-nav-icon.cil-speedometer
+            |                     Escritorio
+            span.badge.badge-info NUEVO
+        li.c-sidebar-nav-title Menu
+        li.c-sidebar-nav-item.c-sidebar-nav-dropdown
+          .container
+            main.pb-3(role='main')
+        li.c-sidebar-nav-divider
+        li.c-sidebar-nav-title System Utilization
+        li.c-sidebar-nav-item.px-3.c-d-compact-none.c-d-minimized-none
+          .text-uppercase.mb-1
+            small
+              b CPU Usage
+          .progress.progress-xs
+            .progress-bar.bg-info(role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+          small.text-muted 348 Processes. 1/4 Cores.
+        li.c-sidebar-nav-item.px-3.c-d-compact-none.c-d-minimized-none
+          .text-uppercase.mb-1
+            small
+              b Memory Usage
+          .progress.progress-xs
+            .progress-bar.bg-warning(role='progressbar' style='width: 70%' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100')
+          small.text-muted 11444GB/16384MB
+        li.c-sidebar-nav-item.px-3.mb-3.c-d-compact-none.c-d-minimized-none
+          .text-uppercase.mb-1
+            small
+              b SSD 1 Usage
+          .progress.progress-xs
+            .progress-bar.bg-danger(role='progressbar' style='width: 95%' aria-valuenow='95' aria-valuemin='0' aria-valuemax='100')
+          small.text-muted 243GB/256GB
+      button.c-sidebar-minimizer.c-class-toggler(type='button' data-target='_parent' data-class='c-sidebar-unfoldable')
+    |    
+    #aside.c-sidebar.c-sidebar-lg.c-sidebar-light.c-sidebar-right.c-sidebar-overlaid
+      button.c-sidebar-close.c-class-toggler(type='button' data-target='_parent' data-class='c-sidebar-show' responsive='true')
+        i.c-icon.cil-x
+      ul.nav.nav-tabs.nav-underline.nav-underline-primary(role='tablist')
+        li.nav-item
+          a.nav-link.active(data-toggle='tab' href='#timeline' role='tab')
+            i.c-icon.cil-list
+        li.nav-item
+          a.nav-link(data-toggle='tab' href='#messages' role='tab')
+            i.c-icon.cil-speech
+        li.nav-item
+          a.nav-link(data-toggle='tab' href='#settings' role='tab')
+            i.c-icon.cil-settings
+      .tab-content
+        #timeline.tab-pane.active(role='tabpanel')
+          .list-group.list-group-accent
+            .list-group-item.list-group-item-accent-secondary.bg-light.text-center.font-weight-bold.text-muted.text-uppercase.c-small Today
+            .list-group-item.list-group-item-accent-warning.list-group-item-divider
+              .c-avatar.float-right
+                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+              div
+                | Meeting with 
+                strong Lucas
+              small.text-muted.mr-3
+                i.c-icon.cil-calendar
+                | &nbsp; 1 - 3pm
+              small.text-muted
+                i.c-icon.cil-location-pin
+                | &nbsp; Palo Alto, CA
+            .list-group-item.list-group-item-accent-info
+              .c-avatar.float-right
+                img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+              div
+                | Skype with 
+                strong Megan
+              small.text-muted.mr-3
+                i.c-icon.cil-calendar
+                | &nbsp; 4 - 5pm
+              small.text-muted
+                i.c-icon.cil-skype
+                | &nbsp; On-line
+            .list-group-item.list-group-item-accent-secondary.bg-light.text-center.font-weight-bold.text-muted.text-uppercase.c-small Tomorrow
+            .list-group-item.list-group-item-accent-danger.list-group-item-divider
+              div
+                | New UI Project - 
+                strong deadline
+              small.text-muted.mr-3
+                i.c-icon.cil-calendar
+                | &nbsp; 10 - 11pm
+              small.text-muted
+                i.c-icon.cil-home
+                | &nbsp; creativeLabs HQ
+              .c-avatars-stack.mt-2
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/2.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/3.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
+            .list-group-item.list-group-item-accent-success.list-group-item-divider
+              div
+                strong #10 Startups.Garden
+                |  Meetup
+              small.text-muted.mr-3
+                i.c-icon.cil-calendar
+                | &nbsp; 1 - 3pm
+              small.text-muted
+                i.c-icon.cil-location-pin
+                | &nbsp; Palo Alto, CA
+            .list-group-item.list-group-item-accent-primary.list-group-item-divider
+              div
+                strong Team meeting
+              small.text-muted.mr-3
+                i.c-icon.cil-calendar
+                | &nbsp; 4 - 6pm
+              small.text-muted
+                i.c-icon.cil-home
+                | &nbsp; creativeLabs HQ
+              .c-avatars-stack.mt-2
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/2.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/3.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                .c-avatar.c-avatar-xs
+                  img.c-avatar-img(src='CoreUI/assets/img/avatars/8.jpg' alt='user@email.com')
+        #messages.tab-pane.p-3(role='tabpanel')
+          .message
+            .py-3.pb-5.mr-3.float-left
+              .c-avatar
+                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                span.c-avatar-status.bg-success
+            div
+              small.text-muted Lukasz Holeczek
+              small.text-muted.float-right.mt-1 1:52 PM
+            .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+            small.text-muted
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+          hr
+          .message
+            .py-3.pb-5.mr-3.float-left
+              .c-avatar
+                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                span.c-avatar-status.bg-success
+            div
+              small.text-muted Lukasz Holeczek
+              small.text-muted.float-right.mt-1 1:52 PM
+            .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+            small.text-muted
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+          hr
+          .message
+            .py-3.pb-5.mr-3.float-left
+              .c-avatar
+                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                span.c-avatar-status.bg-success
+            div
+              small.text-muted Lukasz Holeczek
+              small.text-muted.float-right.mt-1 1:52 PM
+            .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+            small.text-muted
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+          hr
+          .message
+            .py-3.pb-5.mr-3.float-left
+              .c-avatar
+                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                span.c-avatar-status.bg-success
+            div
+              small.text-muted Lukasz Holeczek
+              small.text-muted.float-right.mt-1 1:52 PM
+            .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+            small.text-muted
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+          hr
+          .message
+            .py-3.pb-5.mr-3.float-left
+              .c-avatar
+                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                span.c-avatar-status.bg-success
+            div
+              small.text-muted Lukasz Holeczek
+              small.text-muted.float-right.mt-1 1:52 PM
+            .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+            small.text-muted
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+        #settings.tab-pane.p-3(role='tabpanel')
+          h6 Settings
+          .c-aside-options
+            .clearfix.mt-4
+              small
+                b Option 1
+              label.c-switch.c-switch-label.c-switch-pill.c-switch-success.c-switch-sm.float-right
+                input.c-switch-input(type='checkbox' checked='')
+                span.c-switch-slider(data-checked='On' data-unchecked='Off')
+            div
+              small.text-muted
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          .c-aside-options
+            .clearfix.mt-3
+              small
+                b Option 2
+              label.c-switch.c-switch-label.c-switch-pill.c-switch-success.c-switch-sm.float-right
+                input.c-switch-input(type='checkbox')
+                span.c-switch-slider(data-checked='On' data-unchecked='Off')
+            div
+              small.text-muted
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          .c-aside-options
+            .clearfix.mt-3
+              small
+                b Option 3
+              label.c-switch.c-switch-label.c-switch-pill.c-switch-success.c-switch-sm.float-right
+                input.c-switch-input(type='checkbox')
+                span.c-switch-slider(data-checked='On' data-unchecked='Off')
+          .c-aside-options
+            .clearfix.mt-3
+              small
+                b Option 4
+              label.c-switch.c-switch-label.c-switch-pill.c-switch-success.c-switch-sm.float-right
+                input.c-switch-input(type='checkbox' checked='')
+                span.c-switch-slider(data-checked='On' data-unchecked='Off')
+          hr
+          h6 System Utilization
+          .text-uppercase.mb-1.mt-4
+            small
+              b CPU Usage
+          .progress.progress-xs
+            .progress-bar.bg-info(role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+          small.text-muted 348 Processes. 1/4 Cores.
+          .text-uppercase.mb-1.mt-2
+            small
+              b Memory Usage
+          .progress.progress-xs
+            .progress-bar.bg-warning(role='progressbar' style='width: 70%' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100')
+          small.text-muted 11444GB/16384MB
+          .text-uppercase.mb-1.mt-2
+            small
+              b SSD 1 Usage
+          .progress.progress-xs
+            .progress-bar.bg-danger(role='progressbar' style='width: 95%' aria-valuenow='95' aria-valuemin='0' aria-valuemax='100')
+          small.text-muted 243GB/256GB
+          .text-uppercase.mb-1.mt-2
+            small
+              b SSD 2 Usage
+          .progress.progress-xs
+            .progress-bar.bg-success(role='progressbar' style='width: 10%' aria-valuenow='10' aria-valuemin='0' aria-valuemax='100')
+          small.text-muted 25GB/256GB
+    .c-wrapper.c-fixed-components
+      header.c-header.c-header-light.c-header-fixed.c-header-with-subheader
+        button.c-header-toggler.c-class-toggler.d-lg-none.mfe-auto(type='button' data-target='#sidebar' data-class='c-sidebar-show')
+          i.c-icon.c-icon-lg.cil-menu
+        a.c-header-brand.d-lg-none(href='#')
+          img(src='Icon/Menu125/powersoft.png' width='100' height='46')
+        button.c-header-toggler.c-class-toggler.mfs-3.d-md-down-none(type='button' data-target='#sidebar' data-class='c-sidebar-lg-show' responsive='true')
+          i.c-icon.c-icon-lg.cil-menu
+        |             
+        ul.c-header-nav.d-md-down-none
+          li.c-header-nav-item.px-3
+            a.c-header-nav-link(href='w_Escritorio.aspx') Escritorio
+          li.c-header-nav-item.px-3
+            a#lkbtnConfig.c-header-nav-link(runat='server')
+              i.c-icon.cil-settings
+              asp:label#lblModuloConf(runat='server')
+          li.c-header-nav-item.px-3
+            a#lkbtnSeg.c-header-nav-link(runat='server')
+              i.c-icon.cil-lock-locked
+              asp:label#lblModuloSeg(runat='server')
+        ul.c-header-nav.ml-auto.mr-4
+          li.c-header-nav-item.d-lg-down-none
+            asp:label#lblNomemp(runat='server' text='')
+          li.c-header-nav-item.px-3.c-d-legacy-none
+            button#btndark.c-class-toggler.c-header-nav-btn(runat='server' type='button' onserverclick='btndark_Click')
+              i.c-icon.cil-moon
+            button#btnligth.c-class-toggler.c-header-nav-btn(runat='server' type='button' onserverclick='btnligth_Click')
+              i.c-icon.cil-sun
+          li.c-header-nav-item.dropdown.d-md-down-none.mx-2
+            a.c-header-nav-link(href='#' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='true')
+              i.c-icon.cil-bell
+              span.badge.badge-pill.badge-danger 5
+            .dropdown-menu.dropdown-menu-right.dropdown-menu-lg.pt-0
+              .dropdown-header.bg-light
+                strong You have 5 notifications
+              a.dropdown-item(href='#')
+                i.c-icon.mfe-2.text-success.cil-user-follow
+                |                             New user registered
+              a.dropdown-item(href='#')
+                i.c-icon.mfe-2.text-danger.cil-user-unfollow
+                |                             User deleted
+              a.dropdown-item(href='#')
+                i.c-icon.mfe-2.text-info.cil-chart
+                |                             Sales report is ready
+              a.dropdown-item(href='#')
+                i.c-icon.mfe-2.text-success.cil-basket
+                |                             New client
+              a.dropdown-item(href='#')
+                i.c-icon.mfe-2.text-warning.cil-speedometer
+                |                             Server overloaded
+              .dropdown-header.bg-light
+                strong Server
+              a.dropdown-item.d-block(href='#')
+                .text-uppercase.mb-1
+                  small
+                    b CPU Usage
+                span.progress.progress-xs
+                  .progress-bar.bg-info(role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+                small.text-muted 348 Processes. 1/4 Cores.
+              a.dropdown-item.d-block(href='#')
+                .text-uppercase.mb-1
+                  small
+                    b Memory Usage
+                span.progress.progress-xs
+                  .progress-bar.bg-warning(role='progressbar' style='width: 70%' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100')
+                small.text-muted 11444GB/16384MB
+              a.dropdown-item.d-block(href='#')
+                .text-uppercase.mb-1
+                  small
+                    b SSD 1 Usage
+                span.progress.progress-xs
+                  .progress-bar.bg-danger(role='progressbar' style='width: 95%' aria-valuenow='95' aria-valuemin='0' aria-valuemax='100')
+                small.text-muted 243GB/256GB
+          li.c-header-nav-item.d-md-down-none.mx-2
+            a.c-header-nav-link(href='#' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='true')
+              i.c-icon.cil-list-rich
+              span.badge.badge-pill.badge-warning 15
+            .dropdown-menu.dropdown-menu-right.dropdown-menu-lg.pt-0
+              .dropdown-header.bg-light
+                strong You have 5 pending tasks
+              a.dropdown-item.d-block(href='#')
+                .small.mb-1
+                  | Upgrade NPM &amp; Bower
+                  span.float-right
+                    strong 0%
+                span.progress.progress-xs
+                  .progress-bar.bg-info(role='progressbar' style='width: 0%' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100')
+              a.dropdown-item.d-block(href='#')
+                .small.mb-1
+                  | ReactJS Version
+                  span.float-right
+                    strong 25%
+                span.progress.progress-xs
+                  .progress-bar.bg-danger(role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+              a.dropdown-item.d-block(href='#')
+                .small.mb-1
+                  | VueJS Version
+                  span.float-right
+                    strong 50%
+                span.progress.progress-xs
+                  .progress-bar.bg-warning(role='progressbar' style='width: 50%' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100')
+              a.dropdown-item.d-block(href='#')
+                .small.mb-1
+                  | Add new layouts
+                  span.float-right
+                    strong 75%
+                span.progress.progress-xs
+                  .progress-bar.bg-info(role='progressbar' style='width: 75%' aria-valuenow='75' aria-valuemin='0' aria-valuemax='100')
+              a.dropdown-item.d-block(href='#')
+                .small.mb-1
+                  | Angular 8 Version
+                  span.float-right
+                    strong 100%
+                span.progress.progress-xs
+                  .progress-bar.bg-success(role='progressbar' style='width: 100%' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100')
+              a.dropdown-item.text-center.border-top(href='#')
+                strong View all tasks
+          li.c-header-nav-item.dropdown.d-md-down-none.mx-2
+            a.c-header-nav-link(data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='true')
+              i.c-icon.cil-envelope-open
+              span.badge.badge-pill.badge-info 7
+            .dropdown-menu.dropdown-menu-right.dropdown-menu-lg.pt-0
+              .dropdown-header.bg-light
+                strong You have 4 messages
+              a.dropdown-item(href='#')
+                .message
+                  .py-3.mfe-3.float-left
+                    .c-avatar
+                      img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                      span.c-avatar-status.bg-success
+                  div
+                    small.text-muted John Doe
+                    small.text-muted.float-right.mt-1 Just now
+                  .text-truncate.font-weight-bold
+                    span.text-danger !
+                    |  Important message
+                  .small.text-muted.text-truncate
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+              a.dropdown-item(href='#')
+                .message
+                  .py-3.mfe-3.float-left
+                    .c-avatar
+                      img.c-avatar-img(src='CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
+                      span.c-avatar-status.bg-warning
+                  div
+                    small.text-muted John Doe
+                    small.text-muted.float-right.mt-1 5 minutes ago
+                  .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+                  .small.text-muted.text-truncate
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+              a.dropdown-item(href='#')
+                .message
+                  .py-3.mfe-3.float-left
+                    .c-avatar
+                      img.c-avatar-img(src='CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
+                      span.c-avatar-status.bg-danger
+                  div
+                    small.text-muted John Doe
+                    small.text-muted.float-right.mt-1 1:52 PM
+                  .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+                  .small.text-muted.text-truncate
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+              a.dropdown-item(href='#')
+                .message
+                  .py-3.mfe-3.float-left
+                    .c-avatar
+                      img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+                      span.c-avatar-status.bg-info
+                  div
+                    small.text-muted John Doe
+                    small.text-muted.float-right.mt-1 4:03 PM
+                  .text-truncate.font-weight-bold Lorem ipsum dolor sit amet
+                  .small.text-muted.text-truncate
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...
+              a.dropdown-item.text-center.border-top(href='#')
+                strong View all messages
+          li.c-header-nav-item.dropdown
+            a.c-header-nav-link(data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false')
+              .c-avatar
+                img.c-avatar-img(src='Icon/Menu125/kohinor.png' alt='User')
+              asp:label#lblUsuario(runat='server' text='' cssclass='d-lg-down-none')
+            .dropdown-menu.dropdown-menu-right.pt-0
+              .dropdown-header.bg-light.py-2
+                strong Account
+              a.dropdown-item(href='#')
+                i.c-icon.cil-bell
+                |                             Updates
+                span.badge.badge-info.ml-auto 42
+              a.dropdown-item(href='#')
+                i.c-icon.cil-envelope-open
+                |                             Messages
+                span.badge.badge-success.ml-auto 42
+              a.dropdown-item(href='#')
+                i.c-icon.cil-task
+                |                             Tasks
+                span.badge.badge-danger.ml-auto 42
+              a.dropdown-item(href='#')
+                i.c-icon.cil-comment-square
+                |                             Comments
+                span.badge.badge-warning.ml-auto 42
+              .dropdown-header.bg-light.py-2
+                strong Settings
+              a.dropdown-item(data-toggle='modal' data-target='#ModalProfile')
+                i.c-icon.cil-user
+                |                             Profile
+              a.dropdown-item(href='#')
+                i.c-icon.cil-settings
+                |                             Settings
+              a.dropdown-item(href='#')
+                i.c-icon.cil-credit-card
+                |                             Payments
+                span.badge.badge-secondary.ml-auto 42
+              a.dropdown-item(href='#')
+                i.c-icon.cil-file
+                |                             Projects
+                span.badge.badge-primary.ml-auto 42
+              .dropdown-divider
+              a.dropdown-item(href='#')
+                i.c-icon.cil-lock-locked
+                |                             Lock Account
+              a.dropdown-item(data-toggle='modal' data-target='#ModalLogout')
+                i.c-icon.cil-account-logout
+                |                             Logout
+          button.c-header-toggler.c-class-toggler(type='button' data-target='#aside' data-class='c-sidebar-show')
+            i.c-icon.c-icon-lg.cil-applications-settings
+        .c-subheader.justify-content-between.px-3
 
-    header
-      // Fixed navbar
-      header.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow
-        a.navbar-brand.col-md-3.col-lg-2.me-0.px-3(href='#') Kohinor
-        button.navbar-toggler.position-absolute.d-md-none.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#sidebarMenu' aria-controls='sidebarMenu' aria-expanded='false' aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-        input.form-control.form-control-dark.w-100(type='text' placeholder='Search' aria-label='Search')
-        .navbar-nav
-            .nav-item.text-nowrap
-            a.nav-link.px-3(href='/') Sign out
-            .container-fluid
-  .row-md-13
-    nav#sidebarMenu.col-md-3.col-lg-2.d-md-block.bg-light.sidebar.collapse
-    .row    
-      .col-md-2
-        .position-sticky.pt-3
-          .txtTitulo
-              h2.mt-5 
-                  |KOHINOR
-              p 
-                  |Main Menu
-          ul.nav.flex-column
-            li.nav-item
-              a.nav-link.active(aria-current='page' href='/overview')
-                span(data-feather='home')
-                |               Overview
-            li.nav-item
-              a.nav-link(href='/ticket')
-                span(data-feather='file')
-                |               Tickets
-      .col-md-10
-        block content
-
+      .c-body
+        .container
+          main.pb-3(role='main')
+            |
+      footer.c-footer
+        div
+          i.c-icon.c-icon-xl.cif-ec.mx-1
+        div
+          a(href='https://www.kohinorec.com/') Kohinor Web
+          |  &copy; 
+        .ml-auto
+          | Powered by&nbsp;
+          a(href='http://kohinorerp.com/') Kohinor Software
+    
+    #sidebarModulos.overlay
+      #SidenavModulos.sidenavImg(runat='server')
+        a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+        .content-center
+          asp:image#Image1(runat='server' imageurl='~/Icon/Menu125/kohinor.png' width='75')
+        .text-center
+          h4(style='color: white;') &nbsp;&nbsp; M&oacute;dulos Kohinor
+        hr
+        .container
+          #divInventarios.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgInventarios(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblInventarios(runat='server' text='Inventario')
+          #divCompras.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgCompras(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblCompras(runat='server' text='Compras')
+          #divVentas.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgVentas(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblVentas(runat='server' text='Ventas')
+          #divNomina.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgNomina(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblNomina(runat='server' text='Nómina')
+          #divContabilidad.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgContabilidad(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblContabilidad(runat='server' text='Contabilidad')
+          #divImportaciones.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgImportaciones(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblImportaciones(runat='server' text='Importaciones')
+          #divActivosFijos.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgActivosFijos(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblActivosFijos(runat='server' text='Activos Fijos')
+          #divProduccion.row(runat='server')
+            center
+              .col-6.col-sm-3.mb-2.mr-3
+                asp:imagebutton#imgProduccion(width='60' height='60' runat='server' onclick='imgModulos_Click')
+            .col-6.col-sm-3.mb-2
+              br
+              h5(style='color: white;')
+                asp:label#lblProduccion(runat='server' text='Producción')
+          asp:label#lblError(runat='server' text='' forecolor='Maroon')
+        hr
+        .text-center
+          p.mt-1(style='color: white;')
+            | Copyright &copy;
+          p(style='color: white;')
+            | Todos los derechos reservados
+    
+    #ModalLogout.modal.fade(tabindex='-1' role='dialog' aria-labelledby='lblModalLogoutTitle' aria-hidden='true')
+      .modal-dialog.modal-primary(role='document')
+        .modal-content
+          .modal-header
+            h5#lblModalLogoutTitle.modal-title Cerrar Sesi&oacute;n
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') &times;
+          .modal-body
+            | Seleccionar &quot;Logout&quot; abajo para salir de la sesi&oacute;n actual.
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-dismiss='modal') Cerrar
+            a.btn.btn-primary(href='w_Login.aspx') Logout
+   
+    #ModalProfile.modal.fade(tabindex='-1' role='dialog' aria-labelledby='lblModalProfile' aria-hidden='true')
+      .modal-dialog.modal-primary(role='document')
+        .modal-content
+          .modal-header
+            h5#lblModalProfile.modal-title Perfil Usuario
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') &times;
+          .modal-body
+            p
+              | Empresa:
+              asp:label#lblEmp(runat='server' text='')
+            p
+              | Usuario:
+              asp:label#lblCodus1(runat='server' text='')
+            p
+              | Serie:
+              asp:label#lblSersec(runat='server' text='')
+    block content
 
