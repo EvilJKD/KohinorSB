@@ -37,20 +37,48 @@ a {
   background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(140,59,132,0.9528186274509804) 71%, rgba(75,63,126,1) 100%);
 }
 
+.bg-kohinor-2{
+  background: rgb(140,59,132);
+  background: linear-gradient(90deg, rgba(140,59,132,0.9528186274509804) 0%, rgba(75,63,126,1) 100%);
+  border-color: white;
+}
+
 .lt-kohinor{
   color: #1C144C !important;
+  text-decoration: none;
+}
+.lt-kohinor:hover, .lt-kohinor:focus{
+  font-weight: bolder;
 }
 
 .btn-outline-kohinor{
   border-color: #853F86 !important;
   background-color: white !important;
+  color: #1C144C;
+}
+.btn-outline-kohinor:hover, .btn-outline-kohinor:focus{
+  border-color: #853F86 !important;
+  background-color: #853F86 !important;
+  color: white;
 }
 .btn-dark-kohinor{
   border-color: #4251A5 !important;
   background-color: #4251A5 !important;
   color: white !important;
 }
+.btn-dark-kohinor:hover, .btn-dark-kohinor:focus{
+  border-color: #853F86 !important;
+  background-color: #853F86 !important;
+  color: white !important;
+}
 
+.bg-kohinor-light{
+  background-color: #E1DDFF !important;
+}
+
+.hover-Kohinor:hover, .hover-Kohinor:focus{
+  color: white !important;
+}
 
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {

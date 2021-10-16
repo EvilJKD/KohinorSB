@@ -1,65 +1,70 @@
 extends layout
 
 block content
+
+    #BannerFactura.container-fluid.pt-3 
+        h1.text-center.text-white
+            b Konihor SB
+        h3.text-center.text-white
+            b Tarifas
+
     .row 
         .col-md-4 
             h2.text-center  
                 |Revisar orden
         .col-md-4 
             h2.text-center  
-                |Direccion 
+                | Direccion 
         .col-md-4
             h2.text-center  
-                |Confirmar Pedido
+                b Confirmar Pedido
 
-    .container-fluid.mt-3
-        .row
-            h2.text-center 
-                |Kohinor SB
-            h3.text-center 
-                |Tarifas
-            p
 
-    .container.mt-5.mb-5.d-flex.justify-content-center
-        .card.px-1.py-4
-            .card-body
-            .d-flex.flex-row  
-            .row 
-                img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-
-            .row.mt-4
-                .col-sm-6
-                    a.btn.btn-primary.form-control(href="") Debit/Credit Card
-                .col-sm-6
-                    a.btn.btn-primary.form-control(href="") Paypal
-            
-            .row
-                .col-sm-12
-                .form-group.m-1
-                    input.form-control(type='text' placeholder='Card Number')
-            .row
-                .col-sm-6
-                    .form-group
-                        .input-group
-                        input.form-control(type='text' placeholder='MM/YY')
-
-                .col-sm-6
-                    .form-group
-                        .input-group
-                        input.form-control(type='text' placeholder='Security code')
-
-            .row
-                .col-sm-12
-                .form-group.m-1
-                    .input-group
-                    input.form-control(type='text' placeholder='Name')
-
-            .row
-                .col-sm-12
-                    a.btn.btn-primary.form-control(href="") COMPRAR AHORA
-    .row
+    .row.g-3.mt-4
+        .col-md-3
+        .col-md-6
+            .card
+                .card-body
+                    .row
+                        .col-md-6  Producto 
+                        .col-md-3  Cantidad 
+                        .col-md-3  Precio 
+                        hr
+                    .row
+                        h6.text-center Subtotal: 
+                        h6.text-center Impuesto: 
+                        hr
+                        h6.text-center
+                            b Total: 
+        .col-md-3 
+        .col-md-3
+        .col-md-6
+            .card
+                .card-body
+                    .row.g-3
+                        .col-md-6
+                            a.btn.btn-primary.form-control.bg-kohinor-2(href="") Debit/Credit Card
+                        .col-md-6
+                            a.btn.btn-primary.form-control.bg-kohinor-2(href="") Paypal
+                    form.row.g-3.mt-3(action='' method='post' role='form')
+                        .col-md-12
+                            input#cardnumber.form-control(type='text' placeholder='Card Number')
+                        .col-md-6
+                            input#carddate.form-control(type='text' placeholder='MM/YY')
+                        .col-md-6
+                            input#code.form-control(type='text' placeholder='Security code')
+                        .col-md-12
+                            input#NombreTarjeta.form-control(type='text' placeholder='Name')
+                        .col-md-12
+                            input#direccion.form-control(type='string' name='direccion' placeholder='Calle y Número')
+                        .col-md-12
+                            a.btn.btn-dark.form-control.bg-kohinor-2(href='/') 
+                                b COMPRAR AHORA
+        
+    .row.mt-4
+        .col-md-3
         .col-md-5
-            a.btn.btn-outline-success(href='/factura') atras
+            a.btn.btn-dark.bg-kohinor-2(href='/factura') Atrás
             
             
     

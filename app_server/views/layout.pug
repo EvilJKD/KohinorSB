@@ -14,7 +14,7 @@ html
 
     header
       // Fixed navbar
-      nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-kohinor.lt-kohinor
+      nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-kohinor
         .container-fluid
           a.navbar-brand(href='/') 
             img(alt='Bootstrap Image Preview' src='images/Logotipo_Kohinor_3_Cropped.png' style="max-width:50px")
@@ -32,12 +32,38 @@ html
               li.nav-item
                 a.nav-link.lt-kohinor(href='/contacto') Contacto
             form.d-flex
-              a.btn.btn-outline-kohinor.lt-kohinor(href='/login') Login
+              a.btn.btn-outline-kohinor(href='/login') Login
               a.btn.btn-dark-kohinor(href='/registro') Register
               
     block content
 
-  footer.footer.mt-auto.py-3.bg-light
-    .container
-      span.text-muted Place sticky footer content here.
+  .container-fluid.bg-kohinor-light
+    footer.footer.mt-4.py-3
+      .row
+        .col-md-4
+          .d-flex.align-items-center.justify-content-evenly
+            h6 
+              a.lt-kohinor(href="/") Home
+            h6
+              a.lt-kohinor(href="/about") About Us
+        .col-md-4
+          .d-flex.align-items-center.justify-content-evenly
+            img(alt='Bootstrap Image Preview' src='images/Logotipo_Kohinor_3_Cropped.png' style="max-width:50px")
+        .col-md-4
+          .d-flex.align-items-center.justify-content-evenly
+              h6
+                a.lt-kohinor(href="/kohinor") Kohinor SB
+              h6
+                a.lt-kohinor(href="/contacto") Contacto 
+      hr
+      .d-flex.align-items-center.justify-content-center
+        a(href="/contacto").hover-Kohinor
+          i.fab.fa-linkedin-in.fs-3.m-3.hover-Kohinor(style="color: #1C144C")
+        a(href="/contacto").hover-Kohinor
+          i.fab.fa-facebook.fs-3.m-3.hover-Kohinor(style="color: #1C144C")
+      .d-flex.align-items-center.justify-content-center
+        h6(style="color: #1C144C") © 2021 KOHINOR SB TODOS LOS DERECHOS RESERVADOS
+          
+
+
     
