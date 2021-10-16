@@ -1,23 +1,20 @@
 extends layout
 
 block content
-    .container-fluid
-        .row
-            h2.text-center 
-                |Kohinor SB
-            h3.text-center 
-                |Funcionalidades 
-            p 
-                |Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
-    .container   
-        .row 
-            each element in functions 
-                .col-md-4 
-                    .card
-                        .card-block
-                            img.img-fluid.card-img-top(alt='Bootstrap Image Preview' src=`${element.imgURL}`)
-                            h4.card-title #{element.name}
-                            h6.card-subtitle #{element.description}
+    .row.mt-4
+        h1.text-center 
+            b Kohinor SB
+        h3.text-center Funcionalidades 
+        h6 Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
+  
+    .row 
+        each element in functions 
+            .col-md-4 
+                .card.m-3
+                    .card-block
+                        img.img-fluid.card-img-top(alt='Bootstrap Image Preview' src=`${element.imgURL}`)
+                        h4.card-title #{element.name}
+                        h6.card-subtitle #{element.description}
             
 
                 
