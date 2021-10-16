@@ -25,6 +25,14 @@ a {
   color: white;
 }
 
+#BannerFactura{
+  background-image: url(../images/FondoFactura.jfif);
+  filter: blur(30%);
+  background-size: cover;
+  min-height: 130px;
+}
+
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
