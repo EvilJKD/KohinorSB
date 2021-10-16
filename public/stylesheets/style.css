@@ -32,6 +32,25 @@ a {
   min-height: 130px;
 }
 
+.bg-kohinor{
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(140,59,132,0.9528186274509804) 71%, rgba(75,63,126,1) 100%);
+}
+
+.lt-kohinor{
+  color: #1C144C !important;
+}
+
+.btn-outline-kohinor{
+  border-color: #853F86 !important;
+  background-color: white !important;
+}
+.btn-dark-kohinor{
+  border-color: #4251A5 !important;
+  background-color: #4251A5 !important;
+  color: white !important;
+}
+
 
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {

@@ -1,30 +1,27 @@
 extends layout
 
 block content
-  .container-fluid
-    .row.text-center
-        .col-md-12
-        h2.mt-5
-            |  ¡Ingresa a tu cuenta!
-        p
-            |  Nosotros nos encargamos del resto... 
-    .row.bg-dark
-        p 
-            |         
-    .container-fluid.m-2
-        .row
-            .col-md-2
-                h3.mt-5
-                    |  Login
-                p
-                input(type='text' placeholder='Email address' name='email' required='')
-                p  
-                input(type='password' placeholder='Enter Password' name='psw' required='')
-                p
-                a.btn.btn-outline-success(href='/overview') Login
-                p
-            .col-md-2
-                img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-    .row.bg-dark
-        p 
-            |    
+    .container-fluid
+        .row.text-center
+            .col-md-12
+            h2.mt-5
+                |  ¡Ingresa a tu cuenta!
+            p
+                |  Nosotros nos encargamos del resto... 
+        .row.bg-dark
+            p 
+                |         
+    
+    .row.g-3.mt-4
+        .col-md-3
+        .col-md-6
+            .card
+                .card-body.d-flex.justify-content-evenly.align-items-center
+                    form(action='' method='post' role='form')
+                        h5.alig-self-left 
+                            b LOGIN
+                        input#email.form-control.m-2(type='text' name='email' placeholder='Email')
+                        input#password.form-control.m-2(type='text' name='password' placeholder='Contraseña')
+                        button.btn.btn-outline-dark.m-2.form-control(type='submit') Login
+                    .col-md-6 
+                        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')

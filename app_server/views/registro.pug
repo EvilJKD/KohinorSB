@@ -1,33 +1,40 @@
 extends layout
 
 block content
-  .container-fluid
-    .row.text-center
-        .col-md-12
-        h2.mt-5
-            |  ¿Quiéres formar parte de la familia Kohinor SB?
-        p
-            |  ¡Regístrate y escoge un plan! 
-    .row.bg-dark
-        p 
-            |         
-    .container-fluid.m-2
-        .row
-            .col-md-2
-                h3.mt-5
-                    |  Sign up for a free account
-                p
-                input(type='text' placeholder='First name' name='name' required='')
-                input(type='text' placeholder='Last name' name='lstname' required='')
-                p  
-                input(type='text' placeholder='Email address' name='email' required='')
-                p
-                input(type='password' placeholder='Create Password' name='crtpsw' required='')
-                p
-                button(type='submit') Register
-                p
-            .col-md-2
-                img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-    .row.bg-dark
+    .container-fluid
+        .row.text-center
+            .col-md-12
+            h2.mt-5
+                |  ¿Quiéres formar parte de la familia Kohinor SB?
+            p
+                |  ¡Regístrate y escoge un plan! 
+        .row.bg-dark
+            p 
+                |         
+    .row.g-3.mt-4
+        .col-md-3
+        .col-md-6
+            .card
+                .card-body.d-flex.justify-content-evenly.align-items-center
+                    form.row.g-3(action='' method='post' role='form')
+                        
+                        .col-md-10
+                            h5
+                                b Sign up for a free account
+                        .col-md-5
+                            input#nombre.form-control(type='text' placeholder='First name' name='name' required='')
+                        .col-md-5
+                            input#apellido.form-control(type='text' placeholder='Last name' name='lstname' required='')
+                        .col-md-10  
+                            input#email.form-control(type='text' placeholder='Email address' name='email' required='')
+                        .col-md-10
+                            input#password.form-control(type='password' placeholder='Create Password' name='crtpsw' required='')
+                        .col-md-10
+                            button.btn.btn-outline-dark.m-2.form-control(type='submit') Login
+
+                        
+                    .col-md-4
+                        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+    .row.bg-dark.mt-5.mb-4
         p 
             |    
