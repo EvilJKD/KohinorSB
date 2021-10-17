@@ -79,6 +79,9 @@ a {
 .hover-Kohinor:hover, .hover-Kohinor:focus{
   color: white !important;
 }
+.bannerAbout{
+  background-image: url(../images/bannerAbout.jpeg);
+}
 
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {

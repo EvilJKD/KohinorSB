@@ -1,46 +1,54 @@
 extends layout
 
 block content
-    .container-fluid
-        .row.bg-info
-            h2.mt-5
-                | Kohinor SB
-        .row 
-            .col-md-12
-                p 
-                    |El Sistema  Integrado  de  Información – KOHINOR SB, tiene como objetivo apoyar a la gestión de la empresa mediante el manejo integral de la INFORMACIÓN Financiera, Administrativa, Contable  y de Producción, orientados a mejorar los niveles de productividad, competitividad, eficiencia y eficacia en la entrega de bienes y/o servicios a los clientes externos.
-            
-            .col-md-6 
-                img.img-fluid.img-thumbnail(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-            .col-md-6
-                p 
-                    |KOHINOR SB es un producto de software que dispone de herramientas de apoyo para la toma de decisiones, las mismas que están sustentadas en nuevos conceptos organizacionales orientados a fortalecer a la empresa previa la consecución de la calidad total en cada uno de sus productos.
-                p
-                    |El sistema de información KOHINOR SB está conformado por módulos interrelacionados, que apoyan a la gestión en cada uno de los procesos operativos y decisionales de las empresas de los sectores: industrial, comercial, servicios, gubernamentales, entre otros.
-            
-            .col-md-12 
-                p 
-                    |Todos los módulos que conforman el sistema de información KOHINOR DBS funcionan de manera integral e interrelacionada, cada uno con sus propias facilidades y características orientadas a  apoyar la gestión del negocio con los respectivos controles.
-        hr
-        .row 
-            .col-md-12
-                h3 
-                    |Descubre más sobre Kohinor SB
-        .row
-            .col-md-6
-                img.img-fluid.img-thumbnail(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-                h4 
-                    |Funcionalidades
-                p
-                    |Entra y descubre los módulos que conforman nuestro sistema.
-                a.btn.btn-primary(href="../funcion") Más Información
-            .col-md-6
-                img.img-fluid.img-thumbnail(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-                h4 
-                    |Planes
-                p
-                    |Contrata el sistema que cambiará tu empresa, innovando y optimizando sus áreas de trabajo.
-                a.btn.btn-primary(href="../planes") Más Información
+    .row.bg-kohinor-2.p-5
+        h1.pt-3
+            b.text-white Kohinor SB
+    .row.mt-5.mb-5
+        .col-md-1 
+        .col-md-10
+            h4 El Sistema  Integrado  de  Información – KOHINOR SB, tiene como objetivo apoyar a la gestión de la empresa mediante el manejo integral de la INFORMACIÓN Financiera, Administrativa, Contable  y de Producción, orientados a mejorar los niveles de productividad, competitividad, eficiencia y eficacia en la entrega de bienes y/o servicios a los clientes externos.
+        .col-md-1 
+    .row.mt-5.mb-5 
+        .col-md-1 
+        .col-md-4 
+            img.img-fluid(alt='Bootstrap Image Preview' src='images/bodyKohinor1.jpeg')  
+        .col-md-2 
+        .col-md-4
+            h4 KOHINOR SB es un producto de software que dispone de herramientas de apoyo para la toma de decisiones, las mismas que están sustentadas en nuevos conceptos organizacionales orientados a fortalecer a la empresa previa la consecución de la calidad total en cada uno de sus productos.
+            h4 El sistema de información KOHINOR SB está conformado por módulos interrelacionados, que apoyan a la gestión en cada uno de los procesos operativos y decisionales de las empresas de los sectores: industrial, comercial, servicios, gubernamentales, entre otros.
+        .col-md-1
+    .row.mt-5.mb-5
+        .col-md-1 
+        .col-md-10  
+            h4 Todos los módulos que conforman el sistema de información KOHINOR DBS funcionan de manera integral e interrelacionada, cada uno con sus propias facilidades y características orientadas a  apoyar la gestión del negocio con los respectivos controles.
+        .col-md-1
+    
+    hr.bg-kohinor-2
+        
+    .row.mt-5.mb-5 
+        .col-md-1
+        .col-md-10
+            h3 Descubre más sobre Kohinor SB
+        .col-md-1
+    .d-flex.justify-content-evenly.mt-5.mb-5
+        .col-md-4
+            .card.w-75.mx-auto
+                img.img-fluid.card-image-top(alt='Bootstrap Image Preview' src='images/bodyKohinor2.jpeg')
+                .card-body.mt-3.mb-3 
+                    h4 
+                        b Funcionalidades 
+                    h5 Entra y descubre los módulos que conforman nuestro sistema.
+                    a.btn.btn-outline-kohinor.mt-3.mb-3.form-control(href="../funcion") Más Información
+        .col-md-4
+            .card.w-75.mx-auto
+                img.img-fluid.card-image-top(alt='Bootstrap Image Preview' src='images/bodyKohinor3.jpeg')
+                .card-body.mt-3.mb-3 
+                    h4 
+                        b Planes 
+                    h5 Contrata el sistema que cambiará tu empresa, innovando y optimizando sus áreas de trabajo.
+                    a.btn.btn-outline-kohinor.mt-3.mb-3.form-control(href="../planes") Más Información
+
 
                 
 

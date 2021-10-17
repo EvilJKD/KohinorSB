@@ -1,43 +1,47 @@
 extends layout
 
 block content
-  .container-fluid
-    .row
-        .col-md-12
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-        p.mt-5
-            | PowerSoft Cía. Ltda., está conformada por un equipo de profesionales especializados en Tecnologías de Información y Comunicaciones, Administración de Negocios con experiencia en los sectores público y privado.
+    .row.bannerAbout.p-5
+        .col-md-12.p-5
+        .col-md-12.p-5
+            h2.p-2
+                b.text-white Sobre Nosotros
+        
+    .row.mt-5
+        .col-md-1 
+        .col-md-10
+            h4.mb-4 PowerSoft Cía. Ltda., está conformada por un equipo de profesionales especializados en Tecnologías de Información y Comunicaciones, Administración de Negocios con experiencia en los sectores público y privado.
 
-        p
-            | Nuestros productos y servicios están orientados a satisfacer las necesidades de manejo y gestión de la información mediante el soporte en tecnologías de información dentro de las Entidades, brindando soluciones integrales para el manejo óptimo y adecuado de la información, apoyando a las Organizaciones en la generación de Bienes y/o Servicios de CALIDAD.
+            h4.mb-4 Nuestros productos y servicios están orientados a satisfacer las necesidades de manejo y gestión de la información mediante el soporte en tecnologías de información dentro de las Entidades, brindando soluciones integrales para el manejo óptimo y adecuado de la información, apoyando a las Organizaciones en la generación de Bienes y/o Servicios de CALIDAD.
 
-        p
-            |   A través de nuestros productos y servicios, la experiencia en el asesoramiento a Instituciones y Empresas, en base al uso y aplicación de Tecnologías de Información, nos han calificado para ser proveedores en el mercado nacional de soluciones integrales, para la desafiante problemática empresarial e institucional de todos nuestros clientes.
+            h4.mb-4 A través de nuestros productos y servicios, la experiencia en el asesoramiento a Instituciones y Empresas, en base al uso y aplicación de Tecnologías de Información, nos han calificado para ser proveedores en el mercado nacional de soluciones integrales, para la desafiante problemática empresarial e institucional de todos nuestros clientes.
+        .col-md-1
 
-    .row.bg-dark
-        p 
-            |         
+    .row.bg-kohinor-2 
+        .col-md-12.p-5
+            h3
+                b.text-white ¡Más de 20 años de experiencia!
+                
     
-    .row
+    .row.mt-5.mb-5
         .col-md-12 
-        h3 
-            | Conoce a nuestros profesionales
-    .row    
+        h3 Conoce a nuestros profesionales
+    .d-flex.justify-content-evenly.mt-5.mb-5
         .col-md-4
-            img.img-fluid.img-thumbnail(alt='Bootstrap Image Preview' src='images/dummy2.png')
-            p 
-                | Nombre 
-            p 
-                | Cargo
+            .card.w-50.mx-auto
+                img.img-fluid.card-image-top(alt='Bootstrap Image Preview' src='images/dummy2.png')
+                .card-body 
+                    h5 Nombre 
+                    h5 Cargo
         .col-md-4
-            img.img-fluid.img-thumbnail(alt='Bootstrap Image Preview' src='images/dummy2.png')
-            p 
-                | Nombre 
-            p 
-                | Cargo
+            .card.w-50.mx-auto
+                img.img-fluid.card-image-top(alt='Bootstrap Image Preview' src='images/dummy2.png')
+                .card-body 
+                    h5 Nombre 
+                    h5 Cargo
         .col-md-4
-            img.img-fluid.img-thumbnail(alt='Bootstrap Image Preview' src='images/dummy2.png')
-            p 
-                | Nombre 
-            p 
-                | Cargo
+            .card.w-50.mx-auto
+                img.img-fluid.card-image-top(alt='Bootstrap Image Preview' src='images/dummy2.png')
+                .card-body 
+                    h5 Nombre 
+                    h5 Cargo
