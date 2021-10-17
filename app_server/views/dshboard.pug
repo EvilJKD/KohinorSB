@@ -29,20 +29,25 @@ html
       .c-sidebar-brand.d-lg-down-none
  
         span.c-sidebar-brand-full(onclick='openNav()')
-          img(src='Icon/Menu125/powersoft.png' width='118' height='46' style='cursor: pointer;')
+          img(src='images/Logotipo_Kohinor.png' width='118' height='46' style='cursor: pointer;')
         |           
         span.c-sidebar-brand-minimized(onclick='openNav()')
-          img(src='Icon/Menu125/kohinor.png' width='46' height='46')
+          img(src='images/Logotipo_Kohinor_3_Cropped.png' width='46' height='30')
       ul.c-sidebar-nav
         li.c-sidebar-nav-item
-          a.c-sidebar-nav-link(href='w_Escritorio.aspx')
+          a.c-sidebar-nav-link(href='/')
             i.c-sidebar-nav-icon.cil-speedometer
             |                     Escritorio
             span.badge.badge-info NUEVO
         li.c-sidebar-nav-title Menu
         li.c-sidebar-nav-item.c-sidebar-nav-dropdown
-          .container
-            main.pb-3(role='main')
+          a.c-sidebar-nav-link(href='/overview')
+             i.c-sidebar-nav-icon.cil-home
+             |      Overview
+        li.c-sidebar-nav-item.c-sidebar-nav-dropdown
+          a.c-sidebar-nav-link(href='/ticket')
+             i.c-sidebar-nav-icon.cib-server-fault
+             |      Ticket
         li.c-sidebar-nav-divider
         li.c-sidebar-nav-title System Utilization
         li.c-sidebar-nav-item.px-3.c-d-compact-none.c-d-minimized-none
@@ -292,7 +297,7 @@ html
         button.c-header-toggler.c-class-toggler.d-lg-none.mfe-auto(type='button' data-target='#sidebar' data-class='c-sidebar-show')
           i.c-icon.c-icon-lg.cil-menu
         a.c-header-brand.d-lg-none(href='#')
-          img(src='Icon/Menu125/powersoft.png' width='100' height='46')
+          img(src='images/Logotipo_kohinor.png' width='105' height='40')
         button.c-header-toggler.c-class-toggler.mfs-3.d-md-down-none(type='button' data-target='#sidebar' data-class='c-sidebar-lg-show' responsive='true')
           i.c-icon.c-icon-lg.cil-menu
         |             
@@ -303,18 +308,9 @@ html
             a#lkbtnConfig.c-header-nav-link(runat='server')
               i.c-icon.cil-settings
               asp:label#lblModuloConf(runat='server')
-          li.c-header-nav-item.px-3
-            a#lkbtnSeg.c-header-nav-link(runat='server')
-              i.c-icon.cil-lock-locked
-              asp:label#lblModuloSeg(runat='server')
         ul.c-header-nav.ml-auto.mr-4
           li.c-header-nav-item.d-lg-down-none
             asp:label#lblNomemp(runat='server' text='')
-          li.c-header-nav-item.px-3.c-d-legacy-none
-            button#btndark.c-class-toggler.c-header-nav-btn(runat='server' type='button' onserverclick='btndark_Click')
-              i.c-icon.cil-moon
-            button#btnligth.c-class-toggler.c-header-nav-btn(runat='server' type='button' onserverclick='btnligth_Click')
-              i.c-icon.cil-sun
           li.c-header-nav-item.dropdown.d-md-down-none.mx-2
             a.c-header-nav-link(href='#' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='true')
               i.c-icon.cil-bell
@@ -510,14 +506,11 @@ html
               a.dropdown-item(data-toggle='modal' data-target='#ModalLogout')
                 i.c-icon.cil-account-logout
                 |                             Logout
-          button.c-header-toggler.c-class-toggler(type='button' data-target='#aside' data-class='c-sidebar-show')
-            i.c-icon.c-icon-lg.cil-applications-settings
-        .c-subheader.justify-content-between.px-3
+          
 
       .c-body
-        .container
-          main.pb-3(role='main')
-            |
+        block content
+          
       footer.c-footer
         div
           i.c-icon.c-icon-xl.cif-ec.mx-1
@@ -620,7 +613,7 @@ html
             | Seleccionar &quot;Logout&quot; abajo para salir de la sesi&oacute;n actual.
           .modal-footer
             button.btn.btn-secondary(type='button' data-dismiss='modal') Cerrar
-            a.btn.btn-primary(href='w_Login.aspx') Logout
+            a.btn.btn-primary(href='/login') Logout
    
     #ModalProfile.modal.fade(tabindex='-1' role='dialog' aria-labelledby='lblModalProfile' aria-hidden='true')
       .modal-dialog.modal-primary(role='document')
@@ -639,5 +632,4 @@ html
             p
               | Serie:
               asp:label#lblSersec(runat='server' text='')
-    block content
 

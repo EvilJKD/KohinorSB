@@ -49,6 +49,10 @@ th {
     text-align: center; /*Para centrar text de Gridviews*/
 }
 
+td {
+    text-align: center;
+}
+
 .pagination-ys {
     /*display: inline-block;*/
     padding-left: 0;

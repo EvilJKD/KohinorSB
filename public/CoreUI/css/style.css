@@ -215,7 +215,7 @@ sup {
 a {
     text-decoration: none;
     background-color: transparent;
-    color: #00445e
+    color: #8C3B84
 }
 
 .c-legacy-theme a {
@@ -229,7 +229,7 @@ a {
 @media(hover:hover),(-ms-high-contrast:none) {
     a:hover {
         text-decoration: underline;
-        color: #00445e
+        color: #8C3B84
     }
 
     .c-legacy-theme a:hover {
@@ -13770,7 +13770,7 @@ html:not([dir=rtl]) .progress-group-icon {
     padding: 0;
     box-shadow: none;
     color: #fff;
-    background: #00445e;
+    background: #1F2346;
     transition: box-shadow .3s .15s,margin-left .3s,margin-right .3s,width .3s,z-index 0s ease .3s,-webkit-transform .3s;
     transition: box-shadow .3s .15s,transform .3s,margin-left .3s,margin-right .3s,width .3s,z-index 0s ease .3s;
     transition: box-shadow .3s .15s,transform .3s,margin-left .3s,margin-right .3s,width .3s,z-index 0s ease .3s,-webkit-transform .3s
@@ -15257,7 +15257,7 @@ html:not([dir=rtl]) .c-sidebar.c-sidebar-show.c-sidebar-right, html:not([dir=rtl
         }
 
 .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link, .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle {
-    background: #00445e
+    background: #8C3B84
 }
 
     .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link .c-sidebar-nav-icon, .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle .c-sidebar-nav-icon {
@@ -15265,7 +15265,7 @@ html:not([dir=rtl]) .c-sidebar.c-sidebar-show.c-sidebar-right, html:not([dir=rtl
     }
 
     .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link.c-disabled, .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-disabled.c-sidebar-nav-dropdown-toggle {
-        background: #00445e
+        background: #8C3B84
     }
 
         .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link.c-disabled .c-sidebar-nav-icon, .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-disabled.c-sidebar-nav-dropdown-toggle .c-sidebar-nav-icon {
@@ -15273,7 +15273,7 @@ html:not([dir=rtl]) .c-sidebar.c-sidebar-show.c-sidebar-right, html:not([dir=rtl
         }
 
 .c-sidebar.c-sidebar-minimized .c-sidebar-nav > .c-sidebar-nav-dropdown > .c-sidebar-nav-dropdown-items {
-    background: #00445e
+    background: #8C3B84
 }
 
 .c-sidebar.c-sidebar-minimized .c-sidebar-nav > .c-sidebar-nav-dropdown:hover {
@@ -15459,7 +15459,7 @@ html:not([dir=rtl]) .c-sidebar.c-sidebar-light.c-sidebar-right, *[dir=rtl] .c-si
         }
 
 .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link, .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle {
-    background: #00445e
+    background: #8C3B84
 }
 
     .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link .c-sidebar-nav-icon, .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle .c-sidebar-nav-icon {
@@ -15658,7 +15658,7 @@ html:not([dir=rtl]) .c-sidebar.c-sidebar-light.c-sidebar-right, *[dir=rtl] .c-si
         }
 
 .c-legacy-theme .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link, .c-legacy-theme .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle {
-    background: #20a8d8
+    background: #8C3B84
 }
 
     .c-legacy-theme .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link .c-sidebar-nav-icon, .c-legacy-theme .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle .c-sidebar-nav-icon {
@@ -15860,7 +15860,7 @@ html:not([dir=rtl]) .c-legacy-theme .c-sidebar.c-sidebar-light.c-sidebar-right, 
         }
 
 .c-legacy-theme .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link, .c-legacy-theme .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle {
-    background: #20a8d8
+    background: #8C3B84
 }
 
     .c-legacy-theme .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-link .c-sidebar-nav-icon, .c-legacy-theme .c-sidebar.c-sidebar-light.c-sidebar-minimized .c-sidebar-nav-item:hover > .c-sidebar-nav-dropdown-toggle .c-sidebar-nav-icon {
@@ -17971,7 +17971,8 @@ html:not([dir=rtl]) .c-switch-label .c-switch-slider::after {
 
 .table th, .table td {
     padding: .75rem;
-    vertical-align: top;
+    
+    align-items: center;
     border-top: 1px solid;
     border-top-color: #d8dbe0
 }
@@ -18534,7 +18535,7 @@ html:not([dir=rtl]) .c-switch-label .c-switch-slider::after {
 
 .table .thead-dark th {
     color: #fff;
-    background-color: #00445e;
+    background-color: #1F2346;
     border-color: #758297
 }
 

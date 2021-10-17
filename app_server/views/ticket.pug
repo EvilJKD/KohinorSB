@@ -2,70 +2,41 @@ extends dshboard
 
 block content
     .container-fluid
-        
-        .row 
-            .col-md-10
-                h3 
-                    |Tickets,
-        .row.bg-blue
-            p 
-            |      
-            .col-md-9
-                p
-                input(type='text' placeholder='' name='email' required='')
-        
-            .col-md-3
-                p 
-                    |
-                p 
-                 a.btn.btn-outline-success(href='/overview') Crear Ticket
-                
-        .row 
-            .col-md-10
-                h3 
-                    |Tickets
-        .row    
-            .col-md-2
-                h4 
-                    |Date
-                each ticket in ticketWin
-                    .card   
-                        .card-block 
-                            p= ticket.Date
-            .col-md-2
-                h4 
-                    | Name
-                each ticket in ticketWin
-                    .card   
-                        .card-block 
-                            p= ticket.Name
-            .col-md-1
-                h4 
-                    |Topic
-                each ticket in ticketWin
-                    .card   
-                        .card-block 
-                            p= ticket.Topic   
-            .col-md-3
-                h4 
-                    |Descripcion
-                each ticket in ticketWin
-                    .card   
-                        .card-block 
-                            p= ticket.Descripcion
-            .col-md-2
-                h4 
-                    |Responsable
-                each ticket in ticketWin
-                    .card   
-                        .card-block 
-                            p= ticket.Responsable
-            .col-md-2
-                h4 
-                    |Status
-                each ticket in ticketWin
-                    .card   
-                        .card-block 
-                            p= ticket.Status
-        
-
+        .fade-in
+            .card
+                .card-header
+                    i.c-icon.cil-justify-center
+                    b Ticket
+                .card-body
+                    #cphBody
+                        .table.table-responsive(style='overflow-x: auto;')
+                            .thead-dark
+                                div
+                                    table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
+                                        thead
+                                            tr(style='color:White;font-weight:bold;')
+                                                th(scope='col') &nbsp;
+                                                th(scope='col') N&deg;
+                                                th(scope='col') Asunto &uarr;&darr;
+                                                th(scope='col') Status
+                                                th(scope='col') Usuario
+                                                th(scope='col') Fecha   
+                                                th(scope='col') Operaciones        
+                                                th(scope='col')   
+                                        tbody
+                                            - var pos=1
+                                                each ticket in objetoTicket
+                                                    tr
+                                                        td
+                                                            input(type='image' src='Icon/Menu125/Select-Hand.png' alt='Select' style='width:30px;')
+                                                        td.numTicket= pos++
+                                                        td.asunto= ticket.asunto
+                                                        td.status= ticket.status
+                                                        td.usuario= ticket.usuario
+                                                        td.fecha= ticket.fecha
+                                                        td
+                                                            input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')
+                                                            td
+                                                                input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
+                                                            
+                                                        

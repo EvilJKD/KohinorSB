@@ -5,9 +5,22 @@ const tickets = mongoose.model('ticket'); // el modelo me permite interactuar co
 //controladores
 
 const ticketCreate=(req,res)=>{
-    res
-        .status(200)
-        .json({"status": "Success Create"});
+    tickets.create({
+        asunto: req.body.asunto,
+        fecha: req.body.fecha,
+        status: req.body.status,
+        usuario: req.body.ObjectId
+    }, (err, objetoTicket)=>{
+        if(err){
+            return res
+                .status(400)
+                .json(err);
+        } else {
+            return res
+                .status(201)
+                .json(objetoTicket);
+        }
+    });
 };
 
 //listar todos los documentos de la coleccion
