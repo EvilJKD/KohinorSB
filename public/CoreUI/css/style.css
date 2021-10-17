@@ -18446,7 +18446,7 @@ html:not([dir=rtl]) .c-switch-label .c-switch-slider::after {
 
 .table-active, .table-active > th, .table-active > td {
     color: #4f5d73;
-    background-color: #d8dbe0
+    background-color: #e6e6e6
 }
 
 @media(hover:hover),(-ms-high-contrast:none) {

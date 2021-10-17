@@ -24,9 +24,9 @@ const ticketsSchema = new mongoose.Schema({
 const Ticket = new mongoose.model('ticket',ticketsSchema); //copliar el esquema en un modelo
 
 const ticket = new Ticket({
-    asunto: "Falla en el servicio",
+    asunto: "Falla en el sistema",
     status: "Enviado",
     usuario: '61562e0f9bd990db46b200af'
 });
 
-//ticket.save();
+  // ticket.save();
