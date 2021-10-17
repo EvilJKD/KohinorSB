@@ -1,42 +1,24 @@
 extends layout
 
 block content
-  .container-fluid
-    .row.text-center
-        .col-md-12
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-        p.mt-5
-            |  Horas de Apertura
-        p
-            |  Lunes-Viernes: 09:00-17:00 Hrs 
-
-        p
-            |  Sábados: cerrado
-        p 
-            |  Domingos: cerrado
-    .row.bg-dark
-        p 
-            |         
-    .row.text-center
-        .col-md-12
-        p.mt-5
-            |  Dirección
-        p
-            |  Av. Azucenas y de Los Naranjos 
-
-        p
-            |  N4415 Lote 30
-
-        p 
-            |  Quito, Ecuador
-        p 
-            |  Telefono: 0979551886
-        p 
-            |  Email: info@kohinorerp.com
-    .row.bg-dark
-        p 
-            |    
-    
-    .row
-        .col-md-12
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')       
+    .container-fluid.mt-5
+        .row.text-center
+            .col-md-12.bg-kohinor-2(style="height:10vw")
+               
+            .col-md-12.mt-5.mb-5    
+                h3 
+                    b Horas de Apertura
+                h4 Lunes-Viernes: 09:00-17:00 Hrs 
+                h4 Sábados: cerrado
+                h4 Domingos: cerrado      
+        .row.text-center.bg-kohinor-2.p-5
+            .col-md-12
+                h3(style="color: white")
+                    b Dirección
+                h4(style="color: white") Av. Azucenas y de Los Naranjos 
+                h4(style="color: white") N4415 Lote 30
+                h4(style="color: white") Quito, Ecuador
+                h4(style="color: white") Telefono: 0979551886
+                h4(style="color: white") Email: info@kohinorerp.com
+ 
+              

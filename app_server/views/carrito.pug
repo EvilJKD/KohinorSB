@@ -1,64 +1,83 @@
 extends layout
 
 block content
-    .container-fluid.mt-2
-        .row
-            h2.text-center 
-                |Kohinor SB
-            h3.text-center 
-                |Tarifas
-            p
-    .row.bg-blue
-        p 
-            |                
-    .row 
+    #BannerFactura.container-fluid.pt-3 
+        h1.text-center.text-white
+            b Konihor SB
+        h3.text-center.text-white
+            b Tarifas
+
+    .row.g-3.mt-4 
         .col-md-4 
             h2.text-center  
-                |Revisar orden
+                b Revisar orden
         .col-md-4 
             h2.text-center  
                 |Direccion 
         .col-md-4
             h2.text-center  
                 |Confirmar Pedido
-    .row.bg-dark
-        p 
-            |                
-    .row 
-        .col-md-4 
-            h2.text-left  
-                |Producto
-        .col-md-2 
-            h2.text-center  
-                |Cantidad 
+    
+          
+    .row.mt-5 
         .col-md-1
-            h2.text-left  
-                |Precio
-    .row.bg-dark
-        p 
-            |    
+        .col-md-6
+            hr
+            .row 
+                .col-md-6 
+                    h4.text-left 
+                        b Producto
+                .col-md-3 
+                    h4.text-left 
+                        b Cantidad 
+                .col-md-3
+                    h4.text-left 
+                        b Precio
+            hr
+            each element in carrito
+                .row 
+                    .col-md-6
+                        h5.text-left #{element.producto}
+                    .col-md-3 
+                        h5.text-left #{element.cantidad}
+                    .col-md-3 
+                        h5.text-left #{element.precio}
+            .d-flex.justify-content-end.mt-4
+                a.btn.btn-dark.bg-kohinor-2(href='/factura') Siguiente
+                
 
-    .row   
-        .col-md-8 
-            each element in carrito 
+
+        .col-md-4 
+            .card 
+                .card-body
                     .row 
-                        .col-md-7
-                            .card.h-100
-                                .card-block
-                                    h4.card-title.bg-success.p-4 #{element.producto}
-                        .col-md-1 
-                            .card.h-100
-                                .card-block
-                                    h6.text-center.card-subtitle #{element.cantidad}
-                        .col-md-2
-                            .card.h-100
-                                .card-block
-                                    p.text-center.card-subtitle #{element.precio}
-        .col-md-3
-            img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+                        .col-md-8 
+                            h6.text-left X Usuarios 
+                        .col-md-4 
+                            h6.text-right xxx USD 
+                    hr
+                    .row 
+                        .col-md-8 
+                            h6.text-left Descuento para usuarios 
+                        .col-md-4 
+                            h6.text-right xxx USD
+                    hr
+                    .row 
+                        .col-md-8 
+                            h6.text-left X Modos 
+                        .col-md-4 
+                            h6.text-right xxx USD
+                    hr
+                    .row 
+                        .col-md-8 
+                            h5.text-left Total 
+                        .col-md-4 
+                            h5.text-right xxx USD 
+
+
     .row
         .col-md-5
-            a.btn.btn-outline-success(href='/factura') Siguiente
+            
                            
 
     
