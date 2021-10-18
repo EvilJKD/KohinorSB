@@ -26,7 +26,7 @@ router.get('/login', crtlLogin.login);
 router.get('/registro', crtlRegistro.registro);
 router.get('/overview', crtlOvrview.overview);
 router.get('/ticket', crtlTicket.ticket);
-router.get('/planes', crtlPlanes.planes);
+router.get('/planes', crtlPlanes.funciones);
 router.get('/carrito', crtlCarrito.carrito);
 router.get('/it_usrs', crtlit_usrs.it_usrs);
 router.get('/factura',crtlFactura.factura);

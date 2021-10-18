@@ -1,29 +1,41 @@
 extends layout
 
 block content
-    .container-fluid.mt-2
-        .row
-            h2.text-center 
-                |Kohinor SB
-            h3.text-center 
-                |Planes
-            p 
-                |Conoce el sistema que cambiará tu empresa, innovando y optimizando sus áreas de trabajo
-    .container.content-row   
-        .row 
-            each element in planes 
-                .col-md-4 
-                    .card.h-100
-                        .card-block
-                            h4.card-title.bg-success.p-4 #{element.name}
-                            h6.card-subtitle #{element.description}
-                            a.btn.btn-outline-success(href='/carrito') Lo quiero 
+    #BannerFactura.container-fluid.pt-3.pb-3 
+        h1.text-center.text-white
+            b Konihor SB
+        h3.text-center.text-white
+            b Tarifas
+        h5.text-center.text-white Conoce el sistema que cambiará tu empresa, innovando y optimizando sus áreas de trabajo 
+    .row
+        .col-md-1 
+        .col-md-6
+            .row
+                h5 Elige el número de usuarios
+                .col-md-3
+                .col-md-6 
+                    input.form-control.m-2
+                .col-md-2 
+                    h6.bg-kohinor-2.text-white.form-control.m-2 Usuarios
+                .col-md-1
+            .row
+                h5 Elige tus módulos 
+                select.form-select(name='nombres' multiple aria-label='multiple select materias')
+                    each element in planes
+                        option(value=element.ObjectId) #{element.nombre} -- $ #{element.precio}
 
-    .container-fluid.mt-4 
-        .row.bg-primary
-            h2
-                |Versiones de KOHINOR Smart Business
-        .row 
-            img.img-fluid.card-img-top(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+    .row.bg-kohinor-2.mt-4.mb-4.p-4
+        
+        h2.text-white 
+            b Versiones de KOHINOR Smart Business
+    .row
+        .col-md-3 
+        .col-md-6
+            img.img-fluid.card-img-top(alt='Bootstrap Image Preview' src='images/modulosKohinor.png')
+        .col-md-3
+    .row    
+        .col-md-3 
+        .col-md-6
             h4 Para saber más información acerca de nuestros planes contáctanos.
-            button.btn.btn-secondary(type='button') CONÓCENOS
+            button.btn.btn-dark-kohinor.form-control(type='button') CONÓCENOS
+        .col-md-3
