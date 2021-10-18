@@ -63,7 +63,7 @@ const overview = async(req, res) => {
             return {
                 nombre: result.nombre,
                 apellido: result.apellido,
-                email: result.apellido,
+                email: result.email,
                 contraseña: result.contraseña,
                 Id: result._id
             }
