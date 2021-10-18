@@ -9,7 +9,7 @@ const ctrlFactura = require('../controllers/facturas');
 
 //USUARIOS
 router
-    .route('/users')
+    .route('/users/')
     .post(ctrlUsers.userCreate)
     .get(ctrlUsers.userList)
 router
