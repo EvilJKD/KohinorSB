@@ -5,11 +5,14 @@ block content
     #carouselExampleFade.carousel.slide.carousel-fade(data-bs-ride='carousel')
       .carousel-inner
         .carousel-item.active
-          img.d-block.w-100(src='images/dummy.jpg' alt='...')
+          img.d-block.w-100(src='/images/bannerAbout.jpeg' alt='...' position="relative")
+          .carousel-content
+            h3 Empresa de desarrollo de Software Contable, KOHINOR Smart Business, ideal para conectarte a tu empresa.
+            a.btn.btn-dark-home(href="/about") Conócenos
         .carousel-item
           img.d-block.w-100(src='images/dummy.jpg' alt='...')
         .carousel-item
-          img.d-block.w-100(src='images/dummy.jpg' alt='...')
+          img.d-block.w-100(src='images/dummy.jpg'  alt='...')
       button.carousel-control-prev(type='button' data-bs-target='#carouselExampleFade' data-bs-slide='prev')
         span.carousel-control-prev-icon(aria-hidden='true')
         span.visually-hidden Previous
@@ -17,54 +20,66 @@ block content
         span.carousel-control-next-icon(aria-hidden='true')
         span.visually-hidden Next
   
-  .container-fluid.m-2
+  .container1-fluid.m-2
     .row
       .col-md-6
-        h3
+        h3.t1-home
           |Todos tus procesos en un solo sistema
         p
+          |
+        p.tx1-home
           |Kohinor Smart Business integra todas las areas de tu empresa con soluciones enfocadas a Business Inteligence.
-          ul
+        p 
+          |
+          ul.tx2-home
             li Automatización de procesos.
-
+            p 
+              |
             li Disponibilidad de informacion en un mismo sistema.
-
+            p 
+              |
             li Eficiente manejo de información, permitiendo ahorro de tiempo y costes.
-      .col-md-6
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-        button.btn.btn-success(type='button')
+      .col-md-5
+        p 
+          |
+        img.img-home(src='images/h1.png' height= '500px')
+        p   
+          |
+        button.btn.btn-dark-home(type='button')
           | Más Información
+        p 
+          |
 
-  .container-fluid.m-2
+  .container2-fluid.m-2
     .row
-      .col-md-6
-          img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+      .col-md-5
+          img(src='images/h2.png' height= '500px')
           
       .col-md-6
         
-        p
+        p.tx3-home
           |Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
-        p
-          b Grupo Powersoft
-  
-  .container-fluid
+  .container3-fluid
     .row
       .col-md-12
         h3
           | Grupo Powersoft
-        p
+        p.tx4-home
           | Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
-    .row
-      .col-md-4
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-      .col-md-4
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-      .col-md-4
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-    .row.mt-5
-      .col-md-4
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-      .col-md-4
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
-      .col-md-4
-        img.img-fluid(alt='Bootstrap Image Preview' src='images/dummy.jpg')
+    .img-kohinor-home
+      .row
+        .col-md-4
+          img(alt='Bootstrap Image Preview' src='images/h3.png' height= '400px')
+        .col-md-4
+          img(alt='Bootstrap Image Preview' src='images/h4.png' height= '400px')
+        .col-md-4
+          img(alt='Bootstrap Image Preview' src='images/h5.png' height= '400px')
+      .row.mt-4
+        .col-md-4
+          img(alt='Bootstrap Image Preview' src='images/h6.png' height= '400px')
+        .col-md-4
+          img(alt='Bootstrap Image Preview' src='images/h7.png' height= '400px')
+        .col-md-4
+          img(alt='Bootstrap Image Preview' src='images/h8.png' height= '400px')
+          p 
+            |
