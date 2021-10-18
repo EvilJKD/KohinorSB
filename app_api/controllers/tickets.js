@@ -25,10 +25,16 @@ const ticketCreate=(req,res)=>{
 
 //listar todos los documentos de la coleccion
 const ticketList = (req, res) => {
-    tickets 
-        .find()//obtener todos los documentos de la coleccion
-        //.select('nombre apellido')
-        .populate('usuario')
+    tickets.aggregate([
+        {
+            $lookup:{
+                "from":"users",
+                "localField":"usuario",
+                "foreignField":"_id",
+                "as":"persona"
+            }
+        }
+    ])
         .exec((err, objetoTicket)=> {
             if(!objetoTicket || objetoTicket.length == 0){
                 console.log(`No existen documentos en la coleccion ${tickets}`);

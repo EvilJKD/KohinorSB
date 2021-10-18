@@ -51,7 +51,7 @@ block content
                                                         td.numTicket= pos++
                                                         td.asunto= ticket.asunto
                                                         td.status= ticket.status
-                                                        td.usuario= ticket.usuario
+                                                        td.usuario= ticket.persona.map(result => result.nombre)
                                                         td.fecha= ticket.fecha
                                                         td
                                                             input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')

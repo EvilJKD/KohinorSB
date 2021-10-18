@@ -26,7 +26,7 @@ const Ticket = new mongoose.model('ticket',ticketsSchema); //copliar el esquema 
 const ticket = new Ticket({
     asunto: "Falla en el sistema",
     status: "Enviado",
-    usuario: '61562e0f9bd990db46b200af'
+    usuario: '61551c2556991aed2b36cf48'
 });
 
-  // ticket.save();
+   //.ticketsave();

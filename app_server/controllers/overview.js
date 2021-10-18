@@ -13,10 +13,11 @@ if (process.env.NODE_ENV === 'production') {
 
 
 /* renderizar home page. */
-const renderOverview = (req, res, responseBody) => {
+const renderOverview = (req, res, responseBody1, responseBody2 ) => {
     res.render('overview', {
         title: 'Overview',
-        objetoUsers: responseBody
+        objetoUsers: responseBody1,
+        objetoTicket: responseBody2
 
     });
 };
@@ -68,10 +69,10 @@ const overview = async(req, res) => {
             }
         });
 
-        renderOverview(req, res, {
+        renderOverview(req, res, 
             usersTable,
             ticketTable,
-        });
+        );
     } catch (error) {
         console.log(error);
     }
