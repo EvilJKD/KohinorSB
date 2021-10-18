@@ -23,10 +23,10 @@ const moduleSchema =  new mongoose.Schema({
 const Modulo = new mongoose.model('modulo',moduleSchema); //copliar el esquema en un modelo
 
 const modulo = new Modulo({
-    nombre: 'Modulo Cash PREMIUM',
-    descripcion: 'Manejo de datos + sistema integrado',
-    img: 'dummy.jpg',
-    precio:50
+    nombre: 'Activos Fijos',
+    descripcion: 'Control y asignación de cada uno de los Activos a los funcionarios o empleados de la Empresa. cálculo automático de depreciación del bien en función del tiempo y valor del Bien, reasignación de activos fijos, manejo de cambio o revalorización del activo fijo, manejo de historial de inventario físico.',
+    img: 'Icon/Menu125/10.png',
+    precio: 5.0
 });
 
 //modulo.save();

@@ -20,7 +20,7 @@ const crtlDshboard = require('../controllers/dshboard');
 router.get('/', ctrlMain.index);
 router.get('/about', crtAbout.about); //Invoca al controlador de about
 router.get('/kohinor', crtKohinor.kohinor);
-router.get('/funcion', crtlFuncion.funcion);
+router.get('/funcion', crtlFuncion.funciones);
 router.get('/contacto', crtlContacto.contacto);
 router.get('/login', crtlLogin.login);
 router.get('/registro', crtlRegistro.registro);

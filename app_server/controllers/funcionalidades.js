@@ -1,52 +1,49 @@
+const request = require('request');
+const apiOptions = {
+    server: 'http://localhost:3000' // servidor local - desarrollo
+};
+
+if (process.env.NODE_ENV === 'production') {
+    apiOptions.server = 'https://https://proyecto-kohinor-sb-2021.herokuapp.com' // servidor remoto - producción
+}
+
 /* GET funcionalidades. */
-const funcion = (req, res) => {
+const funcion = (req, res, body) => {
     res.render('funcion',{
         title: 'Funcion',
-        functions: [{
-            imgURL: 'images/dummy.jpg',
-            name: 'Inventarios',
-            description: "Clasificación de los bienes o artículos en almacenes o bodegas. Manejo y control de stocks, varios precios, costos, códigos principales, códigos alternos y registro de características físicas de artículos, control de transferencias entre bodegas."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Compras",
-            description: "Registra las Empresas Proveedoras de Productos, registra la compra de bienes o servicios, ingreso de mercadería, prestamos de mercadería, consignación de mercadería, control de caja chica."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Ventas",
-            description: "Manejo integral de la información relacionada con el proceso de ventas de la Empresa generando un estado de cuenta. Emitie una factura de un servicio o realizar un egreso de un bien."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Importaciones",
-            description: "Registra el pedido del exterior, gastos de cada pedido, la liquidación de la importación y la actualización de los precios de venta y costos de los artículos importados."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Nomina",
-            description: "Liquidación del Rol de una o varias oficinas, rubros de rol creados en función de fórmulas de fácil implementación y uso. control de Transacciones manuales, Notas de debito de empleados, control de vacaciones, calculo automático del rol normal, rol de provisiones, cotrol de días feriados, hitorial de cambio de oficina, cambio de sueldo."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Contabilidad y Finanzas",
-            description: "Control de Transacciones Contables de manera automatizada. Contabilizacion de comprobantes y la generación de Estados Financieros en línea."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Facturación Electrónica",
-            description: "Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec mattis, pulvinar dapibus leo."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Producción",
-            description: "Manejo integral de la producción de bienes de una Empresa Industrial. Control de materias primas, costos de mano de obra, control de tiempos de producción, registro de módulos y secciones de producción, subproductos, control de insumos, fórmulas de producción, tiempos estándar, presupuestos, balanceo de línea."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Puntos de Venta",
-            description: "Manejo de la información generada en el sitio físico de venta directa a los Clientes. Facilita el cobro inmediato en efectivo, cheque, tarjeta de crédito."
-        },{
-            imgURL: 'images/dummy.jpg',
-            name: "Activos Fijos",
-            description: "Control y asignación de cada uno de los Activos a los funcionarios o empleados de la Empresa. cálculo automático de depreciación del bien en función del tiempo y valor del Bien, reasignación de activos fijos, manejo de cambio o revalorización del activo fijo, manejo de historial de inventario físico."
-        }
-    ]
+        functions: body
     });
 };
 
+const funciones = (req, res) => {
+    const path = '/api/modulo';
+    const requestOptions = {
+        url: `${apiOptions.server}${path}`,
+        method: 'GET',
+        json: {}
+    };
+
+    request(
+        requestOptions, // Opciones
+        (err, response, body) => { // callback con sus 3 partes
+            // err - objeto con el error
+            // response - respuesta completa (incluye status)
+            // body - cuerpo de la respuesta
+            if (err) {
+                console.log(err);
+            } else if (response.statusCode === 200 && body) { // además del statusCOde, el objeto resultante debe tener contenido
+                console.log(body);
+                funcion(req, res, body);
+            } else { // en este caso renderizar la vista de manejo de errores
+                console.log(response.statusCode);
+                res.render('error', {
+                    mensaje: 'Existe un error en la colección de usuarios'
+                })
+            }
+        });
+};
+
+
 module.exports = {
-    funcion
+    funciones
 };
