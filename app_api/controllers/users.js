@@ -5,9 +5,22 @@ const users = mongoose.model('user'); // el modelo me permite interactuar con la
 //controladores
 
 const userCreate=(req,res)=>{
-    res
-        .status(200)
-        .json({"status": "Success Create"});
+    users.create({
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        email: req.body.email,
+        contraseña: req.body.contraseña
+    }, (err, objetoUser)=>{
+        if(err){
+            return res
+                .status(400)
+                .json(err);
+        } else {
+            return res
+                .status(201)
+                .json(objetoUser);
+        }
+    });
 };
 
 //listar todos los documentos de la coleccion

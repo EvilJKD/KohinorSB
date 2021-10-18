@@ -115,10 +115,7 @@ h3{
   margin-left: 2vw;
 }
 
-.col-md-4 {
-  padding-left: 25px;
-  padding-right: 25px;
-}
+
 
 .container1-fluid.m-2{
   background: rgb(140,59,132);
@@ -162,9 +159,6 @@ h3{
   color: white;
   font-size: 20px;
   margin-left: 5vw;
-}
-.col-md-5 {
-  margin-left: 6vw;
 }
 
 .img-kohinor-home{

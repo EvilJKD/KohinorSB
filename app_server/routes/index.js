@@ -33,4 +33,7 @@ router.get('/factura',crtlFactura.factura);
 router.get('/confirmar', crtlConfirmar.confirmar);
 router.get('/dshboard', crtlDshboard.dshboard);
 
+/* POST Creación de Usuarios - Formulario. */
+router.post('/registro', crtlRegistro.doAddUsers);
+
 module.exports = router;
