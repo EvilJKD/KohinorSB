@@ -1,6 +1,25 @@
 extends dshboard
 
 block content
+    .c-subheader.px-3
+        ol.breadcrumb.border-0.m-0
+            li.breadcrumb-item.active
+                .btn-group(role='group' aria-label='Basic example')
+                    button#cphBodyHeader_btnNuevo.btn.btn-outline-primary
+                        i.cil-file
+                        | Nuevo
+                    button#cphBodyHeader_btnGuardar.btn.btn-outline-dark(onclick="__doPostBack('ctl00$cphBodyHeader$btnAbrir','')" type='button')
+                        i.cil-save
+                        | Guardar
+                    button#cphBodyHeader_btnCancelar.btn.btn-outline-secondary.disabled(type='button')
+                        i.cil-grid-slash
+                        | Cancelar
+                    button#cphBodyHeader_btnEliminar.btn.btn-outline-secondary.disabled(type='button')
+                        i.cil-trash
+                        | Eliminar
+                span#cphBodyHeader_lblExito(align='right' style='color:Green;')
+                span#cphBodyHeader_lblError(align='right' style='color:Maroon;')
+
     .container-fluid
         .fade-in
             .card
