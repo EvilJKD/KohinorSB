@@ -29,5 +29,5 @@ const modulo = new Modulo({
     precio: 5.0
 });
 
-modulo.save();
+// modulo.save();
 module.exports = Modulo;
