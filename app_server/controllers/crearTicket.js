@@ -4,12 +4,12 @@ const apiOptions = {
     server: 'http://localhost:3000'
 }
 if (process.env.NODE_ENV === 'production') {
-    apiOptions.server = 'https://https://proyecto-kohinor-sb-2021.herokuapp.com'; //servidor remoto - producción
+    apiOptions.server = 'https://kohinor.herokuapp.com'; //servidor remoto - producción
 }
 
  /* GET Registro. */
 const crearticket = (req, res) => {
-    res.render('crearticket',{title: 'crearticket '});
+    res.render('crearTicket',{title: 'crearticket '});
 };
 
 const doAddTicket = (req, res) => {
@@ -32,7 +32,7 @@ const doAddTicket = (req, res) => {
             if(statusCode === 201){
                 console.log("Ticket Enviado");
                 console.log(body);
-                res.render('crearticket', {title: 'crearticket'})
+                res.render('crearTicket', {title: 'crearticket'})
             } else{
                 console.log('statusCode: ', statusCode);
                 console.log('Error: ', err);
