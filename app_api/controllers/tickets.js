@@ -12,6 +12,7 @@ const ticketCreate=(req,res)=>{
         usuario: req.body.usuario
     }, (err, objetoTicket)=>{
         if(err){
+            console.log("ERROR")
             return res
                 .status(400)
                 .json(err);
