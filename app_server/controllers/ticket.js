@@ -15,13 +15,14 @@ if (process.env.NODE_ENV === 'production') {
 const renderTicket = (req, res, responseBody) => {
     res.render('ticket', {
         title: 'Tickets',
-        objetoTicket: responseBody
+        objetoTickets: responseBody
             // nombre: responseBody.nombre,
             // apellido: responseBody.apellido,
             // direccion: responseBody.direccion,
             // carrera: responseBody.carrera
     });
 };
+
 
 // controlador para index
 const ticket = (req, res) => {

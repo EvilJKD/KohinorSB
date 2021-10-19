@@ -15,6 +15,7 @@ const crtlit_usrs = require('../controllers/it_usrs');
 const crtlFactura = require('../controllers/factura');
 const crtlConfirmar = require('../controllers/confirmar');
 const crtlDshboard = require('../controllers/dshboard');
+const crtlcrearTicket = require('../controllers/crearTicket');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
@@ -32,8 +33,10 @@ router.get('/it_usrs', crtlit_usrs.it_usrs);
 router.get('/factura',crtlFactura.factura);
 router.get('/confirmar', crtlConfirmar.confirmar);
 router.get('/dshboard', crtlDshboard.dshboard);
+router.get('/crearTicket', crtlcrearTicket.crearticket);
 
 /* POST Creación de Usuarios - Formulario. */
 router.post('/registro', crtlRegistro.doAddUsers);
+router.post('/crearTicket', crtlcrearTicket.doAddTicket);
 
 module.exports = router;

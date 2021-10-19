@@ -5,12 +5,9 @@ block content
         ol.breadcrumb.border-0.m-0
             li.breadcrumb-item.active
                 .btn-group(role='group' aria-label='Basic example')
-                    button#cphBodyHeader_btnNuevo.btn.btn-outline-primary
+                    a#cphBodyHeader_btnNuevo.btn.btn-outline-primary(href= '/crearTicket')
                         i.cil-file
                         | Nuevo
-                    button#cphBodyHeader_btnGuardar.btn.btn-outline-dark(onclick="__doPostBack('ctl00$cphBodyHeader$btnAbrir','')" type='button')
-                        i.cil-save
-                        | Guardar
                     button#cphBodyHeader_btnCancelar.btn.btn-outline-secondary.disabled(type='button')
                         i.cil-grid-slash
                         | Cancelar
@@ -19,13 +16,20 @@ block content
                         | Eliminar
                 span#cphBodyHeader_lblExito(align='right' style='color:Green;')
                 span#cphBodyHeader_lblError(align='right' style='color:Maroon;')
-
     .container-fluid
         .fade-in
             .card
                 .card-header
                     i.c-icon.cil-justify-center
                     b Ticket
+                    p
+                    .form-group
+                        select#maxRows.form-control(name='state')
+                            option(value='50') Mostrar todos los tickets
+                            option(value='3') 3
+                            option(value='5') 5
+                            option(value='10') 10
+                            option(value='15') 15
                 .card-body
                     #cphBody
                         .table.table-responsive(style='overflow-x: auto;')
@@ -44,7 +48,7 @@ block content
                                                 th(scope='col')   
                                         tbody
                                             - var pos=1
-                                                each ticket in objetoTicket
+                                                each ticket in objetoTickets
                                                     tr
                                                         td
                                                             input(type='image' src='Icon/Menu125/Select-Hand.png' alt='Select' style='width:30px;')
@@ -56,15 +60,7 @@ block content
                                                         td
                                                             input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')
                                                             td
-                                                                input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
-                                        tr.pagination-ys.justify-content-center.align-items-center
-                                            td(colspan='8')
-                                                table
-                                                    tbody
-                                                        tr
-                                                            td
-                                                                 span 1
-                                                            td
-                                                                a(href="javascript:__doPostBack('ctl00$cphBody$grvPedido','Page$2')") 2             
-                                                            
-                                                        
+                                                                input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;') 
+    
+
+                            

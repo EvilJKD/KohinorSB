@@ -9,7 +9,7 @@ const ticketCreate=(req,res)=>{
         asunto: req.body.asunto,
         fecha: req.body.fecha,
         status: req.body.status,
-        usuario: req.body.ObjectId
+        usuario: req.body.usuario
     }, (err, objetoTicket)=>{
         if(err){
             return res

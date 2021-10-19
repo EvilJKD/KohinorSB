@@ -31,7 +31,7 @@ router
 
 //TICKETS
 router
-    .route('/ticket')
+    .route('/ticket/')
     .post(ctrlTicket.ticketCreate)
     .get(ctrlTicket.ticketList)
 router

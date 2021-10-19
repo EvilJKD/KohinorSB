@@ -1,0 +1,32 @@
+extends dshboard
+
+block content 
+    h1.txt-ticket-1  
+        |Crear nuevo ticket
+    p.txt-ticket-2 
+        |Llene todos los campos a continuación
+
+    .row
+        form.row.g-3(action='' method='post' role='form')
+            .row                                
+                .col-ticket-1
+                    p Asunto
+                        input#asunto.form-control(type='text' placeholder='Asunto' name='asunto' required='')
+                    p
+            .row
+                .col-ticket-1
+                    p Usuario
+                        input#usuario.form-control(type='text' placeholder='Usuario' name='usuario' required='')
+            .row 
+                .col-ticket-1 
+                    p Fecha 
+                        input#fecha.form-control(type='date' placeholder='Fecha' name='fecha' required='')
+            .row
+                .col-ticket-1
+                    p Status
+                        input#status.form-control(type='text' placeholder='Status' name='status' value= 'Enviado' required='')
+            .row
+                .col-ticket-2
+                    button.btn.btn-outline-dark.m-2.form-control.btn-outline-kohinor(type='submit') Enviar
+
+                            
