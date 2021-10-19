@@ -10,6 +10,7 @@ block content
     .row
         .col-md-1 
         .col-md-6
+            p
             .row
                 h5 Elige el número de usuarios
                 .col-md-3
@@ -23,6 +24,33 @@ block content
                 select.form-select(name='nombres' multiple aria-label='multiple select materias')
                     each element in planes
                         option(value=element.ObjectId) #{element.nombre} -- $ #{element.precio}
+        .col-md-4 
+            p
+            .card 
+                .card-body
+                    .row 
+                        .col-md-8 
+                            h6.text-left X Usuarios 
+                        .col-md-4 
+                            h6.text-right xxx USD 
+                    hr
+                    .row 
+                        .col-md-8 
+                            h6.text-left Descuento para usuarios 
+                        .col-md-4 
+                            h6.text-right xxx USD
+                    hr
+                    .row 
+                        .col-md-8 
+                            h6.text-left X Modos 
+                        .col-md-4 
+                            h6.text-right xxx USD
+                    hr
+                    .row 
+                        .col-md-8 
+                            h5.text-left Total 
+                        .col-md-4 
+                            h5.text-right xxx USD 
 
     .row.bg-kohinor-2.mt-4.mb-4.p-4
         
