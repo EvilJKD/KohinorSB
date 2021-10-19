@@ -4,7 +4,7 @@ const apiOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-    apiOptions.server = 'https://https://proyecto-kohinor-sb-2021.herokuapp.com' // servidor remoto - producción
+    apiOptions.server = 'https://kohinor.herokuapp.com/' // servidor remoto - producción
 }
 
 
