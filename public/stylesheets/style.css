@@ -6,6 +6,38 @@ body {
 a {
   color:white;
 }
+.navbar ul ul {
+  display:none;
+  position:absolute;
+  top:3.5vh;
+  left:7vw;
+  padding:0;
+  list-style:none;
+  background: white;
+ }
+ 
+ /* items del menu desplegable */
+ 
+ .navbar ul ul li {
+  float:none;
+  width:150px
+ }
+ 
+ /* enlaces de los items del menu desplegable */
+ 
+ .navbar ul ul a {
+  line-height:120%;
+  padding:10px 15px;
+  text-decoration:none;
+  color:#1F2346;
+ }
+ 
+ /* items del menu desplegable al pasar el ratón */
+ 
+ .navbar ul li:hover > ul {
+  display:block;
+ }
+
 .row.bg-blue{
   background-color: aqua;
 }
