@@ -17,14 +17,13 @@ const UpdateTicket = (req, res) => {
     res.redirect(`/ticketUpdate/${req.body.id}`);
 };
 const ticketRead = (req, res) => {
-    const path = `/api/search/${req.params.ticketid}`;
-    
+    const path = `/api/ticket/${req.params.ticketid}`;
     axios.get(`${apiOptions.server}${path}`)
         .then((response) =>{ //Si es exitoso
             console.log("AXIOS", response.data);
             res.render("ticketUpdate",{
                 title: 'ticketUpdate ',
-                _id: body[0].id
+                _id: response.data.ticketid
             });
         })
         .catch((error) => { //Si hay algun error
