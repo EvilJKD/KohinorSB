@@ -81,7 +81,7 @@ const ticketRead = (req, res) => {
    
 };
 
-const ticketFindId = (req, res) => {
+/* const ticketFindId = (req, res) => {
     const buscar = new RegExp(req.params.ticketid);
     console.log(`Buscar ticket con id: ${buscar}`);
     tickets
@@ -107,7 +107,7 @@ const ticketFindId = (req, res) => {
                 .status(200)
                 .json(objetoTicket);
         });
-};
+}; */
 
 const ticketUpdate = (req, res) => {
     res
@@ -121,6 +121,6 @@ module.exports = {
     ticketCreate,
     ticketList,
     ticketRead,
-    ticketUpdate,
-    ticketFindId
+    ticketUpdate
+    //ticketFindId
 };

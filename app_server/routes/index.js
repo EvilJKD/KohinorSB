@@ -44,7 +44,7 @@ router.post('/crearTicket', crtlcrearTicket.doAddTicket);
 
 router
     .route('/ticketUpdate')
-    .get(crtlTicketUpdate.renderUpdate)
+    .get(crtlTicketUpdate.ticketEdit)
     .post(crtlTicketUpdate.UpdateTicket);
 router
     .route('/ticketUpdate/:ticketid')

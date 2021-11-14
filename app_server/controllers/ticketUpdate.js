@@ -10,8 +10,11 @@ if (process.env.NODE_ENV === 'production') {
 }
 
  /* GET Registro. */
-const renderUpdate = (req, res) => {
-    res.render('ticketUpdate',{title: 'ticketUpdate '});
+const ticketEdit = (req, res, responseBody) => {
+    res.render('ticketUpdate',{
+        title: 'ticketUpdate ',
+        id: responseBody._id
+    });
 };
 const UpdateTicket = (req, res) => {
     res.redirect(`/ticketUpdate/${req.body.id}`);
@@ -21,10 +24,7 @@ const ticketRead = (req, res) => {
     axios.get(`${apiOptions.server}${path}`)
         .then((response) =>{ //Si es exitoso
             console.log("AXIOS", response.data);
-            res.render("ticketUpdate",{
-                title: 'ticketUpdate ',
-                _id: response.data.ticketid
-            });
+            ticketEdit(req, res, response.data);
         })
         .catch((error) => { //Si hay algun error
             console.log("AXIOS - StatusCode", error.status);
@@ -32,7 +32,7 @@ const ticketRead = (req, res) => {
         });
 };
 module.exports = {
-    renderUpdate,
+    ticketEdit,
     UpdateTicket,
     ticketRead
 };
