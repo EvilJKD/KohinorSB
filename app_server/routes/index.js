@@ -16,6 +16,7 @@ const crtlFactura = require('../controllers/factura');
 const crtlConfirmar = require('../controllers/confirmar');
 const crtlDshboard = require('../controllers/dshboard');
 const crtlcrearTicket = require('../controllers/crearTicket');
+const crtlTicketUpdate = require('../controllers/ticketUpdate');
 
 /* GET home page. */
 router.get('/', ctrlMain.index);
@@ -34,9 +35,20 @@ router.get('/factura',crtlFactura.factura);
 router.get('/confirmar', crtlConfirmar.confirmar);
 router.get('/dshboard', crtlDshboard.dshboard);
 router.get('/crearTicket', crtlcrearTicket.crearticket);
+//router.get('/ticketUpdate', crtlTicketUpdate.ticketUpdate);
 
 /* POST Creación de Usuarios - Formulario. */
 router.post('/registro', crtlRegistro.doAddUsers);
+/* POST Creación de ticket - Formulario. */
 router.post('/crearTicket', crtlcrearTicket.doAddTicket);
+
+router
+    .route('/ticketUpdate')
+    .get(crtlTicketUpdate.renderUpdate)
+    .post(crtlTicketUpdate.UpdateTicket);
+router
+    .route('/ticketUpdate/:ticketid')
+    .get(crtlTicketUpdate.ticketRead)
+    //.post(crtlTicketUpdate.doUpdateTicket);
 
 module.exports = router;

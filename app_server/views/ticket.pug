@@ -52,7 +52,7 @@ block content
                                                     tr
                                                         td
                                                             input(type='image' src='Icon/Menu125/Select-Hand.png' alt='Select' style='width:30px;')
-                                                        td.numTicket= pos++
+                                                        td.numTicket= ticket._id
                                                         td.asunto= ticket.asunto
                                                         td.status= ticket.status
                                                         td.usuario= ticket.persona.map(result => result.nombre)
@@ -60,7 +60,9 @@ block content
                                                         td
                                                             input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')
                                                             td
-                                                                input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;') 
+                                                                a(href= '/ticketUpdate')
+                                                                    input#cphBodyimgbtnEdit_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
+
     
 
                             
