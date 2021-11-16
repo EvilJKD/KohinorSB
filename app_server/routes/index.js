@@ -42,9 +42,8 @@ router.post('/registro', crtlRegistro.doAddUsers);
 /* POST Creación de ticket - Formulario. */
 router.post('/crearTicket', crtlcrearTicket.doAddTicket);
 
-/* router
-    .post('/ticketUpdate', crtlTicketUpdate.UpdateTicket); */
-router.get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead)
-router.post('/ticketDelete/:ticketid', crtlTicket.deleteTicket)
+router.get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead);
+router.post('/ticketUpdate/:ticketid', crtlTicketUpdate.doUpdateTicket); 
+router.post('/ticketDelete/:ticketid', crtlTicket.deleteTicket);
 
 module.exports = router;

@@ -13,7 +13,12 @@ if (process.env.NODE_ENV === 'production') {
 const ticketEdit = (req, res, responseBody) => {
     res.render('ticketUpdate', {
         title: 'ticketUpdate ',
-        id: responseBody._id
+        id: responseBody._id,
+        asunto: responseBody.asunto,
+        usuario: responseBody.usuario.nombre,
+        fecha: responseBody.fecha,
+        status: responseBody.status
+
     });
 };
 /* const UpdateTicket = (req, res) => {
@@ -39,8 +44,32 @@ const ticketRead = (req, res) => {
             res.redirect('/');
         });
 };
+
+
+const doUpdateTicket = (req, res) => {
+    const path = '/api/ticket';
+
+    axios.put(`${apiOptions.server}${path}/${req.params.ticketid}`,{
+        asunto: req.body.asunto,
+        status: req.body.status,
+        usuario: req.body.usuario,
+        fecha: req.body.fecha
+    })
+    .then((response) => {
+        console.log("AXIOS REQUEST - Ticket Actualizado");
+        console.log(req.body);
+        //res.redirect('/ticket');
+    }) 
+    .catch((error) => {
+        console.log('AXIOS - statusCode: ', error.status);
+        console.log('AXIOS - Error: ', error);
+        console.log('AXIOS - Req.Body', req.body);
+    })
+}
+
 module.exports = {
     ticketEdit,
     UpdateTicket,
-    ticketRead
+    ticketRead,
+    doUpdateTicket
 };
