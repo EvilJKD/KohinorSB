@@ -115,12 +115,37 @@ const ticketUpdate = (req, res) => {
         .json({"status": "Success Update"});
 };
 
+const ticketDelete = (req, res) => {
+    tickets 
+        .findById(req.params.ticketid)
+        .populate('usuario')
+        .exec((err, objetoTicket)=> {
+            if(!objetoTicket){
+                console.log(`Ticket con ticketid: ${req.params.ticketid} no encontrado`);
+                return res
+                    .status(404)
+                    .json({
+                        "Mensaje": "Ticket no encontrado"
+                    });   
+            } else if (err){
+                return res
+                    .status(404)
+                    .json(err);
+            }
+            else{
+                console.log("OBJETO A ELIMINAR", objetoTicket);
+                tickets.deleteOne({"_id": req.params.ticketid});
+            }
+        });
+}
+
 
 
 module.exports = {
     ticketCreate,
     ticketList,
     ticketRead,
-    ticketUpdate
+    ticketUpdate,
+    ticketDelete
     //ticketFindId
 };

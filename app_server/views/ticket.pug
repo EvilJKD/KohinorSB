@@ -58,11 +58,13 @@ block content
                                                         td.usuario= ticket.persona.map(result => result.nombre)
                                                         td.fecha= ticket.fecha
                                                         td
-                                                            input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')
+                                                            a(href= `/ticketDelete/${ticket._id}`)
+                                                                //|Borrar
+                                                                input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')
                                                             td
                                                                 a(href= `/ticketUpdate/${ticket._id}`)
-                                                                    |editar
-                                                                    //input#cphBodyimgbtnEdit_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
+                                                                    //|editar
+                                                                    input#cphBodyimgbtnEdit_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
 
     
 

@@ -67,6 +67,19 @@ const ticket = (req, res) => {
         });
 };
 
+const deleteTicket = (req, res) => {
+    const path = `/api/ticket/${req.params.ticketid}`;
+    axios.delete(`${apiOptions.server}${path}`,{})
+        .then((response) => {
+            res.redirect('/ticket');
+        })
+        .catch((error)=> {
+            console.log("AXIOS - StatusCode", error.status);
+            console.log("AXIOS", error);
+        })
+}
+
 module.exports = {
-    ticket
+    ticket,
+    deleteTicket
 };

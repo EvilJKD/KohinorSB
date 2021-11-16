@@ -38,6 +38,7 @@ router
     .route('/ticket/:ticketid')
     .get(ctrlTicket.ticketRead)
     .put(ctrlTicket.ticketUpdate)
+    .delete(ctrlTicket.ticketDelete)
 
 //FACTURA
 router

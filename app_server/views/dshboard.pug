@@ -3,24 +3,24 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='CoreUI/css/style.css')
-    link(rel='stylesheet', href='stylesheets/styleTable.css')
+    link(rel='stylesheet', href='../CoreUI/css/style.css')
+    link(rel='stylesheet', href='../stylesheets/styleTable.css')
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
-    link(href='CoreUI/vendors/coreui/chartjs/css/coreui-chartjs.css' rel='stylesheet')
-    link(href='CoreUI/css/style2.css' rel='stylesheet')
-    link(href='CoreUI/vendors/coreui/icons/css/brand.min.css' rel='stylesheet')
-    link(href='CoreUI/vendors/coreui/icons/css/flag.min.css' rel='stylesheet')
-    link(href='CoreUI/vendors/coreui/icons/css/free.min.css' rel='stylesheet')
-    link(href='Content/StyleSheet1.css' rel='stylesheet')
+    link(href='../CoreUI/vendors/coreui/chartjs/css/coreui-chartjs.css' rel='stylesheet')
+    link(href='../CoreUI/css/style2.css' rel='stylesheet')
+    link(href='../CoreUI/vendors/coreui/icons/css/brand.min.css' rel='stylesheet')
+    link(href='../CoreUI/vendors/coreui/icons/css/flag.min.css' rel='stylesheet')
+    link(href='../CoreUI/vendors/coreui/icons/css/free.min.css' rel='stylesheet')
+    link(href='../Content/StyleSheet1.css' rel='stylesheet')
 
-    script(src='CoreUI/vendors/coreui/coreui/js/coreui.bundle.min.js')
+    script(src='../CoreUI/vendors/coreui/coreui/js/coreui.bundle.min.js')
 
 
-    script(src='CoreUI/vendors/coreui/icons/js/svgxuse.min.js')
-    script(src='CoreUI/vendors/coreui/chartjs/js/coreui-chartjs.bundle.js')
-    script(src='CoreUI/vendors/coreui/utils/js/coreui-utils.js')
-    script(src='/CoreUI/js/main.js')
+    script(src='../CoreUI/vendors/coreui/icons/js/svgxuse.min.js')
+    script(src='../CoreUI/vendors/coreui/chartjs/js/coreui-chartjs.bundle.js')
+    script(src='../CoreUI/vendors/coreui/utils/js/coreui-utils.js')
+    script(src='../CoreUI/js/main.js')
 
 
   body
@@ -31,10 +31,10 @@ html
       .c-sidebar-brand.d-lg-down-none
  
         span.c-sidebar-brand-full(onclick='openNav()')
-          img(src='images/Logotipo_Kohinor.png' width='118' height='46' style='cursor: pointer;')
+          img(src='../images/Logotipo_Kohinor.png' width='118' height='46' style='cursor: pointer;')
         |           
         span.c-sidebar-brand-minimized(onclick='openNav()')
-          img(src='images/Logotipo_Kohinor_3_Cropped.png' width='46' height='30')
+          img(src='../images/Logotipo_Kohinor_3_Cropped.png' width='46' height='30')
       ul.c-sidebar-nav
         li.c-sidebar-nav-item
           a.c-sidebar-nav-link(href='/overview')
@@ -50,6 +50,10 @@ html
           a.c-sidebar-nav-link(href='/ticket')
              i.c-sidebar-nav-icon.cib-server-fault
              |      Ticket
+        li.c-sidebar-nav-item.c-sidebar-nav-dropdown
+          a.c-sidebar-nav-link(href='/ticket')
+             i.c-sidebar-nav-icon.cib-server-fault
+             |      Módulos
         li.c-sidebar-nav-divider
         li.c-sidebar-nav-title System Utilization
         li.c-sidebar-nav-item.px-3.c-d-compact-none.c-d-minimized-none
@@ -94,7 +98,7 @@ html
             .list-group-item.list-group-item-accent-secondary.bg-light.text-center.font-weight-bold.text-muted.text-uppercase.c-small Today
             .list-group-item.list-group-item-accent-warning.list-group-item-divider
               .c-avatar.float-right
-                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
               div
                 | Meeting with 
                 strong Lucas
@@ -106,7 +110,7 @@ html
                 | &nbsp; Palo Alto, CA
             .list-group-item.list-group-item-accent-info
               .c-avatar.float-right
-                img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+                img.c-avatar-img(src='../CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
               div
                 | Skype with 
                 strong Megan
@@ -129,15 +133,15 @@ html
                 | &nbsp; creativeLabs HQ
               .c-avatars-stack.mt-2
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/2.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/2.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/3.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/3.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
             .list-group-item.list-group-item-accent-success.list-group-item-divider
               div
                 strong #10 Startups.Garden
@@ -159,24 +163,24 @@ html
                 | &nbsp; creativeLabs HQ
               .c-avatars-stack.mt-2
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/2.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/2.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/3.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/3.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
                 .c-avatar.c-avatar-xs
-                  img.c-avatar-img(src='CoreUI/assets/img/avatars/8.jpg' alt='user@email.com')
+                  img.c-avatar-img(src='../CoreUI/assets/img/avatars/8.jpg' alt='user@email.com')
         #messages.tab-pane.p-3(role='tabpanel')
           .message
             .py-3.pb-5.mr-3.float-left
               .c-avatar
-                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
                 span.c-avatar-status.bg-success
             div
               small.text-muted Lukasz Holeczek
@@ -188,7 +192,7 @@ html
           .message
             .py-3.pb-5.mr-3.float-left
               .c-avatar
-                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
                 span.c-avatar-status.bg-success
             div
               small.text-muted Lukasz Holeczek
@@ -200,7 +204,7 @@ html
           .message
             .py-3.pb-5.mr-3.float-left
               .c-avatar
-                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
                 span.c-avatar-status.bg-success
             div
               small.text-muted Lukasz Holeczek
@@ -212,7 +216,7 @@ html
           .message
             .py-3.pb-5.mr-3.float-left
               .c-avatar
-                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
                 span.c-avatar-status.bg-success
             div
               small.text-muted Lukasz Holeczek
@@ -224,7 +228,7 @@ html
           .message
             .py-3.pb-5.mr-3.float-left
               .c-avatar
-                img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
                 span.c-avatar-status.bg-success
             div
               small.text-muted Lukasz Holeczek
@@ -299,7 +303,7 @@ html
         button.c-header-toggler.c-class-toggler.d-lg-none.mfe-auto(type='button' data-target='#sidebar' data-class='c-sidebar-show')
           i.c-icon.c-icon-lg.cil-menu
         a.c-header-brand.d-lg-none(href='#')
-          img(src='images/Logotipo_kohinor.png' width='105' height='40')
+          img(src='../images/Logotipo_kohinor.png' width='105' height='40')
         button.c-header-toggler.c-class-toggler.mfs-3.d-md-down-none(type='button' data-target='#sidebar' data-class='c-sidebar-lg-show' responsive='true')
           i.c-icon.c-icon-lg.cil-menu
         |             
@@ -413,7 +417,7 @@ html
                 .message
                   .py-3.mfe-3.float-left
                     .c-avatar
-                      img.c-avatar-img(src='CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
+                      img.c-avatar-img(src='../CoreUI/assets/img/avatars/7.jpg' alt='user@email.com')
                       span.c-avatar-status.bg-success
                   div
                     small.text-muted John Doe
@@ -427,7 +431,7 @@ html
                 .message
                   .py-3.mfe-3.float-left
                     .c-avatar
-                      img.c-avatar-img(src='CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
+                      img.c-avatar-img(src='../CoreUI/assets/img/avatars/6.jpg' alt='user@email.com')
                       span.c-avatar-status.bg-warning
                   div
                     small.text-muted John Doe
@@ -439,7 +443,7 @@ html
                 .message
                   .py-3.mfe-3.float-left
                     .c-avatar
-                      img.c-avatar-img(src='CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
+                      img.c-avatar-img(src='../CoreUI/assets/img/avatars/5.jpg' alt='user@email.com')
                       span.c-avatar-status.bg-danger
                   div
                     small.text-muted John Doe
@@ -451,7 +455,7 @@ html
                 .message
                   .py-3.mfe-3.float-left
                     .c-avatar
-                      img.c-avatar-img(src='CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
+                      img.c-avatar-img(src='../CoreUI/assets/img/avatars/4.jpg' alt='user@email.com')
                       span.c-avatar-status.bg-info
                   div
                     small.text-muted John Doe
@@ -464,7 +468,7 @@ html
           li.c-header-nav-item.dropdown
             a.c-header-nav-link(data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false')
               .c-avatar
-                img.c-avatar-img(src='Icon/Menu125/kohinor.png' alt='User')
+                img.c-avatar-img(src='../Icon/Menu125/kohinor.png' alt='User')
               asp:label#lblUsuario(runat='server' text='' cssclass='d-lg-down-none')
             .dropdown-menu.dropdown-menu-right.pt-0
               .dropdown-header.bg-light.py-2
@@ -527,7 +531,7 @@ html
       #SidenavModulos.sidenavImg(runat='server')
         a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
         .content-center
-          asp:image#Image1(runat='server' imageurl='~/Icon/Menu125/kohinor.png' width='75')
+          asp:image#Image1(runat='server' imageurl='../Icon/Menu125/kohinor.png' width='75')
         .text-center
           h4(style='color: white;') &nbsp;&nbsp; M&oacute;dulos Kohinor
         hr

@@ -44,8 +44,7 @@ router.post('/crearTicket', crtlcrearTicket.doAddTicket);
 
 /* router
     .post('/ticketUpdate', crtlTicketUpdate.UpdateTicket); */
-router
-    .get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead)
-    //.post(crtlTicketUpdate.doUpdateTicket);
+router.get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead)
+router.post('/ticketDelete/:ticketid', crtlTicket.deleteTicket)
 
 module.exports = router;

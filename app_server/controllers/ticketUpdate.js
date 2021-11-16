@@ -18,9 +18,16 @@ const ticketEdit = (req, res, responseBody) => {
 };
 /* const UpdateTicket = (req, res) => {
     res.redirect(`/ticketUpdate/${req.body.id}`);
-}; */
+};  */
+
+const UpdateTicket = (req, res) => {
+    res.render('ticketUpdate', {
+        title: "UPDATE"
+    })
+}
 const ticketRead = (req, res) => {
     const path = `/api/ticket/${req.params.ticketid}`;
+    console.log('PATH',`${apiOptions.server}${path}`);
     axios.get(`${apiOptions.server}${path}`)
         .then((response) => { //Si es exitoso
             console.log("AXIOS", response.data);
@@ -34,6 +41,6 @@ const ticketRead = (req, res) => {
 };
 module.exports = {
     ticketEdit,
-    //UpdateTicket,
+    UpdateTicket,
     ticketRead
 };
