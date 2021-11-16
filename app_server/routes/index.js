@@ -44,7 +44,19 @@ router.post('/crearTicket', crtlcrearTicket.doAddTicket);
 
 /* router
     .post('/ticketUpdate', crtlTicketUpdate.UpdateTicket); */
-router.get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead)
-router.post('/ticketDelete/:ticketid', crtlTicket.deleteTicket)
+router.get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead);
+router.post('/ticketDelete/:ticketid', crtlTicket.deleteTicket);
+
+//Seccion modulos en Overview
+router.route('/modulos')
+    .get(crtlFuncion.getModulos)
+router.route('/crearModulo')
+    .get(crtlFuncion.renderCreateView)
+    .post(crtlFuncion.createModulos)
+router.route('/editarModulo/:moduloid')
+    .get(crtlFuncion.getModuloAndDisplay)
+    .post(crtlFuncion.updateModulo)
+router.route('/modulos/:moduloid')
+    .get(crtlFuncion.deleteModulo);
 
 module.exports = router;

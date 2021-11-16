@@ -1,0 +1,25 @@
+extends dshboard
+
+block content 
+
+    h1.txt-ticket-1= title    
+    p.txt-ticket-2 
+        |Llene todos los campos a continuación
+
+    .row
+        form.row.g-3(action='' method='post' role='form')
+            .row                                
+                .col-ticket-1
+                    p Nombre
+                        input#asunto.form-control(type='text' placeholder='Nombre' name='nombre' required='' value=nombre)
+            .row
+                .col-ticket-1
+                    p Descripción
+                        input#usuario.form-control(type='text' placeholder='Descripción' name='descripcion' required='' value=descripcion)
+            .row
+                .col-ticket-1
+                    p Precio
+                        input#usuario.form-control(type='number' placeholder='Precio' name='precio' required='' value=precio)
+            .row
+                .col-ticket-2
+                    button.btn.btn-outline-dark.m-2.form-control.btn-outline-kohinor(type='submit') Enviar
