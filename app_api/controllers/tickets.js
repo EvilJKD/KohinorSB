@@ -105,7 +105,6 @@ const ticketUpdate = (req, res) => {
                     .json(err);
             }
             objetoTicket.asunto = req.body.asunto;
-            objetoTicket.usuario = req.body.usuario;
             objetoTicket.fecha = req.body.fecha;
             objetoTicket.status = req.body.status;
             objetoTicket.save((err, objTicket) => {
@@ -125,7 +124,7 @@ const ticketUpdate = (req, res) => {
 
 const ticketDelete = (req, res) => {
     if (req.params.ticketid) {
-        modulos
+        tickets
             .findByIdAndDelete(req.params.ticketid)
             .exec((err) => {
                 if (err) {
@@ -143,6 +142,8 @@ const ticketDelete = (req, res) => {
             .json({ "Mensaje": "Ticket no encontrado" });
     }
 };
+
+
 
 
 module.exports = {

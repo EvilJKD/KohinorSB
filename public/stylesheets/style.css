@@ -36,9 +36,8 @@ a {
  .navbar ul li:hover > ul {
   display:block;
  }
-
-.row.bg-blue{
-  background-color: aqua;
+ .titulo{
+  color: #1F2346;
 }
 
 .bd-placeholder-img {

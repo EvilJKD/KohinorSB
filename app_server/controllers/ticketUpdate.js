@@ -53,7 +53,6 @@ const doUpdateTicket = (req, res) => {
     axios.put(`${apiOptions.server}${path}`, {
             asunto: req.body.asunto,
             status: req.body.status,
-            usuario: req.body.usuario,
             fecha: req.body.fecha
         }) //Primer parametro es el url del request y el segundo es el body con los parametros
         .then((response) => { //Si el request es exitoso

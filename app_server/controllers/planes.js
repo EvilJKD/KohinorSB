@@ -19,34 +19,6 @@ const planes = (req, res, body) => {
     });
 };
 
-// const funciones = (req, res) => {
-//     const path = '/api/modulo';
-//     const requestOptions = {
-//         url: `${apiOptions.server}${path}`,
-//         method: 'GET',
-//         json: {}
-//     };
-
-//     request(
-//         requestOptions, // Opciones
-//         (err, response, body) => { // callback con sus 3 partes
-//             // err - objeto con el error
-//             // response - respuesta completa (incluye status)
-//             // body - cuerpo de la respuesta
-//             if (err) {
-//                 console.log(err);
-//             } else if (response.statusCode === 200 && body) { // además del statusCOde, el objeto resultante debe tener contenido
-//                 console.log(body);
-//                 planes(req, res, body);
-//             } else { // en este caso renderizar la vista de manejo de errores
-//                 console.log(response.statusCode);
-//                 res.render('error', {
-//                     mensaje: 'Existe un error en la colección de modulos'
-//                 })
-//             }
-//         });
-// };
-
 const funciones = (req, res) => {
     const path = '/api/modulo';
     

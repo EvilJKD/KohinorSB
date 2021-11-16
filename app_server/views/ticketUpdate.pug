@@ -7,7 +7,7 @@ block content
         form.row.g-3(action='' method='post' role='form')
             .row                                
                 .col-ticket-1
-                    input#id.form-control(type='text' placeholder='id' name='id' value=id)
+                    input#id.form-control(type='text' placeholder='id' name='id' value=id readonly='')
     p.txt-ticket-2 
         |Llene todos los campos a continuación
 
@@ -16,7 +16,7 @@ block content
             .row                                
                 .col-ticket-1
                     p Asunto
-                        input#asunto.form-control(type='text' placeholder='Asunto' name='asunto' value=asunto required='')
+                        input#asunto.form-control(type='text' placeholder='Asunto' name='asunto' value=asunto required='' readonly='')
                     p
             .row
                 .col-ticket-1
@@ -29,7 +29,12 @@ block content
             .row
                 .col-ticket-1
                     p Status
-                        input#status.form-control(type='text' placeholder='Status' name='status' value=status required='')
+                        select#status.form-control(name='status')
+                            option(value='Enviado') Enviado
+                            option(value='Pendiente' selected='') Pendiente
+                            option(value='En Proceso') En Proceso
+                            option(value='Procesado') Procesado
+                        //input#status.form-control(type='text' placeholder='Status' name='status' value=status required='')
             .row
                 .col-ticket-2
                     button.btn.btn-outline-dark.m-2.form-control.btn-outline-kohinor(type='submit') Actualizar

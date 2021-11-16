@@ -26,32 +26,6 @@ const renderTicket = (req, res, responseBody) => {
 };
 
 
-// controlador para index
-// const ticket = (req, res) => {
-//     const path = '/api/ticket/';
-//     const requestOptions = {
-//         url: `${apiOptions.server}${path}`,
-//         method: 'GET',
-//         json: {}
-//     };
-
-//     request(
-//         requestOptions, // Opciones
-//         (err, response, body) => { // callback con sus 3 partes
-//             // err - objeto con el error
-//             // response - respuesta completa (incluye status)
-//             // body - cuerpo de la respuesta
-//             if (err) {
-//                 console.log(err);
-//             } else if (response.statusCode === 200) {
-//                 console.log(body);
-//                 renderTicket(req, res, body);
-//             } else {
-//                 console.log(response.statusCode);
-//             }
-//         });
-// };
-
 //Aplicacion de Axios para el request
 const ticket = (req, res) => {
     const path = '/api/ticket/';

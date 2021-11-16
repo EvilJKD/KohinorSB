@@ -2,81 +2,78 @@ extends dshboard
 
 block content
     .container-fluid
-        
         .row 
-            .col-md-10
-                h3 hi #{pageUser.user}
-        .row 
-            .col-md-10
-                h3 
-                    |Tickets
-        .row    
-            .col-md-4
-                h4 
-                    |Date
-                each ticket in ticket_menu
-                    .card   
-                        .card-block 
-                            p= ticket.Date
-            .col-md-4
-                h4 
-                    | Topic
-                each ticket in ticket_menu
-                    .card   
-                        .card-block 
-                            p= ticket.Topic 
-            .col-md-4
-                h4 
-                    |Status
-                each ticket in ticket_menu
-                    .card   
-                        .card-block 
-                            p= ticket.Status
-        .row 
+           .col-md-10
+                h3.titulo hola User, 
+        .row.bg-blue
+                .col-md-9
+                    h4 
+                        |Kohinor SB
+                .col-md-3
+                    p 
+                        |   
+                    
+        .fade-in
+            .card
+                .card-header
+                    i.c-icon.cil-justify-center
+                    b Ticket
+                .card-body
+                    #cphBody
+                        .table.table-responsive(style='overflow-x: auto;')
+                            .thead-dark
+                                div
+                                    table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
+                                        thead
+                                            tr(style='color:White;font-weight:bold;')
+                                                th(scope='col') Fecha 
+                                                th(scope='col') Asunto &uarr;&darr;
+                                                th(scope='col') Status  
+                                        tbody
+                                            each it_usrs in objetoTicket
+                                                tr
+                                                    td.fecha= it_usrs.fecha
+                                                    td.asunto= it_usrs.asunto
+                                                    td.status= it_usrs.status
+        .row     
             p 
-                |    
-        .row 
-            .col-md-1 
-                h2.text-left  
-                    |Date
-            .col-md-3 
-                h2.text-center  
-                    |Company 
-            .col-md-3
-                h2.text-left  
-                    |Status
-        .row.bg-dark
-            p 
-                |    
-
-        .row   
-            .col-md-8 
-                each element in usrCompany 
-                    .row 
-                        .col-md-2
-                            .card-block
-                                 p.card-title.bg-success.p-4 #{element.Date}
-                        .col-md-3 
-                            .card-block
-                                p.text-center.bg-success.p-4 #{element.Company}
-                        .col-md-2
-                            .card-block
-                                p.text-center.bg-success.p-4 #{element.Status}
-            .col-md-3
-                 each element in pageUser
-                    .row 
-                        .col-md-5
-                            .card.h-20
-                                .card-block
-                                    p.text-center.bg-success.p-4 #{element.new}
-                                    h3.card-subtitle New Users
-                            p
-                            .card.h-20   
-                                .card-block
-                                    p.text-center.bg-success.p-4 #{element.purchases}
-                                    h3.card-subtitle Purchases
-                            p
-                            .card.h-20
-                                .card-block
-                                    p.text-center.bg-success.p-4 #{element.balance}
-                                    h3.card-subtitle Balance
+                |  
+            .col-md-8  
+                .fade-in
+                    .card
+                        .card-header
+                            i.c-icon.cil-justify-center
+                            b Usuarios
+                        .card-body
+                            #cphBody
+                                .table.table-responsive(style='overflow-x: auto;')
+                                    .thead-dark
+                                        div
+                                            table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
+                                                thead
+                                                    tr(style='color:White;font-weight:bold;')
+                                                        th(scope='col') Nombre 
+                                                        th(scope='col') Apellido &uarr;&darr;
+                                                        th(scope='col') email  
+                                                tbody
+                                                    each users in objetoUsers
+                                                        tr
+                                                            td.nombre= users.nombre
+                                                            td.apellido= users.apellido
+                                                            td.email= users.email
+            .col-md-4
+                .row
+                    .col-md-1
+                        p 
+                                |        
+                        iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' width='400' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=9b41ab56-b643-418b-8096-8f418219291b&autoRefresh=60&theme=dark')
+                .row
+                    .col-md-1
+                        p 
+                                |
+                        iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' width='400' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=2c20918c-8689-4de2-8989-e3bc9154cc6d&autoRefresh=60&theme=dark')
+                .row
+                    .col-md-1
+                        p 
+                                |
+                        iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' width='400' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=3fb66133-6d0f-446a-b5bc-48ffc3e2a62f&autoRefresh=60&theme=dark')    
