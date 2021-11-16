@@ -9,30 +9,31 @@ if (process.env.NODE_ENV === 'production') {
     apiOptions.server = 'https://kohinor.herokuapp.com'; //servidor remoto - producción
 }
 
- /* GET Registro. */
+/* GET Registro. */
 const ticketEdit = (req, res, responseBody) => {
-    res.render('ticketUpdate',{
+    res.render('ticketUpdate', {
         title: 'ticketUpdate ',
         id: responseBody._id
     });
 };
-const UpdateTicket = (req, res) => {
+/* const UpdateTicket = (req, res) => {
     res.redirect(`/ticketUpdate/${req.body.id}`);
-};
+}; */
 const ticketRead = (req, res) => {
     const path = `/api/ticket/${req.params.ticketid}`;
     axios.get(`${apiOptions.server}${path}`)
-        .then((response) =>{ //Si es exitoso
+        .then((response) => { //Si es exitoso
             console.log("AXIOS", response.data);
             ticketEdit(req, res, response.data);
         })
         .catch((error) => { //Si hay algun error
             console.log("AXIOS - StatusCode", error.status);
             console.log("AXIOS", error);
+            res.redirect('/');
         });
 };
 module.exports = {
     ticketEdit,
-    UpdateTicket,
+    //UpdateTicket,
     ticketRead
 };

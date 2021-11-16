@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const ctrlMain = require('../controllers/main');
 const crtAbout = require('../controllers/about'); //Controladores / About
-const crtKohinor = require('../controllers/kohinor'); 
+const crtKohinor = require('../controllers/kohinor');
 const crtlFuncion = require('../controllers/funcionalidades');
 const crtlContacto = require('../controllers/contacto');
 const crtlLogin = require('../controllers/login');
@@ -31,7 +31,7 @@ router.get('/ticket', crtlTicket.ticket);
 router.get('/planes', crtlPlanes.funciones);
 router.get('/carrito', crtlCarrito.carrito);
 router.get('/it_usrs', crtlit_usrs.it_usrs);
-router.get('/factura',crtlFactura.factura);
+router.get('/factura', crtlFactura.factura);
 router.get('/confirmar', crtlConfirmar.confirmar);
 router.get('/dshboard', crtlDshboard.dshboard);
 router.get('/crearTicket', crtlcrearTicket.crearticket);
@@ -42,13 +42,10 @@ router.post('/registro', crtlRegistro.doAddUsers);
 /* POST Creación de ticket - Formulario. */
 router.post('/crearTicket', crtlcrearTicket.doAddTicket);
 
+/* router
+    .post('/ticketUpdate', crtlTicketUpdate.UpdateTicket); */
 router
-    .route('/ticketUpdate')
-    .get(crtlTicketUpdate.ticketEdit)
-    .post(crtlTicketUpdate.UpdateTicket);
-router
-    .route('/ticketUpdate/:ticketid')
-    .get(crtlTicketUpdate.ticketRead)
+    .get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead)
     //.post(crtlTicketUpdate.doUpdateTicket);
 
 module.exports = router;
