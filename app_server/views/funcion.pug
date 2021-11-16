@@ -10,14 +10,14 @@ block content
     .row 
         - var i = 0
         each element in functions 
-            .col-md-4
+            .col-md-3
                 .card.m-5
                     .card-block.m-3
                         img.card-img-top(src=`${element.img}`)
                         h4.card-title #{element.nombre}
                         h5.card-subtitle #{element.descripcion}
             - i += 1
-            if i%3 == 0
+            if i%4 == 0
                 hr.bg-kohinor-2.p-4
             
 
