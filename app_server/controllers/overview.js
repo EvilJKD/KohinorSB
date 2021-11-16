@@ -16,11 +16,10 @@ if (process.env.NODE_ENV === 'production') {
 
 
 /* renderizar home page. */
-const renderOverview = (req, res, responseBody1, responseBody2 ) => {
+const renderOverview = (req, res, responseBody1 ) => {
     res.render('overview', {
         title: 'Overview',
-        objetoUsers: responseBody1,
-        objetoTicket: responseBody2
+        objetoTicket: responseBody1
 
     });
 };
@@ -35,11 +34,10 @@ const getTickets = () => {
     return axios.get(`${apiOptions.server}${path}`);
 } */
 
-const overview =  (req, res) => {Promise.all([getTickets(), getUsers()])
+const overview =  (req, res) => {Promise.all([getTickets()])
     .then((results) => {
         //Arreglo de resultados
         const tickets = results[0].data;
-        const users = results[1].data;
 
         console.log("TICKETS", tickets);
         //Mapeo de los tickets para la tabla
@@ -66,7 +64,7 @@ const overview =  (req, res) => {Promise.all([getTickets(), getUsers()])
 
         //Renderizado de la vista
         renderOverview(req, res, 
-            ticketTable,
+            ticketTable
         );
     })
     .catch((error) => {
