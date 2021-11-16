@@ -44,7 +44,10 @@ router.post('/crearTicket', crtlcrearTicket.doAddTicket);
 
 router.get('/ticketUpdate/:ticketid', crtlTicketUpdate.ticketRead);
 router.post('/ticketUpdate/:ticketid', crtlTicketUpdate.doUpdateTicket); 
-router.post('/ticketDelete/:ticketid', crtlTicket.deleteTicket);
+router.get('/ticket/:ticketid', crtlTicket.deleteTicket);
+
+//Seccion Ticket
+router.route()
 
 
 //Seccion modulos en Overview

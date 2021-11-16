@@ -69,15 +69,21 @@ const ticket = (req, res) => {
 
 const deleteTicket = (req, res) => {
     const path = `/api/ticket/${req.params.ticketid}`;
-    axios.delete(`${apiOptions.server}${path}`,{})
-        .then((response) => {
+    console.log("ENTRO EN EL DELETE ticket");
+
+    axios.delete(`${apiOptions.server}${path}`) //Declaracion del path, se ejecuta la promesa
+        .then((response) => { //Cuando el request es exitoso
+            console.log('Axios Request', response);
             res.redirect('/ticket');
         })
-        .catch((error)=> {
-            console.log("AXIOS - StatusCode", error.status);
-            console.log("AXIOS", error);
-        })
+        .catch(() => { //Cuando el request tiene algun error
+            console.log(response.statusCode);
+            res.render('error', {
+                mensaje: 'Existe un error en la colección de usuarios'
+            })
+        });
 }
+
 
 module.exports = {
     ticket,

@@ -46,25 +46,27 @@ const ticketRead = (req, res) => {
 };
 
 
-const doUpdateTicket = (req, res) => {
-    const path = '/api/ticket';
 
-    axios.put(`${apiOptions.server}${path}/${req.params.ticketid}`,{
-        asunto: req.body.asunto,
-        status: req.body.status,
-        usuario: req.body.usuario,
-        fecha: req.body.fecha
-    })
-    .then((response) => {
-        console.log("AXIOS REQUEST - Ticket Actualizado");
-        console.log(req.body);
-        //res.redirect('/ticket');
-    }) 
-    .catch((error) => {
-        console.log('AXIOS - statusCode: ', error.status);
-        console.log('AXIOS - Error: ', error);
-        console.log('AXIOS - Req.Body', req.body);
-    })
+const doUpdateTicket = (req, res) => {
+    const path = `/api/ticket/${req.params.ticketid}`;
+
+    axios.put(`${apiOptions.server}${path}`, {
+            asunto: req.body.asunto,
+            status: req.body.status,
+            usuario: req.body.usuario,
+            fecha: req.body.fecha
+        }) //Primer parametro es el url del request y el segundo es el body con los parametros
+        .then((response) => { //Si el request es exitoso
+            console.log("AXIOS REQUEST --- Ticket EDITADO");
+            console.log(req.body);
+            res.redirect('/ticket')
+        })
+        .catch((error) => { //Si es que hay algun error en el request
+            console.log('AXIOS - statusCode: ', error.status);
+            console.log('AXIOS - Error: ', error);
+            console.log('AXIOS - Req.Body', req.body);
+            res.redirect('/ticket');
+        })
 }
 
 module.exports = {

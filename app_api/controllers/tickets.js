@@ -104,9 +104,11 @@ const ticketUpdate = (req, res) => {
                     .status(400)
                     .json(err);
             }
+            objetoTicket.asunto = req.body.asunto;
+            objetoTicket.usuario = req.body.usuario;
             objetoTicket.fecha = req.body.fecha;
             objetoTicket.status = req.body.status;
-            objetoTicket.save((err, tickets) => {
+            objetoTicket.save((err, objTicket) => {
                 if (err) {
                     res
                         .status(404)
@@ -114,36 +116,33 @@ const ticketUpdate = (req, res) => {
                 } else {
                     res
                         .status(200)
-                        .json(tickets);
+                        .json(objTicket);
                 }
             })
         })
 };
 
-const ticketDelete = (req, res) => {
-    tickets 
-        .findById(req.params.ticketid)
-        .populate('usuario')
-        .exec((err, objetoTicket)=> {
-            if(!objetoTicket){
-                console.log(`Ticket con ticketid: ${req.params.ticketid} no encontrado`);
-                return res
-                    .status(404)
-                    .json({
-                        "Mensaje": "Ticket no encontrado"
-                    });   
-            } else if (err){
-                return res
-                    .status(404)
-                    .json(err);
-            }
-            else{
-                console.log("OBJETO A ELIMINAR", objetoTicket);
-                tickets.deleteOne({"_id": req.params.ticketid});
-            }
-        });
-}
 
+const ticketDelete = (req, res) => {
+    if (req.params.ticketid) {
+        modulos
+            .findByIdAndDelete(req.params.ticketid)
+            .exec((err) => {
+                if (err) {
+                    return res
+                        .status(404)
+                        .json(err)
+                }
+                res
+                    .status(204)
+                    .json(null)
+            });
+    } else {
+        res
+            .status(404)
+            .json({ "Mensaje": "Ticket no encontrado" });
+    }
+};
 
 
 module.exports = {
@@ -152,5 +151,4 @@ module.exports = {
     ticketRead,
     ticketUpdate,
     ticketDelete
-    //ticketFindId
 };
