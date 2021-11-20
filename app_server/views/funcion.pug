@@ -1,13 +1,13 @@
 extends layout
 
 block content
-    .row.mt-4
+    .row.mt-4.pt-5.mx-0.container-fluid
         h1.text-center 
             b Kohinor SB
         h3.text-center.text-black Funcionalidades 
         h4.mt-5.mb-5 Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
   
-    .row 
+    .row.mx-0.container-fluid
         - var i = 0
         each element in functions 
             .col-md-3
@@ -18,7 +18,7 @@ block content
                         h5.card-subtitle #{element.descripcion}
             - i += 1
             if i%4 == 0
-                hr.bg-kohinor-2.p-4
+                hr.bg-kohinor-2.p-4.container-fluid
             
 
                 

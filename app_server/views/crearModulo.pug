@@ -6,20 +6,17 @@ block content
     p.txt-ticket-2 
         |Llene todos los campos a continuación
 
-    .row
-        form.row.g-3(action='' method='post' role='form')
-            .row                                
-                .col-ticket-1
+    .container-fluid.mx-0
+        form.g-3(action='' method='post' role='form')                          
+            .row
+                .col-md-6
                     p Nombre
                         input#asunto.form-control(type='text' placeholder='Nombre' name='nombre' required='' value=nombre)
-            .row
-                .col-ticket-1
+                .col-md-6
                     p Descripción
                         input#usuario.form-control(type='text' placeholder='Descripción' name='descripcion' required='' value=descripcion)
-            .row
-                .col-ticket-1
+                .col-md-6
                     p Precio
                         input#usuario.form-control(type='number' placeholder='Precio' name='precio' required='' value=precio)
-            .row
-                .col-ticket-2
-                    button.btn.btn-outline-dark.m-2.form-control.btn-outline-kohinor(type='submit') Enviar
+            .row.d-flex.flex-row-reverse
+                button.btn.btn-outline-dark.m-2.btn-outline-kohinor(type='submit') Enviar

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .container-fluid.mt-5
+  .container-fluid.mt-5.mb-2
     #carouselExampleFade.carousel.slide.carousel-fade(data-bs-ride='carousel')
       .carousel-inner
         .carousel-item.active
@@ -20,8 +20,8 @@ block content
         span.carousel-control-next-icon(aria-hidden='true')
         span.visually-hidden Next
   
-  .container1-fluid.m-2
-    .row.d-flex.justify-content-evenly
+  .bg-kohinor-2.mt-2.mb-2
+    .row.d-flex.justify-content-evenly.m-0
       .col-md-6
         h3.t1-home
           |Todos tus procesos en un solo sistema
@@ -41,12 +41,12 @@ block content
             li Eficiente manejo de información, permitiendo ahorro de tiempo y costes.
       .col-md-5
         .row
-          img.img-fluid.p-1(src='images/h1_2.png' height= '500px')
+          img.img-fluid(src='images/h1_2.png' height= '500px')
         .row  
           a.btn.btn-dark-home(href='/kohinor')
             | Más Información
 
-  .container2-fluid.m-2
+  .bg-kohinor-grey.container-fluid.mt-2.mb-2
     .row.d-flex.justify-content-evenly
       .col-md-6
         .row
@@ -56,7 +56,7 @@ block content
         .row
           p.tx3-home
             |Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
-  .container3-fluid
+  .bg-kohinor-3.container-fluid.mt-2.mb-2
     .row
       .col-md-12
         h3

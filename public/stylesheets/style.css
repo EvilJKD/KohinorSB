@@ -64,12 +64,22 @@ a {
 
 .bg-kohinor{
   background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(140,59,132,0.9528186274509804) 71%, rgba(75,63,126,1) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 40%, rgba(140,59,132,1) 71%, rgba(75,63,126,1) 100%);
 }
 
 .bg-kohinor-2{
   background: rgb(140,59,132);
   background: linear-gradient(90deg, rgba(140,59,132,0.9528186274509804) 0%, rgba(75,63,126,1) 100%);
+  border-color: white;
+}
+
+.bg-kohinor-3{
+  background: rgb(140,59,132);
+  background: linear-gradient(100deg, #655BA6 0%, #655ba69d 100%);
+  border-color: white;
+}
+.bg-kohinor-grey{
+  background: #DFDFDF;
   border-color: white;
 }
 
@@ -117,8 +127,12 @@ a {
   background-color: #E1DDFF !important;
 }
 
+.hover-Kohinor{
+  color: rgba(75,63,126,1);
+}
+
 .hover-Kohinor:hover, .hover-Kohinor:focus{
-  color: white !important;
+  color: rgba(140,59,132,1) !important;
 }
 .bannerAbout{
   background-image: url(../images/bannerAbout.jpg);
@@ -151,24 +165,6 @@ h3{
 .t1-home{
   margin-top: 5vh;
   margin-left: 2vw;
-}
-
-
-
-.container1-fluid.m-2{
-  background: rgb(140,59,132);
-  background: linear-gradient(90deg, rgba(140,59,132,0.9528186274509804) 0%, rgba(75,63,126,1) 100%);
-  border-color: white;
-}
-
-.container2-fluid.m-2{
-  background: #DFDFDF;
-  border-color: white;
-}
-.container3-fluid{
-  background: rgb(140,59,132);
-  background: linear-gradient(100deg, #655BA6 0%, #655ba69d 100%);
-  border-color: white;
 }
 
 .tx1-home{
