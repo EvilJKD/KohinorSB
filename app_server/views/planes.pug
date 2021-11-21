@@ -15,15 +15,23 @@ block content
                 h5 Elige el número de usuarios
                 .col-md-3
                 .col-md-6 
-                    input.form-control.m-2
+                    input.form-control.m-2(type="number" id="numeroUsuarios")
                 .col-md-2 
                     h6.bg-kohinor-2.text-white.form-control.m-2 Usuarios
                 .col-md-1
             .row
                 h5 Elige tus módulos 
-                select.form-select(name='nombres' multiple aria-label='multiple select materias')
-                    each element in planes
-                        option(value=element.ObjectId) #{element.nombre} -- $ #{element.precio}
+                each element in planes
+                    .col-md-6
+                        .card
+                            .row
+                                .col-md-4
+                                    img.img-thumbnail.rounded(src=element.img)
+                                .col-md-6.d-flex.justify-content-center.align-items-center
+                                    h6
+                                        b #{element.nombre}
+                                .col-md-2.d-flex.justify-content-center.align-items-center
+                                    input.form-check-input(type="checkbox" id=element._id)
         .col-md-4 
             p
             .card 
