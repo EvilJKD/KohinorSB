@@ -13,11 +13,21 @@ block content
             p
             .row
                 h5 Elige el número de usuarios
-                .col-md-3
                 .col-md-6 
-                    input.form-control.m-2(type="number" id="numeroUsuarios")
+                    input.form-control.m-2(name="user" type="number" id="numeroUsuarios")
                 .col-md-2 
                     h6.bg-kohinor-2.text-white.form-control.m-2 Usuarios
+                .col-md-2 
+                    input.btn.btn-outline-dark.m-2.btn-outline-kohinor(name='suma' type='button' onclick='valorUser()' value='Agregar')
+
+                script(type='text/javascript').
+                    function valorUser() {
+                        var user = document.getElementById("numeroUsuarios").value;
+                        document.getElementById("resultado").innerHTML = user;
+                        document.getElementById("valorUnitarioUser").innerHTML = 7;
+                    }
+                        
+
                 .col-md-1
             .row
                 h5 Elige tus módulos 
@@ -33,10 +43,11 @@ block content
                                 .col-md-2.d-flex.justify-content-center.align-items-center
                                     form(action='#')
                                         div
-                                            input.x(type="checkbox" id=element._id)
+                                            input.x(type="checkbox" value=element._id)
                         
                 script(type='text/javascript').
                     var cboxes = document.getElementsByTagName("input");
+                    
                         for (var i=0; i<cboxes.length; i++){
                             var valor = cboxes[i].checked;
                                 if(cboxes[i].className  == 'x'){
@@ -47,10 +58,12 @@ block content
                                     }
                                 }
                         }
-
+                    var cont = 5;
                     function contar(){
                         var totales = "";
                         var contador = 1;
+                        var contTotal = 5
+                        var precioTotal = 0;
                         var casillas = document.getElementsByTagName("input");
                             for (var i=0; i < casillas.length; i++){
                                 var valor = casillas[i].checked;
@@ -58,10 +71,14 @@ block content
                                     if(clase == 'x'){
                                         if(valor == true){
                                             totales = contador++;
+                                            precioTotal += contTotal;
                                         }
                                     }
                             }
                         document.getElementById("counter").innerHTML= totales
+                        document.getElementById("valorUnitarioModulos").innerHTML = 5;
+                        document.getElementById("total").innerHTML = precioTotal + " USD";
+                        
                     }
         .col-md-4 
             p
@@ -69,9 +86,11 @@ block content
                 .card-body
                     .row 
                         .col-md-8 
+                            label#resultado #
                             h6.text-left X Usuarios 
                         .col-md-4 
-                            h6.text-right xxx USD 
+                            label#valorUnitarioUser $
+                            h6.text-right x USD 
                     hr
                     .row 
                         .col-md-8 
@@ -83,14 +102,15 @@ block content
                         .col-md-8 
                             label#counter #
                             h6.text-left X Modulos 
-                        .col-md-4 
-                            h6.text-right xxx USD
+                        .col-md-4
+                            label#valorUnitarioModulos $
+                            h6.text-right x USD
                     hr
                     .row 
                         .col-md-8 
                             h5.text-left Total 
                         .col-md-4 
-                            h5.text-right xxx USD 
+                            label#total.text-right $
                     hr
                     .row 
                         .col-md-8 
