@@ -31,7 +31,38 @@ block content
                                     h6
                                         b #{element.nombre}
                                 .col-md-2.d-flex.justify-content-center.align-items-center
-                                    input.form-check-input(type="checkbox" id=element._id)
+                                    form(action='#')
+                                        div
+                                            input.x(type="checkbox" id=element._id)
+                        
+                script(type='text/javascript').
+                    var cboxes = document.getElementsByTagName("input");
+                        for (var i=0; i<cboxes.length; i++){
+                            var valor = cboxes[i].checked;
+                                if(cboxes[i].className  == 'x'){
+                                    if(!cboxes[i].addEventListener){
+                                    cboxes[i].attachEvent("onclick", contar);
+                                    }else{
+                                    cboxes[i].addEventListener("click", contar, false);
+                                    }
+                                }
+                        }
+
+                    function contar(){
+                        var totales = "";
+                        var contador = 1;
+                        var casillas = document.getElementsByTagName("input");
+                            for (var i=0; i < casillas.length; i++){
+                                var valor = casillas[i].checked;
+                                var clase = casillas[i].className;
+                                    if(clase == 'x'){
+                                        if(valor == true){
+                                            totales = contador++;
+                                        }
+                                    }
+                            }
+                        document.getElementById("counter").innerHTML= totales
+                    }
         .col-md-4 
             p
             .card 
@@ -50,7 +81,8 @@ block content
                     hr
                     .row 
                         .col-md-8 
-                            h6.text-left X Modos 
+                            label#counter #
+                            h6.text-left X Modulos 
                         .col-md-4 
                             h6.text-right xxx USD
                     hr
