@@ -1,9 +1,11 @@
+var getUrl = window.location;
+var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
+
 
 
 const apiOptions = {
-    server: 'http://localhost:3000' // servidor local - desarrollo
-};
-
+    server: baseUrl.substring(0, baseUrl.length-1)
+}; 
 
 //Planes
 let propiedadesComprar = [];
@@ -87,6 +89,7 @@ const crearFactura = () => {
 
 const crearFactura2 = () => {
     const path = `/api/factura`;
+    console.log(`${apiOptions.server}${path}`);
     postData(`${apiOptions.server}${path}`,  {
         telefono: sessionStorage.getItem('telefono'),
         direccion: sessionStorage.getItem('direccion'),
@@ -99,7 +102,6 @@ const crearFactura2 = () => {
     }).then(data => {
         console.log(data); // JSON data parsed by `data.json()` call
         sessionStorage.clear();
-        window.redirect();
       });
 }
 
