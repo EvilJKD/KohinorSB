@@ -27,27 +27,27 @@ block content
                 .card-body
                     form.row.g-3(action='' method='post' role='form')
                         .col-md-5
-                            input#nombre.form-control(type='text' name='nombre' placeholder='First Name')
+                            input#nombre.form-control.infoPersona(type='text' name='nombre' placeholder='First Name')
                         .col-md-7
-                            input#apellido.form-control(type='text' name='apellido' placeholder='Last Name')
+                            input#apellido.form-control.infoPersona(type='text' name='apellido' placeholder='Last Name')
                         .col-md-8
-                            input#email.form-control(type='text' name='email' placeholder='Email')
+                            input#email.form-control.infoPersona(type='text' name='email' placeholder='Email')
                         .col-md-4
-                            input#telefono.form-control(type='number' name='telefono' placeholder='Télf')
+                            input#telefono.form-control.infoPersona(type='number' name='telefono' placeholder='Télf')
                         .col-md-12
-                            input#direccion.form-control(type='string' name='direccion' placeholder='Calle y Número')
+                            input#direccion.form-control.infoPersona(type='string' name='direccion' placeholder='Calle y Número')
                         .col-md-5
-                            input#codpostal.form-control(type='number' name='codpostal' placeholder='Código Postal')
+                            input#codpostal.form-control.infoPersona(type='number' name='codpostal' placeholder='Código Postal')
                         .col-md-7
-                            input#ciudad.form-control(type='text' name='ciudad' placeholder='Ciudad')
+                            input#ciudad.form-control.infoPersona(type='text' name='ciudad' placeholder='Ciudad')
                         .col-md-6
-                            select#pais.custom-select.form-control(name='pais')
+                            select#pais.custom-select.form-control.infoPersona(name='pais')
                                 option(selected='') Pa&iacute;s
                                 option(value='1') One
                                 option(value='2') Two
                                 option(value='3') Three
                         .col-md-6
-                            select#estado.custom-select.form-control(name='estado')
+                            select#estado.custom-select.form-control.infoPersona(name='estado')
                                 option(selected='') Estado/Provincia
                                 option(value='1') One
                                 option(value='2') Two
@@ -56,7 +56,7 @@ block content
                             a.btn.btn-dark.bg-kohinor-2(href='/carrito') Atr&aacute;s
                         .col-md-7
                         .col-md-2
-                            a.btn.btn-dark.bg-kohinor-2(href='/confirmar') Continuar
+                            a.btn.btn-dark.bg-kohinor-2(href='/confirmar' onclick="guardarInfoPersona()") Continuar
         .col-md-3
             .card
                 .card-body

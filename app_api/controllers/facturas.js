@@ -4,9 +4,28 @@ const facturas = mongoose.model('factura'); // el modelo me permite interactuar 
 //controladores
 
 const facturaCreate=(req,res)=>{
-    res
-        .status(200)
-        .json({"status": "Success Create"});
+    facturas.create({
+        telefono: req.body.telefono,
+        direccion: req.body.direccion,
+        codPostal: req.body.codPostal,
+        ciudad: req.body.ciudad, 
+        provincia: req.body.provincia,
+        pais: req.body.pais, 
+        listaModulos: req.body.listaModulos,
+        numUsuarios: req.body.numUsuarios
+    }, (err, objetoFactura)=>{
+        if(err){
+            console.log('Error Factura', err);
+            console.log('REQ.BODY', req.body);
+            return res
+                .status(400)
+                .json(err);
+        } else {
+            return res
+                .status(201)
+                .json(objetoFactura);
+        }
+    });
 };
 
 //listar todos los documentos de la coleccion

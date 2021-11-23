@@ -32,10 +32,12 @@ const facturaSchema =  new mongoose.Schema({
         type: [{type: mongoose.Schema.ObjectId, ref: 'modulo'}],
         required:true
     },
-
+    numUsuarios: {
+        type: Number,
+        required: true
+    },
     usuario:{
         type: mongoose.Schema.ObjectId, ref: 'user',
-        required:true
     }
 
 });

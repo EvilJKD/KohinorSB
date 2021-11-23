@@ -62,4 +62,5 @@ router.route('/editarModulo/:moduloid')
 router.route('/modulos/:moduloid')
     .get(crtlFuncion.deleteModulo);
 
+
 module.exports = router;

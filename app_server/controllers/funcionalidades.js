@@ -1,4 +1,3 @@
-const request = require('request');
 
 //Require de Axios
 const axios = require('axios');

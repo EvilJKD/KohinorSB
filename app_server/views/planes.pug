@@ -43,7 +43,7 @@ block content
                                 .col-md-2.d-flex.justify-content-center.align-items-center
                                     form(action='#')
                                         div
-                                            input.x(type="checkbox" value=element._id)
+                                            input.x(type="checkbox" id=element._id class="seleccionModulo")
                         
                 script(type='text/javascript').
                     var cboxes = document.getElementsByTagName("input");
@@ -114,7 +114,7 @@ block content
                     hr
                     .row 
                         .col-md-8 
-                            a.btn.btn-dark-home(href="/carrito") Comprar
+                            a.btn.btn-dark-home(href="/carrito"  onclick="guardarVistaPlanes()") Comprar
 
     .row.bg-kohinor-2.mt-4.mb-4.p-4.mx-0.container-fluid
         

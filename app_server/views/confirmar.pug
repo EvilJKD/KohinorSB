@@ -41,12 +41,40 @@ block content
         .col-md-6
             .card
                 .card-body
-                    .row.g-3
+                    form.row.g-3(action='' method='post' role='form')
+                        .col-md-12.mt-2
+                            h5.text-dark Lista de modulos
+                            input.form-control(type='text' name='listaModulos' readonly='')
+                        .col-md-12.mt-2
+                            h5.text-dark Datos Personales
+                        .col-md-5
+                            input#nombre.form-control.infoPersona(type='text' name='nombre' placeholder='First Name')
+                        .col-md-7
+                            input#apellido.form-control.infoPersona(type='text' name='apellido' placeholder='Last Name')
+                        .col-md-8
+                            input#email.form-control.infoPersona(type='text' name='email' placeholder='Email')
+                        .col-md-4
+                            input#telefono.form-control.infoPersona(type='number' name='telefono' placeholder='Télf')
+                        .col-md-12
+                            input#direccion.form-control.infoPersona(type='string' name='direccion' placeholder='Calle y Número')
+                        .col-md-5
+                            input#codpostal.form-control.infoPersona(type='number' name='codpostal' placeholder='Código Postal')
+                        .col-md-7
+                            input#ciudad.form-control.infoPersona(type='text' name='ciudad' placeholder='Ciudad')
                         .col-md-6
-                            a.btn.btn-primary.form-control.bg-kohinor-2(href="") Debit/Credit Card
+                            select#pais.custom-select.form-control.infoPersona(name='pais')
+                                option(selected='') Pa&iacute;s
+                                option(value='1') One
+                                option(value='2') Two
+                                option(value='3') Three
                         .col-md-6
-                            a.btn.btn-primary.form-control.bg-kohinor-2(href="") Paypal
-                    form.row.g-3.mt-3(action='' method='post' role='form')
+                            select#estado.custom-select.form-control.infoPersona(name='estado')
+                                option(selected='') Estado/Provincia
+                                option(value='1') One
+                                option(value='2') Two
+                                option(value='3') Three       
+                        .col-md-12.mt-2
+                            h5.text-dark Datos de Pago
                         .col-md-12
                             input#cardnumber.form-control(type='text' placeholder='Card Number')
                         .col-md-6
@@ -58,7 +86,7 @@ block content
                         .col-md-12
                             input#direccion.form-control(type='string' name='direccion' placeholder='Calle y Número')
                         .col-md-12
-                            a.btn.btn-dark.form-control.bg-kohinor-2(href='/') 
+                            button.btn.btn-dark.form-control.bg-kohinor-2(href='/' onclick='crearFactura2()') 
                                 b COMPRAR AHORA
         
     .row.mt-4.container-fluid.mx-0
