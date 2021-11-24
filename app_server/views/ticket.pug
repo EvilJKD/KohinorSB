@@ -24,19 +24,12 @@ block content
                     i.c-icon.cil-justify-center
                     b Ticket
                     p
-                    .form-group
-                        select#maxRows.form-control(name='state')
-                            option(value='50') Mostrar todos los tickets
-                            option(value='3') 3
-                            option(value='5') 5
-                            option(value='10') 10
-                            option(value='15') 15
                 .card-body
                     #cphBody
                         .table.table-responsive(style='overflow-x: auto;')
                             .thead-dark
                                 div
-                                    table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
+                                    table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped.tablaTickets(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
                                         thead
                                             tr(style='color:White;font-weight:bold;')
                                                 th(scope='col') &nbsp;
@@ -66,6 +59,12 @@ block content
                                                                 a(href= `/ticketUpdate/${ticket._id}`)
                                                                     //|editar
                                                                     input#cphBodyimgbtnEdit_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
+
+                                script(src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js')
+                                script(src='https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js')
+                                script(src='https://cdn.datatables.net/v/dt/jszip-2.5.0/b-2.0.1/b-html5-2.0.1/cr-1.5.4/datatables.min.js')
+                                script(src='https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js')
+                                script(src='/scripts/tablas.js')
 
     
 
