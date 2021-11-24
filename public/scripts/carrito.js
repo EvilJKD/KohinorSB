@@ -1,14 +1,15 @@
 var getUrl = window.location;
-var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
+var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[0];
 
 
 
 const apiOptions = {
-    server: baseUrl.substring(0, baseUrl.length-1)
-}; 
+    server: baseUrl.substring(0, baseUrl.length - 1)
+};
 
 //Planes
 let propiedadesComprar = [];
+let lstModulos;
 let numeroUsuarios;
 
 //Factura
@@ -26,19 +27,19 @@ let provincia;
 const guardarNumUsuario = () => {
     let inputNumUsuarios = document.querySelector('#numeroUsuarios');
     numeroUsuarios = inputNumUsuarios.value;
-    sessionStorage.setItem('numUsuarios', parseInt(inputNumUsuarios.value,10));
+    sessionStorage.setItem('numUsuarios', parseInt(inputNumUsuarios.value, 10));
 }
 
 const guardarModulos = () => {
     let checksModulos = document.querySelectorAll('.seleccionModulo');
-    checksModulos.forEach( (modulo) => {
-        if(modulo.checked==true){
+    checksModulos.forEach((modulo) => {
+        if (modulo.checked == true) {
             propiedadesComprar.push(modulo.id);
         }
     });
     sessionStorage.setItem('comprarModulos', JSON.stringify(propiedadesComprar));
+    
 }
-
 
 const guardarVistaPlanes = () => {
     console.log("Entro");
@@ -46,6 +47,27 @@ const guardarVistaPlanes = () => {
     guardarModulos();
 };
 
+lstModulos = JSON.parse(sessionStorage.getItem('comprarModulos'));
+const modulosFactura = () => {
+    for (let m=0; m<lstModulos.length; m++) {
+        let modulo = JSON.parse(lstModulos[m]);
+        document.getElementById('cardModulo').innerHTML += `<div class="card col-md-13" >
+                                                                <div class="row">
+                                                                    <div class="col-md-5">
+                                                                        <img src="${modulo.img}"" class="img-thumbnail" width="120px" height="120px">
+                                                                    </div>
+                                                                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                                                        <div class="card-body">
+                                                                        <h5 class="card-title">${modulo.nombre}</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                                                        <p class="card-text">${modulo.precio} USD</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>`;
+    };
+};
 //Funciones Factura
 
 const guardarInfoPersona = () => {
@@ -66,12 +88,15 @@ const crearFactura = () => {
     const path = `/api/factura`;
 
     axios.post(`${apiOptions.server}${path}`, {
+            nombre: sessionStorage.getItem('nombre'),
+            apellido: sessionStorage.getItem('apellido'),
+            email: sessionStorage.getItem('email'),
             telefono: sessionStorage.getItem('telefono'),
             direccion: sessionStorage.getItem('direccion'),
             codPostal: sessionStorage.getItem('codPostal'),
-            ciudad: sessionStorage.getItem('ciudad'), 
+            ciudad: sessionStorage.getItem('ciudad'),
             provincia: sessionStorage.getItem('provincia'),
-            pais: sessionStorage.getItem('pais'), 
+            pais: sessionStorage.getItem('pais'),
             listaModulos: JSON.parse(sessionStorage.getItem('propiedadComprar')),
             numUsuarios: sessionStorage.getItem('numUsuarios')
         }) //Primer parametro es el url del request y el segundo es el body con los parametros
@@ -90,36 +115,38 @@ const crearFactura = () => {
 const crearFactura2 = () => {
     const path = `/api/factura`;
     console.log(`${apiOptions.server}${path}`);
-    postData(`${apiOptions.server}${path}`,  {
+    postData(`${apiOptions.server}${path}`, {
+        nombre: sessionStorage.getItem('nombre'),
+        apellido: sessionStorage.getItem('apellido'),
+        email: sessionStorage.getItem('email'),
         telefono: sessionStorage.getItem('telefono'),
         direccion: sessionStorage.getItem('direccion'),
         codPostal: sessionStorage.getItem('codPostal'),
-        ciudad: sessionStorage.getItem('ciudad'), 
+        ciudad: sessionStorage.getItem('ciudad'),
         provincia: sessionStorage.getItem('provincia'),
-        pais: sessionStorage.getItem('pais'), 
-        listaModulos: JSON.parse(sessionStorage.getItem('comprarModulos')),
+        pais: sessionStorage.getItem('pais'),
+        listaModulos: JSON.parse(sessionStorage.getItem('comprarModulos')).map(modulo => JSON.parse(modulo).id),
         numUsuarios: sessionStorage.getItem('numUsuarios')
     }).then(data => {
         console.log(data); // JSON data parsed by `data.json()` call
         sessionStorage.clear();
-      });
+    });
 }
 
 async function postData(url = '', data = {}) {
     // Opciones por defecto estan marcadas con un *
     const response = await fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data) // body data type must match "Content-Type" header
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
     return response.json(); // parses JSON response into native JavaScript objects
-  }
-  
+}

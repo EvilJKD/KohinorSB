@@ -43,7 +43,7 @@ block content
                                 .col-md-2.d-flex.justify-content-center.align-items-center
                                     form(action='#')
                                         div
-                                            input.x(type="checkbox" id=element._id class="seleccionModulo")
+                                            input.x(type="checkbox" id=`{"id":"${element._id}", "nombre": "${element.nombre}", "img":"${element.img}","precio": ${element.precio} }` class="seleccionModulo")
                         
                 script(type='text/javascript').
                     var cboxes = document.getElementsByTagName("input");

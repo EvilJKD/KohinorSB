@@ -4,6 +4,19 @@ const Modulo = mongoose.model('modulo');
 const Usuario = mongoose.model('user');
 
 const facturaSchema =  new mongoose.Schema({
+
+    nombre: {
+        type: String,
+        required:true
+    },
+    apellido: {
+        type: String,
+        required:true
+    },
+    email: {
+        type: String,
+        required:true
+    },
     telefono: {
         type: String,
         required:true
@@ -45,6 +58,9 @@ const facturaSchema =  new mongoose.Schema({
 const Factura = new mongoose.model('factura',facturaSchema); //copliar el esquema en un modelo
 
 const factura = new Factura({
+    nombre: "Rai",
+    apellido: "Apellido",
+    email: "raidia@gmail.com",
     telefono: "0912345678",
     direccion: "5th Ave",
     codPostal: "18932",
@@ -52,7 +68,9 @@ const factura = new Factura({
     provincia: "NY",
     pais: "Estados Unidos",
     listaModulos: ["61562e9b53abf3120cd7fbac"],
+    numUsuarios: 3,
     usuario: "61562d72dcf954049525116e"
 });
 
-//factura.save()
+factura.save()
+module.exports = Factura;
