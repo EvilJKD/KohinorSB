@@ -1,103 +1,113 @@
 extends layout
 
 block content
-  .container-fluid.mt-5.mb-2
-    #carouselExampleFade.carousel.slide.carousel-fade(data-bs-ride='carousel')
-      .carousel-inner
-        .carousel-item.active
-          img.d-block.w-100(src='/images/bannerAbout.jpg' alt='...' position="relative")
-          .carousel-content
-            h3 Empresa de desarrollo de Software Contable, KOHINOR Smart Business, ideal para conectarte a tu empresa.
-            a.btn.btn-dark-home(href="/about") Conócenos
-        .carousel-item
-          img.d-block.w-100(src='/images/bannerAbout2.jpg' alt='...')
-        .carousel-item
-          img.d-block.w-100(src='/images/bannerAbout3.jpg'  alt='...')
-      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleFade' data-bs-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.visually-hidden Previous
-      button.carousel-control-next(type='button' data-bs-target='#carouselExampleFade' data-bs-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.visually-hidden Next
-  
-  .bg-kohinor-2.mt-2.mb-2
-    .row.d-flex.justify-content-evenly.m-0
-      .col-md-6
-        h3.t1-home
-          |Todos tus procesos en un solo sistema
-        p
-          |
-        p.tx1-home
-          |Kohinor Smart Business integra todas las areas de tu empresa con soluciones enfocadas a Business Inteligence.
-        p 
-          |
-          ul.tx2-home
-            li Automatización de procesos.
-            p 
-              |
-            li Disponibilidad de informacion en un mismo sistema.
-            p 
-              |
-            li Eficiente manejo de información, permitiendo ahorro de tiempo y costes.
-      .col-md-5
-        .row
-          img.img-fluid(src='images/h1_2.png' height= '500px')
-        .row  
-          a.btn.btn-dark-home(href='/kohinor')
-            | Más Información
+  app-framework 
+block scripts
+  script(src='/build/runtime.aa4d84d1c2416edc.js')
+  script(src='/build/polyfills.41a009fb35663607.js')
+  script(src='/build/main.2c2b72d9392d9d2e.js')
+ 
+//-
+  extends layout
 
-  .bg-kohinor-grey.container-fluid.mt-2.mb-2
-    .row.d-flex.justify-content-evenly
-      .col-md-6
-        .row
-          img.img-fluid(src='images/h2.png' height= '500px')
-          
-      .col-md-6
-        .row
-          p.tx3-home
-            |Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
-  .bg-kohinor-3.container-fluid.mt-2.mb-2
-    .row
-      .col-md-12
-        h3
-          | Grupo Powersoft
-        p.tx4-home
-          | Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
-    .row
-      .col-md-4.d-flex.justify-content-center.my-3
-        .containerImages
-          img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h3.png' height= '400px')
-          .overlay
+  block content
+    .container-fluid.mt-5.mb-2
+      #carouselExampleFade.carousel.slide.carousel-fade(data-bs-ride='carousel')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='/images/bannerAbout.jpg' alt='...' position="relative")
+            .carousel-content
+              h3 Empresa de desarrollo de Software Contable, KOHINOR Smart Business, ideal para conectarte a tu empresa.
+              a.btn.btn-dark-home(href="/about") Conócenos
+          .carousel-item
+            img.d-block.w-100(src='/images/bannerAbout2.jpg' alt='...')
+          .carousel-item
+            img.d-block.w-100(src='/images/bannerAbout3.jpg'  alt='...')
+        button.carousel-control-prev(type='button' data-bs-target='#carouselExampleFade' data-bs-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.visually-hidden Previous
+        button.carousel-control-next(type='button' data-bs-target='#carouselExampleFade' data-bs-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.visually-hidden Next
+    
+    .bg-kohinor-2.mt-2.mb-2
+      .row.d-flex.justify-content-evenly.m-0
+        .col-md-6
+          h3.t1-home
+            |Todos tus procesos en un solo sistema
+          p
+            |
+          p.tx1-home
+            |Kohinor Smart Business integra todas las areas de tu empresa con soluciones enfocadas a Business Inteligence.
+          p 
+            |
+            ul.tx2-home
+              li Automatización de procesos.
+              p 
+                |
+              li Disponibilidad de informacion en un mismo sistema.
+              p 
+                |
+              li Eficiente manejo de información, permitiendo ahorro de tiempo y costes.
+        .col-md-5
+          .row
+            img.img-fluid(src='images/h1_2.png' height= '500px')
+          .row  
+            a.btn.btn-dark-home(href='/kohinor')
+              | Más Información
+
+    .bg-kohinor-grey.container-fluid.mt-2.mb-2
+      .row.d-flex.justify-content-evenly
+        .col-md-6
+          .row
+            img.img-fluid(src='images/h2.png' height= '500px')
+            
+        .col-md-6
+          .row
+            p.tx3-home
+              |Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
+    .bg-kohinor-3.container-fluid.mt-2.mb-2
+      .row
+        .col-md-12
+          h3
+            | Grupo Powersoft
+          p.tx4-home
+            | Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.
+      .row
+        .col-md-4.d-flex.justify-content-center.my-3
+          .containerImages
+            img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h3.png' height= '400px')
+            .overlay
+              .text
+                | Lorem Ipsum 
+        .col-md-4.d-flex.justify-content-center.my-3
+          .containerImages
+            img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h4.png' height= '400px')
+            .overlay
             .text
-              | Lorem Ipsum 
-      .col-md-4.d-flex.justify-content-center.my-3
-        .containerImages
-          img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h4.png' height= '400px')
-          .overlay
-           .text
-            | Lorem Ipsum
-      .col-md-4.d-flex.justify-content-center.my-3
-        .containerImages
-          img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h5.png' height= '400px')
-          .overlay
-           .text
-            | Lorem Ipsum
-    .row.mt-4
-      .col-md-4.d-flex.justify-content-center.my-3
-        .containerImages
-          img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h6.png' height= '400px')
-          .overlay
-           .text
-            | Lorem Ipsum
-      .col-md-4.d-flex.justify-content-center.my-3
-        .containerImages
-          img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h7.png' )
-          .overlay
-           .text
-            | Lorem Ipsum
-      .col-md-4.d-flex.justify-content-center.my-3
-        .containerImages
-          img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h8.png' height= '400px')
-          .overlay
-           .text
-            | Lorem Ipsum
+              | Lorem Ipsum
+        .col-md-4.d-flex.justify-content-center.my-3
+          .containerImages
+            img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h5.png' height= '400px')
+            .overlay
+            .text
+              | Lorem Ipsum
+      .row.mt-4
+        .col-md-4.d-flex.justify-content-center.my-3
+          .containerImages
+            img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h6.png' height= '400px')
+            .overlay
+            .text
+              | Lorem Ipsum
+        .col-md-4.d-flex.justify-content-center.my-3
+          .containerImages
+            img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h7.png' )
+            .overlay
+            .text
+              | Lorem Ipsum
+        .col-md-4.d-flex.justify-content-center.my-3
+          .containerImages
+            img.mx-auto.d-block(alt='Bootstrap Image Preview' src='images/h8.png' height= '400px')
+            .overlay
+            .text
+              | Lorem Ipsum

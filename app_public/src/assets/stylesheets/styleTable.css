@@ -1,0 +1,36 @@
+.form-group{
+    width: 10vw;
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
+
+.col-ticket-1{
+    width: 16vw;
+    margin-left: 5vw;
+}
+
+.col-ticket-2{
+    margin-left: 75vw;
+    margin-right: 40vw;
+}
+.col-ticket-3{
+    margin-left: 2vw;
+}
+
+.form-control {
+    border-width: 2px;
+    border-color: #1F2346;
+}
+.txt-ticket-1 {
+    margin-left: 3vw;
+    margin-top: 2vh;
+    font-size: 38px;
+}
+
+.txt-ticket-2 {
+    margin-left: 5vw;
+    margin-top: 2vh;
+    font-size: 24px;
+}

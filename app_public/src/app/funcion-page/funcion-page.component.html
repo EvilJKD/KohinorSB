@@ -1,0 +1,18 @@
+<body>
+    <div class="row mt-4 pt-5 mx-0 container-fluid">
+        <h1 class="text-center"> <b>Kohinor SB</b></h1>
+        <h3 class="text-center text-black">Funcionalidades </h3>
+        <h4 class="mt-5 mb-5">Nuestra solución de software ERP brinda un método fácil y efectivo de administrar y gestionar tu empresa,  optimizando recursos y controlando procesos empresariales.</h4>
+    </div>
+    <div class="row mx-0 container-fluid">
+        <div class="col-md-3" *ngFor="let modulo of modulos"> 
+            <div class="card m-5">
+                <div class="card-block m-3">
+                    <img class="card-img-top" src='{{modulo.img}}'>
+                    <h4 class="card-title">{{modulo.nombre}}</h4>
+                    <h5 class="card-subtitle">{{modulo.descripcion}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

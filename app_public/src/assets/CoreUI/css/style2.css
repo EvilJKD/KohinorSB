@@ -1,0 +1,75 @@
+
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    z-index: 99999;
+}
+
+.sidenavImg {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #0c232b;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+    .sidenavImg.dark-theme {
+        background-color: #2c2c34;
+    }
+
+    .sidenavImg a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        .sidenavImg a:hover {
+            color: #f1f1f1;
+        }
+
+.sidenavImg .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sidenavImg {
+        padding-top: 15px;
+    }
+
+        .sidenavImg a {
+            font-size: 18px;
+        }
+}
+
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9990;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    overflow-x: hidden;
+    transition: 0.0005s;
+    padding-top: 60px;
+}
+
+
+
+.fondoLogin {
+    background: linear-gradient(#00445e,#204AB8)
+}
+
