@@ -1,0 +1,78 @@
+<div class="c-body">
+    <div class="c-subheader px-3">
+        <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item active">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a class="btn btn-outline-primary" id="cphBodyHeader_btnNuevo" href="/crearTicket">
+                        <i class="cil-file"></i>Nuevo</a>
+                    <button class="btn btn-outline-secondary disabled" id="cphBodyHeader_btnCancelar" type="button">
+                        <i class="cil-grid-slash"></i>Cancelar</button>
+                    <button class="btn btn-outline-secondary disabled" id="cphBodyHeader_btnEliminar" type="button">
+                        <i class="cil-trash"></i>Eliminar</button>
+                </div>
+                <span id="cphBodyHeader_lblExito" align="right" style="color:Green;"></span>
+                <span id="cphBodyHeader_lblError" align="right" style="color:Maroon;"></span>
+            </li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+        <div class="fade-in">
+            <div class="card">
+                <div class="card-header">
+                    <i class="c-icon cil-justify-center"></i>
+                    <b>Ticket</b>
+                    <p></p>
+                </div>
+                <div class="card-body">
+                    <div id="cphBody">
+                        <div class="table table-responsive" style="overflow-x: auto;">
+                            <div class="thead-dark">
+                                <div>
+                                    <table class="table table-bordered table-active table-active table-hover table-striped tablaTickets" id="cphBody" cellspacing="0" rules="all" border="1" style="border-collapse:collapse;">
+                                        <thead>
+                                            <tr style="color:White;font-weight:bold;">
+                                                <th scope="col">&nbsp;</th>
+                                                <th scope="col">N°</th>
+                                                <th scope="col">Asunto ↑↓</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Usuario</th>
+                                                <th scope="col">Fecha</th>
+                                                <th scope="col">Operaciones</th>
+                                                <th scope="col">  </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr  *ngFor="let ticket of tickets">
+                                                <td><input type="image" src="Icon/Menu125/Select-Hand.png" alt="Select" style="width:30px;"></td>
+                                                <td>{{ticket._id}}</td>
+                                                <td>{{ticket.asunto}}</td>
+                                                <td>{{ticket.status}}</td>
+                                                <td>{{ticket.usuario}}</td>
+                                                <td>{{ticket.fecha}}</td>
+                                                <td>
+                                                    <a href="`/ticket/${ticket._id}`">
+                                                        <!--|Borrar--><input id="cphBodyimgbtnDelete_0" type="image" name="" src="Icon/Menu125/delete-icon.png" style="width:30px; height:30px;">
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="`/ticket/${ticket._id}`">
+                                                        <!--|editar--><input id="cphBodyimgbtnEdit_0" type="image" name="" src="Icon/Menu125/edit.png" style="width:30px; height:30px;">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                                <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+                                <script src="https://cdn.datatables.net/v/dt/jszip-2.5.0/b-2.0.1/b-html5-2.0.1/cr-1.5.4/datatables.min.js"></script>
+                                <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+                                <script src="/scripts/tablas.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Modulos } from 'src/app/interfaces/modulos';
+import { Tickets } from 'src/app/interfaces/tickets';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,9 @@ export class KohinorDataServiceService {
   public getModulos() {
     const url: string = `${this.apiBaseUrl}/api/modulo/`;
     return this.http.get<Modulos[]>(url)
+  }
+  public getTickets() {
+    const url: string = `${this.apiBaseUrl}/api/ticket/`;
+    return this.http.get<Tickets[]>(url)
   }
 }

@@ -1,71 +1,81 @@
 extends dshboard
 
 block content
-    .c-subheader.px-3
-        ol.breadcrumb.border-0.m-0
-            li.breadcrumb-item.active
-                .btn-group(role='group' aria-label='Basic example')
-                    a#cphBodyHeader_btnNuevo.btn.btn-outline-primary(href='/crearTicket')
-                        i.cil-file
-                        | Nuevo
-                    button#cphBodyHeader_btnCancelar.btn.btn-outline-secondary.disabled(type='button')
-                        i.cil-grid-slash
-                        | Cancelar
-                    button#cphBodyHeader_btnEliminar.btn.btn-outline-secondary.disabled(type='button')
-                        i.cil-trash
-                        | Eliminar
-                span#cphBodyHeader_lblExito(align='right' style='color:Green;')
-                span#cphBodyHeader_lblError(align='right' style='color:Maroon;')
+    app-framework 
+block scripts
+    script(src='/build/runtime.aa4d84d1c2416edc.js')
+    script(src='/build/polyfills.41a009fb35663607.js')
+    script(src='/build/main.6a4d8d242a05171e.js')
 
-    .container-fluid
-        .fade-in
-            .card
-                .card-header
-                    i.c-icon.cil-justify-center
-                    b Ticket
-                    p
-                .card-body
-                    #cphBody
-                        .table.table-responsive(style='overflow-x: auto;')
-                            .thead-dark
-                                div
-                                    table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped.tablaTickets(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
-                                        thead
-                                            tr(style='color:White;font-weight:bold;')
-                                                th(scope='col') &nbsp;
-                                                th(scope='col') N&deg;
-                                                th(scope='col') Asunto &uarr;&darr;
-                                                th(scope='col') Status
-                                                th(scope='col') Usuario
-                                                th(scope='col') Fecha   
-                                                th(scope='col') Operaciones        
-                                                th(scope='col')   
-                                        tbody
-                                            - var pos=1
-                                                each ticket in objetoTickets
-                                                    tr
-                                                        td
-                                                            input(type='image' src='Icon/Menu125/Select-Hand.png' alt='Select' style='width:30px;')
-                                                        td.numTicket= ticket._id
-                                                        td.asunto= ticket.asunto
-                                                        td.status= ticket.status
-                                                        td.usuario= ticket.persona.map(result => result.nombre)
-                                                        td.fecha= ticket.fecha
-                                                        td
-                                                            a(href= `/ticket/${ticket._id}`)
-                                                                //|Borrar
-                                                                input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')
+//-    
+    extends dshboard
+
+    block content
+        .c-subheader.px-3
+            ol.breadcrumb.border-0.m-0
+                li.breadcrumb-item.active
+                    .btn-group(role='group' aria-label='Basic example')
+                        a#cphBodyHeader_btnNuevo.btn.btn-outline-primary(href='/crearTicket')
+                            i.cil-file
+                            | Nuevo
+                        button#cphBodyHeader_btnCancelar.btn.btn-outline-secondary.disabled(type='button')
+                            i.cil-grid-slash
+                            | Cancelar
+                        button#cphBodyHeader_btnEliminar.btn.btn-outline-secondary.disabled(type='button')
+                            i.cil-trash
+                            | Eliminar
+                    span#cphBodyHeader_lblExito(align='right' style='color:Green;')
+                    span#cphBodyHeader_lblError(align='right' style='color:Maroon;')
+
+        .container-fluid
+            .fade-in
+                .card
+                    .card-header
+                        i.c-icon.cil-justify-center
+                        b Ticket
+                        p
+                    .card-body
+                        #cphBody
+                            .table.table-responsive(style='overflow-x: auto;')
+                                .thead-dark
+                                    div
+                                        table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped.tablaTickets(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
+                                            thead
+                                                tr(style='color:White;font-weight:bold;')
+                                                    th(scope='col') &nbsp;
+                                                    th(scope='col') N&deg;
+                                                    th(scope='col') Asunto &uarr;&darr;
+                                                    th(scope='col') Status
+                                                    th(scope='col') Usuario
+                                                    th(scope='col') Fecha   
+                                                    th(scope='col') Operaciones        
+                                                    th(scope='col')   
+                                            tbody
+                                                - var pos=1
+                                                    each ticket in objetoTickets
+                                                        tr
                                                             td
-                                                                a(href= `/ticketUpdate/${ticket._id}`)
-                                                                    //|editar
-                                                                    input#cphBodyimgbtnEdit_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
+                                                                input(type='image' src='Icon/Menu125/Select-Hand.png' alt='Select' style='width:30px;')
+                                                            td.numTicket= ticket._id
+                                                            td.asunto= ticket.asunto
+                                                            td.status= ticket.status
+                                                            td.usuario= ticket.persona.map(result => result.nombre)
+                                                            td.fecha= ticket.fecha
+                                                            td
+                                                                a(href= `/ticket/${ticket._id}` )
+                                                                    //|Borrar
+                                                                    input#cphBodyimgbtnDelete_0(type='image' name='' src='Icon/Menu125/delete-icon.png' style='width:30px; height:30px;')
+                                                                td
+                                                                    a(href= `/ticketUpdate/${ticket._id}`)
+                                                                        //|editar
+                                                                        input#cphBodyimgbtnEdit_0(type='image' name='' src='Icon/Menu125/edit.png' style='width:30px; height:30px;')
 
-                                script(src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js')
-                                script(src='https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js')
-                                script(src='https://cdn.datatables.net/v/dt/jszip-2.5.0/b-2.0.1/b-html5-2.0.1/cr-1.5.4/datatables.min.js')
-                                script(src='https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js')
-                                script(src='/scripts/tablas.js')
+                                    script(src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js')
+                                    script(src='https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js')
+                                    script(src='https://cdn.datatables.net/v/dt/jszip-2.5.0/b-2.0.1/b-html5-2.0.1/cr-1.5.4/datatables.min.js')
+                                    script(src='https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js')
+                                    script(src='/scripts/tablas.js')
 
-    
+        
 
-                            
+                                

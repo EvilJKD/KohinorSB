@@ -6,6 +6,7 @@ import { KohinorsbPageComponent } from './kohinorsb-page/kohinorsb-page.componen
 import { ContactoPageComponent } from './contacto-page/contacto-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FuncionPageComponent } from './funcion-page/funcion-page.component';
+import { TicketPageComponent } from './ticket-page/ticket-page.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'funcion',
     component: FuncionPageComponent
+  },
+  {
+    path: 'ticket',
+    component: TicketPageComponent
   }
 ];
 

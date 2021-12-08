@@ -12,6 +12,7 @@ import { KohinorsbPageComponent } from './kohinorsb-page/kohinorsb-page.componen
 import { ContactoPageComponent } from './contacto-page/contacto-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FuncionPageComponent } from './funcion-page/funcion-page.component';
+import { TicketPageComponent } from './ticket-page/ticket-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FuncionPageComponent } from './funcion-page/funcion-page.component';
     KohinorsbPageComponent,
     ContactoPageComponent,
     LoginPageComponent,
-    FuncionPageComponent
+    FuncionPageComponent,
+    TicketPageComponent
   ],
   imports: [
     BrowserModule,
