@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tickets } from 'src/app/interfaces/tickets';
 import { KohinorDataServiceService } from 'src/app/services/kohinor-data-service.service';
 
+
 @Component({
   selector: 'app-ticket-page',
   templateUrl: './ticket-page.component.html',
@@ -9,6 +10,7 @@ import { KohinorDataServiceService } from 'src/app/services/kohinor-data-service
 })
 export class TicketPageComponent implements OnInit {
   public tickets: Tickets[] = [];
+  dtOptions: DataTables.Settings = {};
 
   constructor(private KohinorDataServiceService: KohinorDataServiceService) { }
   private getData(): void {
@@ -27,6 +29,13 @@ export class TicketPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 5,
+      processing: true
+    };
+    
   }
 
 }
