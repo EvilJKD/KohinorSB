@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 export class TicketPageComponent implements OnInit, AfterViewInit {
   public tickets: Tickets[] = [];
   dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<void> = new Subject();
+  dtTrigger: Subject<any> = new Subject();
 
 
   constructor(private KohinorDataServiceService: KohinorDataServiceService) { }
@@ -24,7 +24,7 @@ export class TicketPageComponent implements OnInit, AfterViewInit {
       .subscribe({
         next:(data) => {
         this.tickets = data;
-        //this.dtTrigger.next();
+        this.dtTrigger.next(this.tickets);
       },
       error:(e)=>{
         console.error(e);
@@ -35,8 +35,10 @@ export class TicketPageComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     
     this.getData();
-
-    setTimeout(() => {
+    this.dtOptions = {
+      lengthMenu: [ 2, 5, 7, 10, 20]
+    }
+    /* setTimeout(() => {
       $('.tablaTickets').DataTable({
          pagingType: 'full_numbers',
          pageLength: 5,
@@ -46,10 +48,10 @@ export class TicketPageComponent implements OnInit, AfterViewInit {
             [1, "desc"]
          ]
       });
-   }, 500);
+   }, 500); */
   }
   ngAfterViewInit(): void{
-    this.dtTrigger.next();
+    this.dtTrigger.next(this.tickets);
   }
 
 }
