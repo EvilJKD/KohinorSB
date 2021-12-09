@@ -1,0 +1,33 @@
+<div class="c-subheader px-3">
+    <ol class="breadcrumb border-0 m-0">
+        <li class="breadcrumb-item active">
+            <div class="btn-group" role="group" aria-label="Basic example"><a class="btn btn-outline-primary" id="cphBodyHeader_btnNuevo" href="/crearModulo"><i class="cil-file"></i>Nuevo</a><button class="btn btn-outline-secondary disabled" id="cphBodyHeader_btnCancelar" type="button"><i class="cil-grid-slash"></i>Cancelar</button><button class="btn btn-outline-secondary disabled" id="cphBodyHeader_btnEliminar" type="button"><i class="cil-trash"></i>Eliminar</button></div>
+            <span id="cphBodyHeader_lblExito" align="right" style="color:Green;"></span><span id="cphBodyHeader_lblError" align="right" style="color:Maroon;"></span>
+        </li>
+    </ol>
+</div>
+<div class="container-fluid mb-4">
+    <div class="fade-in">
+        <div class="row">
+            <div class="col-md-3 d-flex align-items-stretch" *ngFor="let modulo of modulos">
+                <div class="card">
+                    <div class="card-block m-3">
+                        <img class="card-img-top" src='{{modulo.img}}'>
+                        <h4 class="card-title">{{modulo.nombre}}</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6 class="card-subtitle">{{modulo.descripcion}}</h6>
+                            </li>
+                            <li class="list-group-item">
+                                <h6 class="card-subtitle">Precio: {{modulo.descripcion}}</h6>
+                            </li>
+                        </ul>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-around"><a class="btn btn-outline-kohinor" href="/editarModulo/${modulo._id}">Editar</a><a class="btn btn-outline-kohinor" href="/modulos/${modulo._id}">Borrar</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

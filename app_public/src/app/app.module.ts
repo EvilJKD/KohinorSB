@@ -14,6 +14,7 @@ import { ContactoPageComponent } from './contacto-page/contacto-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FuncionPageComponent } from './funcion-page/funcion-page.component';
 import { TicketPageComponent } from './ticket-page/ticket-page.component';
+import { ModulosPageComponent } from './modulos-page/modulos-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TicketPageComponent } from './ticket-page/ticket-page.component';
     ContactoPageComponent,
     LoginPageComponent,
     FuncionPageComponent,
-    TicketPageComponent
+    TicketPageComponent,
+    ModulosPageComponent
   ],
   imports: [
     BrowserModule,

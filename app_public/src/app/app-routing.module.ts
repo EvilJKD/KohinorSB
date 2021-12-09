@@ -7,6 +7,7 @@ import { ContactoPageComponent } from './contacto-page/contacto-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FuncionPageComponent } from './funcion-page/funcion-page.component';
 import { TicketPageComponent } from './ticket-page/ticket-page.component';
+import { ModulosPageComponent } from './modulos-page/modulos-page.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,12 @@ const routes: Routes = [
   {
     path: 'ticket',
     component: TicketPageComponent
+  },
+  {
+    path: 'modulos',
+    component: ModulosPageComponent
   }
+
 ];
 
 @NgModule({
