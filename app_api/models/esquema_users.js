@@ -17,10 +17,6 @@ const usuariosSchema =  new mongoose.Schema({
         unique: true,
         required:true
     },
-    contrasena: {
-        type: String,
-        required:true
-    },
     hash:String,
     salt:String
 
@@ -50,11 +46,11 @@ usuariosSchema.methods.generateJwt = () => {
 
 const Usuario = new mongoose.model('user',usuariosSchema); //copliar el esquema en un modelo
 
-/* const user = new Usuario({
-    nombre: 'Ash',
-    apellido: 'Ketchum',
-    email: 'poketrainer01@hotmail.com',
-    setPassword("pikachu4life");
-}); */
+ /* const user = new Usuario();
+    user.nombre= 'Ash',
+    user.apellido= 'Ketchum',
+    user.email= 'poketrainer01@hotmail.com',
+    user.setPassword("pikachu4life"); */
+ 
 //user.save();
 module.exports = Usuario;

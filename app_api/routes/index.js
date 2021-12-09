@@ -5,6 +5,7 @@ const ctrlUsers = require('../controllers/users');
 const ctrlModulo = require('../controllers/modulos');
 const ctrlTicket = require('../controllers/tickets');
 const ctrlFactura = require('../controllers/facturas');
+const ctrlAuth = require('../controllers/authentication');
 //definir las rutas para las acciones sobre la coleccion users 
 
 //USUARIOS
@@ -50,3 +51,6 @@ router
     .get(ctrlFactura.facturaRead)
 
  module.exports = router;
+
+ router.post('/register', ctrlAuth.register);
+ router.post('/login', ctrlAuth.login);
