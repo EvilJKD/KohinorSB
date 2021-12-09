@@ -9,7 +9,7 @@ const userCreate=(req,res)=>{
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         email: req.body.email,
-        contraseña: req.body.contraseña
+        contrasena: req.body.contrasena
     }, (err, objetoUser)=>{
         if(err){
             return res

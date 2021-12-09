@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {APP_BASE_HREF} from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'
 import { DataTablesModule } from 'angular-datatables';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +36,9 @@ import { RegisterPageComponent } from './register-page/register-page.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [FrameworkComponent]
