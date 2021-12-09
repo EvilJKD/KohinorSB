@@ -17,6 +17,7 @@ import { FuncionPageComponent } from './funcion-page/funcion-page.component';
 import { TicketPageComponent } from './ticket-page/ticket-page.component';
 import { ModulosPageComponent } from './modulos-page/modulos-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { CrearModuloPageComponent } from './crear-modulo-page/crear-modulo-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RegisterPageComponent } from './register-page/register-page.component';
     FuncionPageComponent,
     TicketPageComponent,
     ModulosPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    CrearModuloPageComponent
   ],
   imports: [
     BrowserModule,
