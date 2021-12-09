@@ -1,22 +1,32 @@
-extends dshboard
+extends layout
 
-block content 
+block content
+    app-framework 
+block scripts
+    script(src='/build/runtime.aa4d84d1c2416edc.js')
+    script(src='/build/polyfills.41a009fb35663607.js')
+    script(src='/build/main.cea3d9c628d2dbca.js')
 
-    h1.txt-ticket-1= title    
-    p.txt-ticket-2 
-        |Llene todos los campos a continuación
+//-
+    extends dshboard
 
-    .container-fluid.mx-0
-        form.g-3(action='' method='post' role='form')                          
-            .row
-                .col-md-6
-                    p Nombre
-                        input#asunto.form-control(type='text' placeholder='Nombre' name='nombre' required='' value=nombre)
-                .col-md-6
-                    p Descripción
-                        input#usuario.form-control(type='text' placeholder='Descripción' name='descripcion' required='' value=descripcion)
-                .col-md-6
-                    p Precio
-                        input#usuario.form-control(type='number' placeholder='Precio' name='precio' required='' value=precio)
-            .row.d-flex.flex-row-reverse
-                button.btn.btn-outline-dark.m-2.btn-outline-kohinor(type='submit') Enviar
+    block content 
+
+        h1.txt-ticket-1= title    
+        p.txt-ticket-2 
+            |Llene todos los campos a continuación
+
+        .container-fluid.mx-0
+            form.g-3(action='' method='post' role='form')                          
+                .row
+                    .col-md-6
+                        p Nombre
+                            input#asunto.form-control(type='text' placeholder='Nombre' name='nombre' required='' value=nombre)
+                    .col-md-6
+                        p Descripción
+                            input#usuario.form-control(type='text' placeholder='Descripción' name='descripcion' required='' value=descripcion)
+                    .col-md-6
+                        p Precio
+                            input#usuario.form-control(type='number' placeholder='Precio' name='precio' required='' value=precio)
+                .row.d-flex.flex-row-reverse
+                    button.btn.btn-outline-dark.m-2.btn-outline-kohinor(type='submit') Enviar
