@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -8,6 +8,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { FuncionPageComponent } from './funcion-page/funcion-page.component';
 import { TicketPageComponent } from './ticket-page/ticket-page.component';
 import { ModulosPageComponent } from './modulos-page/modulos-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'modulos',
     component: ModulosPageComponent
+  },
+  {
+    path: 'registro',
+    component: RegisterPageComponent
   }
 
 ];
