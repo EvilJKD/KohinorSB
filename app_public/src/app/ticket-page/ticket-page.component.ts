@@ -3,6 +3,7 @@ import { Tickets } from 'src/app/interfaces/tickets';
 import { KohinorDataServiceService } from 'src/app/services/kohinor-data-service.service';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
+import * as $ from 'jquery';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Subject } from 'rxjs';
   templateUrl: './ticket-page.component.html',
   styleUrls: ['./ticket-page.component.css']
 })
-export class TicketPageComponent implements OnInit, AfterViewInit {
+export class TicketPageComponent implements OnInit {
   public tickets: Tickets[] = [];
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
@@ -50,8 +51,4 @@ export class TicketPageComponent implements OnInit, AfterViewInit {
       });
    }, 500); */
   }
-  ngAfterViewInit(): void{
-    this.dtTrigger.next(this.tickets);
-  }
-
 }
