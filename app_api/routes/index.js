@@ -1,6 +1,11 @@
 //REST API router
 const express = require('express');
 const router = express.Router();
+const jwt = require('express-jwt');
+const auth = jwt ({
+    secret: process.env.JWT_SECRET,
+    userProperty: 'payload'
+});
 const ctrlUsers = require('../controllers/users');
 const ctrlModulo = require('../controllers/modulos');
 const ctrlTicket = require('../controllers/tickets');
