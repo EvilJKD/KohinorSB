@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { BROWSER_STORAGE } from '../storage';
-import { User } from '../user';
+import { User } from 'src/app/user';
 import { AuthResponse } from '../authresponse';
 import { KohinorDataServiceService } from 'src/app/services/kohinor-data-service.service';
 
@@ -14,7 +14,7 @@ export class AuthenticationService {
     private kohinorDataServiceService: KohinorDataServiceService) { }
   
   public getToken(): string {
-    return this.storage.getItem('db_kohinor-token');
+    return this.storage.getItem('db_kohinor-token')!;
   }
   public saveToken(token: string): void {
     this.storage.setItem('db_kohinor-token', token);
@@ -29,5 +29,21 @@ export class AuthenticationService {
   }
   public logout(): void {
     this.storage.removeItem('db_kohinor-token');
+  }
+  public isLoggedIn(): boolean {
+    const token: string = this.getToken();
+      if (token) {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        return payload.exp > (Date.now() / 1000);
+      } else {
+        return false;
+      }
+  }
+  public getCurrentUser(): User {
+    if (this.isLoggedIn()) {
+      const token: string = this.getToken();
+      const { email, nombre, apellido } = JSON.parse(atob(token.split('.')[1]));
+      return { email, nombre, apellido } as User;
+    }
   }
 }

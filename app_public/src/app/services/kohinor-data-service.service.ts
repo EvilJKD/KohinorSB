@@ -31,16 +31,23 @@ export class KohinorDataServiceService {
     return this.http
       .post(url, formData)
   }
-  public login(user: User){
+  public login(user: User): Promise<AuthResponse>{
     return this.makeAuthApiCall('login', user);
   }
-  public register(user: User){
+  public register(user: User): Promise<AuthResponse>{
     return this.makeAuthApiCall('register', user);
   }
-  private makeAuthApiCall(urlPath: string, user: User){
+  private makeAuthApiCall(urlPath: string, user: User): Promise<AuthResponse>{
   const url: string = `${this.apiBaseUrl}/${urlPath}`;
   return this.http
     .post(url, user)
+    .toPromise()
+    .then(response => response as AuthResponse)
+    .catch(this.handleError);
  }
+ private handleError(error: any): Promise<AuthResponse> {
+  console.error('Something has gone wrong', error);
+  return Promise.reject(error.message || error);
+}
 
 }
