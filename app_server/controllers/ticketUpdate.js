@@ -41,7 +41,7 @@ const ticketRead = (req, res) => {
         .catch((error) => { //Si hay algun error
             console.log("AXIOS - StatusCode", error.status);
             console.log("AXIOS", error);
-            res.redirect('/');
+            res.redirect('/it_usrs');
         });
 };
 
@@ -58,13 +58,13 @@ const doUpdateTicket = (req, res) => {
         .then((response) => { //Si el request es exitoso
             console.log("AXIOS REQUEST --- Ticket EDITADO");
             console.log(req.body);
-            res.redirect('/ticket')
+            res.redirect('/ticketAdmin')
         })
         .catch((error) => { //Si es que hay algun error en el request
             console.log('AXIOS - statusCode: ', error.status);
             console.log('AXIOS - Error: ', error);
             console.log('AXIOS - Req.Body', req.body);
-            res.redirect('/ticket');
+            res.redirect('/ticketAdmin');
         })
 }
 

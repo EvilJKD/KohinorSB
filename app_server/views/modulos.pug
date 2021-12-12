@@ -1,49 +1,40 @@
-extends dshboard
+extends dshboardAdmin
 
-block content
-    app-framework 
-block scripts
-    script(src='/build/runtime.aa4d84d1c2416edc.js')
-    script(src='/build/polyfills.41a009fb35663607.js')
-    script(src='/build/main.2ce851efaf3874fe.js') 
-//-  
-    extends dshboard
-
-    block content 
-        .c-subheader.px-3
-            ol.breadcrumb.border-0.m-0
-                li.breadcrumb-item.active
-                    .btn-group(role='group' aria-label='Basic example')
-                        a#cphBodyHeader_btnNuevo.btn.btn-outline-primary(href= '/crearModulo')
-                            i.cil-file
-                            | Nuevo
-                        button#cphBodyHeader_btnCancelar.btn.btn-outline-secondary.disabled(type='button')
-                            i.cil-grid-slash
-                            | Cancelar
-                        button#cphBodyHeader_btnEliminar.btn.btn-outline-secondary.disabled(type='button')
-                            i.cil-trash
-                            | Eliminar
-                    span#cphBodyHeader_lblExito(align='right' style='color:Green;')
-                    span#cphBodyHeader_lblError(align='right' style='color:Maroon;')
-        
-        .container-fluid.mb-4
-            .fade-in
-                .row
-                    each modulo in modulos 
-                        .col-md-3.d-flex.align-items-stretch
-                            .card
-                                .card-block.m-3
-                                    img.card-img-top(src=`${modulo.img}`)
-                                    h4.card-title #{modulo.nombre}
-                                    ul.list-group.list-group-flush
-                                        li.list-group-item
-                                            h6.card-subtitle #{modulo.descripcion}
-                                        li.list-group-item
-                                            h6.card-subtitle Precio: #{modulo.precio}
-                                    .card-footer
-                                        .d-flex.justify-content-around
-                                            a.btn.btn-outline-kohinor(href= `/editarModulo/${modulo._id}`)
-                                                | Editar
-                                            a.btn.btn-outline-kohinor(href= `/modulos/${modulo._id}`)
-                                                | Borrar
-                    
+block content 
+    .c-subheader.px-3
+        ol.breadcrumb.border-0.m-0
+            li.breadcrumb-item.active
+                .btn-group(role='group' aria-label='Basic example')
+                    a#cphBodyHeader_btnNuevo.btn.btn-outline-primary(href= '/crearModulo')
+                        i.cil-file
+                        | Nuevo
+                    button#cphBodyHeader_btnCancelar.btn.btn-outline-secondary.disabled(type='button')
+                        i.cil-grid-slash
+                        | Cancelar
+                    button#cphBodyHeader_btnEliminar.btn.btn-outline-secondary.disabled(type='button')
+                        i.cil-trash
+                        | Eliminar
+                span#cphBodyHeader_lblExito(align='right' style='color:Green;')
+                span#cphBodyHeader_lblError(align='right' style='color:Maroon;')
+    
+    .container-fluid.mb-4
+        .fade-in
+            .row
+                each modulo in modulos 
+                    .col-md-3.d-flex.align-items-stretch
+                        .card
+                            .card-block.m-3
+                                img.card-img-top(src=`${modulo.img}`)
+                                h4.card-title #{modulo.nombre}
+                                ul.list-group.list-group-flush
+                                    li.list-group-item
+                                        h6.card-subtitle #{modulo.descripcion}
+                                    li.list-group-item
+                                        h6.card-subtitle Precio: #{modulo.precio}
+                                .card-footer
+                                    .d-flex.justify-content-around
+                                        a.btn.btn-outline-kohinor(href= `/editarModulo/${modulo._id}`)
+                                            | Editar
+                                        a.btn.btn-outline-kohinor(href= `/modulos/${modulo._id}`)
+                                            | Borrar
+                

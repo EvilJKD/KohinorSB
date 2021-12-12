@@ -10,8 +10,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
  /* GET Registro. */
-const crearticket = (req, res) => {
-    res.render('crearTicket',{title: 'crearticket '});
+const crearticket = (req, res, usuario) => {
+    res.render('crearTicket',{title: 'Crea tu ticket para soporte', usuario: req.user._id});
 };
 
 
@@ -27,7 +27,7 @@ const doAddTicket = (req, res) => {
     .then((response) => {
         console.log("AXIOS REQUEST - Ticket Enviado");
         console.log(req.body);
-        res.render('crearTicket', {title: 'crearticket'})
+        res.redirect("/overview");
     }) 
     .catch((error) => {
         console.log('AXIOS - statusCode: ', error.status);

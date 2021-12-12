@@ -25,9 +25,17 @@ const modulosAdmin = (req, res, body) => {
         modulos: body
     })
 }
-const renderCreateView = (req, res, body = null) => {
+const renderCreateView = (req, res,body = null) => {
     res.render('crearModulo', {
         title: "Crear Modulo",
+        descripcion: body.descripcion,
+        nombre: body.nombre,
+        precio: body.precio
+    });
+}
+const renderEditarView = (req, res,body = null) => {
+    res.render('crearModulo', {
+        title: "Editar Modulo",
         descripcion: body.descripcion,
         nombre: body.nombre,
         precio: body.precio
@@ -110,7 +118,7 @@ const getModuloAndDisplay = (req, res) => {
     axios.get(`${apiOptions.server}${path}`) //Declaracion del path, se ejecuta la promesa
         .then((response) => { //Cuando el request es exitoso
             console.log('Axios Request', response);
-            renderCreateView(req, res, response.data);
+            renderEditarView(req, res, response.data);
         })
         .catch(() => { //Cuando el request tiene algun error
             console.log(response.statusCode);

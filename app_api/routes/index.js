@@ -1,16 +1,12 @@
 //REST API router
 const express = require('express');
 const router = express.Router();
-const jwt = require('express-jwt');
-const auth = jwt ({
-    secret: process.env.JWT_SECRET,
-    userProperty: 'payload'
-});
 const ctrlUsers = require('../controllers/users');
 const ctrlModulo = require('../controllers/modulos');
 const ctrlTicket = require('../controllers/tickets');
 const ctrlFactura = require('../controllers/facturas');
 const ctrlAuth = require('../controllers/authentication');
+const ctrlSearch = require('../controllers/search');
 //definir las rutas para las acciones sobre la coleccion users 
 
 //USUARIOS
@@ -54,8 +50,12 @@ router
 router
     .route('/factura/:facturaid')
     .get(ctrlFactura.facturaRead)
+//SEARCH
+router
+    .route('/searchticket')
+    .post(ctrlSearch.ticketList)
 
  module.exports = router;
 
- router.post('/register', ctrlAuth.register);
- router.post('/login', ctrlAuth.login);
+router.post('/registro', ctrlAuth.register);
+router.post('/login', ctrlAuth.login);

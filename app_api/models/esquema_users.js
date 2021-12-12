@@ -3,10 +3,10 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 
 //Schema Usuarios
-const usuariosSchema =  new mongoose.Schema({
+const usuariosSchema = new mongoose.Schema({
     nombre: {
         type: String,
-        required:true
+        required: true
     },
     apellido: {
         type: String,
@@ -15,42 +15,49 @@ const usuariosSchema =  new mongoose.Schema({
     email: {
         type: String,
         unique: true,
-        required:true
+        required: true
     },
-    hash:String,
-    salt:String
+
+    hash: {
+        type: String
+    },
+    salt: {
+        type: String
+    }
 
 });
 
-usuariosSchema.methods.setPassword = (password) => {
+usuariosSchema.methods.setPassword = function(password) {
     this.salt = crypto.randomBytes(16).toString('hex');
     this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
+
+    console.log("Usuario Creado", this);
 };
 
-usuariosSchema.methods.validPassword = (password) => {
+usuariosSchema.methods.validPassword = function(password) {
     const hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64, 'sha512').toString('hex');
     return this.hash === hash;
 }
 
-usuariosSchema.methods.generateJwt = () => {
+usuariosSchema.methods.generateJwt = function() {
     const expiry = new Date();
     expiry.setDate(expiry.getDate() + 7);
     return jwt.sign({
-        _id:this._id,
+        _id: this._id,
         nombre: this.nombre,
         apellido: this.apellido,
         email: this.email,
-        exp: parseInt(expiry.getTime()/1000, 10),
+        exp: parseInt(expiry.getTime() / 1000, 10),
     }, process.env.JWT_SECRET);
 };
 
-const Usuario = new mongoose.model('user',usuariosSchema); //copliar el esquema en un modelo
+const Usuario = new mongoose.model('user', usuariosSchema); //copliar el esquema en un modelo
 
- /* const user = new Usuario();
-    user.nombre= 'Ash',
-    user.apellido= 'Ketchum',
-    user.email= 'poketrainer01@hotmail.com',
-    user.setPassword("pikachu4life"); */
- 
-//user.save();
+/* const user = new Usuario();
+user.nombre = 'Ash',
+    user.apellido = 'Ketchum',
+    user.email = 'poketrainer01@hotmail.com',
+    user.setPassword("pikachu4life");
+
+user.save(); */
 module.exports = Usuario;

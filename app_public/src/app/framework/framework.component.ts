@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../interfaces/user';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-framework',
@@ -11,5 +13,4 @@ export class FrameworkComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

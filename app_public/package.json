@@ -22,6 +22,7 @@
     "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.11.3",
     "jquery": "^3.6.0",
+    "ngx-cookie-service": "^13.1.2",
     "promise": "^8.1.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",

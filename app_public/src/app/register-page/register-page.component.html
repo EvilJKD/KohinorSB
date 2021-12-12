@@ -18,11 +18,13 @@
                         <div class="col-md-10">
                             <h5><b>Sign up for a free account</b></h5>
                         </div>
-                        <div class="col-md-5"><input [(ngModel)]="newUser.nombre" class="form-control" id="nombre" type="text" placeholder="First name" name="name" required=""></div>
-                        <div class="col-md-5"><input [(ngModel)]="newUser.apellido" class="form-control" id="apellido" type="text" placeholder="Last name" name="lastname" required=""></div>
-                        <div class="col-md-10"> <input [(ngModel)]="newUser.email" class="form-control" id="email" type="text" placeholder="Email address" name="email" required=""></div>
-                        <div class="col-md-10"><input [(ngModel)]="newUser.contrasena" class="form-control" id="password" type="password" placeholder="Create Password" name="crtpsw" required=""></div>
+                        <div class="col-md-5"><input [(ngModel)]="credentials.nombre" class="form-control" id="nombre" type="text" placeholder="First name" name="name" required=""></div>
+                        <div class="col-md-5"><input [(ngModel)]="credentials.apellido" class="form-control" id="apellido" type="text" placeholder="Last name" name="lastname" required=""></div>
+                        <div class="col-md-10"> <input [(ngModel)]="credentials.email" class="form-control" id="email" type="text" placeholder="Email address" name="email" required=""></div>
+                        <div class="col-md-10"><input [(ngModel)]="credentials.contrasena" class="form-control" id="password" type="password" placeholder="Create Password" name="crtpsw" required=""></div>
                         <div class="col-md-10"><button class="btn btn-outline-dark m-2 form-control btn-outline-kohinor" type="submit">Registrarse</button></div>
+
+                        <div role="alert" *ngIf="formError" class="alert alert-danger">{{ formError }}</div>
                     </form>
                     <div class="col-md-4"><img class="img-fluid" alt="Bootstrap Image Preview" src="images/Logotipo_Kohinor_3.png"></div>
                 </div>

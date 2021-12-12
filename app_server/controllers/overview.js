@@ -19,22 +19,26 @@ if (process.env.NODE_ENV === 'production') {
 const renderOverview = (req, res, responseBody1 ) => {
     res.render('overview', {
         title: 'Overview',
+        usuario: `${req.user.nombre} ${req.user.apellido}`,
         objetoTicket: responseBody1
 
     });
 };
 //Tomando en cuenta la documentacion, se deben crean dos funciones que devuelvan la promesa de axios.
 
-const getTickets = () => {
-    const path = '/api/ticket';
-    return axios.get(`${apiOptions.server}${path}`);
+const getTickets = (req) => {
+    const path = '/api/searchticket';
+    console.log("REQ USER", req.user);
+    return axios.post(`${apiOptions.server}${path}`,{
+        codigo: req.user._id
+    });
 }
 /* const getUsers = () => {
     const path = '/api/users';
     return axios.get(`${apiOptions.server}${path}`);
 } */
 
-const overview =  (req, res) => {Promise.all([getTickets()])
+const overview =  (req, res) => {Promise.all([getTickets(req)])
     .then((results) => {
         //Arreglo de resultados
         const tickets = results[0].data;
@@ -68,6 +72,7 @@ const overview =  (req, res) => {Promise.all([getTickets()])
         );
     })
     .catch((error) => {
+        renderOverview(req, res, []);
         console.log(error);
     })
 };

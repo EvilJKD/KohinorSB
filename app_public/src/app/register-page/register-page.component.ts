@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Register } from '../interfaces/register';
+import { Router } from '@angular/router';
 import { KohinorDataServiceService } from '../services/kohinor-data-service.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-register-page',
@@ -9,42 +11,40 @@ import { KohinorDataServiceService } from '../services/kohinor-data-service.serv
 })
 export class RegisterPageComponent implements OnInit {
   
-  public newUser: Register = {
+  /* public newUser: Register = {
+    nombre: '',
+    apellido: '',
+    email: '',
+    contrasena: ''
+  }; */
+  public formError: string ='';
+  
+  public credentials = {
     nombre: '',
     apellido: '',
     email: '',
     contrasena: ''
   };
   public onUserCreateSubmit(): void{
-    if(this.formIsValid()){
-      this.kohinorDataService.addUser(this.newUser)
-      .subscribe({
-        next:(data) => {
-        this.resetAndHideReviewForm()
-      },
-      error:(e)=>{
-        console.error(e);
-      }
-      });
-    }
-  }
-  
-  private formIsValid(): boolean {
-    if (this.newUser.nombre && this.newUser.apellido && this.newUser.email && this.newUser.contrasena) {
-      return true;
+    this.formError='';
+    if(!this.credentials.nombre || !this.credentials.apellido || !this.credentials.email || !this.credentials.contrasena){
+      this.formError = "Por favor, llene todos los campos";
     } else {
-      return false;
+      this.doRegister();
     }
   }
 
-  private resetAndHideReviewForm(): void {
-    this.newUser.nombre = '';
-    this.newUser.apellido = '';
-    this.newUser.email = '';
-    this.newUser.contrasena = '';
+  private doRegister(): void {
+    this.authenticationService.register(this.credentials)
+      .then(() => window.location.href = '/overview')
+      .catch((message) => this.formError = message);
   }
   
-  constructor(private kohinorDataService: KohinorDataServiceService) { }
+  
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+    ) { }
 
   ngOnInit(): void {
   }

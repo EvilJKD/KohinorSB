@@ -47,7 +47,7 @@ const ticketList = (req, res) => {
             } else if (err){
                 console.log(`Se encontro error en la coleccion ${tickets}`);
                 return res
-                    .status(404)
+                    .status(400)
                     .json(err);
             }
             res

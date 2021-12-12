@@ -4,6 +4,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'
 import { DataTablesModule } from 'angular-datatables';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +43,7 @@ import { CrearModuloPageComponent } from './crear-modulo-page/crear-modulo-page.
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }, CookieService],
   bootstrap: [FrameworkComponent]
 })
 export class AppModule { }

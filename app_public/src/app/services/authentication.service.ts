@@ -1,8 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
 import { BROWSER_STORAGE } from '../storage';
-import { User } from 'src/app/user';
-import { AuthResponse } from '../authresponse';
+import { User } from 'src/app/interfaces/user';
+import { AuthResponse } from '../interfaces/authresponse';
 import { KohinorDataServiceService } from 'src/app/services/kohinor-data-service.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,10 @@ import { KohinorDataServiceService } from 'src/app/services/kohinor-data-service
 export class AuthenticationService {
 
   constructor(
-    @Inject(BROWSER_STORAGE) private storage: Storage, 
-    private kohinorDataServiceService: KohinorDataServiceService) { }
-  
-  public getToken(): string {
-    return this.storage.getItem('db_kohinor-token')!;
-  }
+    private cookieService: CookieService, private kohinorDataServiceService: KohinorDataServiceService) { }
+
   public saveToken(token: string): void {
-    this.storage.setItem('db_kohinor-token', token);
+    this.cookieService.set('db_kohinor-token', token);
   }
   public login(user: User): Promise<any> {
     return this.kohinorDataServiceService.login(user)
@@ -26,24 +23,5 @@ export class AuthenticationService {
   public register(user: User): Promise<any>{
     return this.kohinorDataServiceService.register(user)
       .then((authResp: AuthResponse) => this.saveToken(authResp.token));
-  }
-  public logout(): void {
-    this.storage.removeItem('db_kohinor-token');
-  }
-  public isLoggedIn(): boolean {
-    const token: string = this.getToken();
-      if (token) {
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        return payload.exp > (Date.now() / 1000);
-      } else {
-        return false;
-      }
-  }
-  public getCurrentUser(): User {
-    if (this.isLoggedIn()) {
-      const token: string = this.getToken();
-      const { email, nombre, apellido } = JSON.parse(atob(token.split('.')[1]));
-      return { email, nombre, apellido } as User;
-    }
   }
 }

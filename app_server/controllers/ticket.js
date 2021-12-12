@@ -24,13 +24,25 @@ const renderTicket = (req, res, responseBody) => {
             // carrera: responseBody.carrera
     });
 };
+const renderTicketAdmin = (req, res, responseBody) => {
+    res.render('ticketAdmin', {
+        title: 'Tickets',
+        objetoTickets: responseBody
+            // nombre: responseBody.nombre,
+            // apellido: responseBody.apellido,
+            // direccion: responseBody.direccion,
+            // carrera: responseBody.carrera
+    });
+};
 
 
 //Aplicacion de Axios para el request
 const ticket = (req, res) => {
-    const path = '/api/ticket/';
+    const path = '/api/searchticket';
 
-    axios.get(`${apiOptions.server}${path}`)
+    axios.post(`${apiOptions.server}${path}`,{
+        codigo: req.user._id
+    })
         .then((response) =>{ //Si es exitoso
             console.log("AXIOS", response.data);
             renderTicket(req, res, response.data);
@@ -38,6 +50,22 @@ const ticket = (req, res) => {
         .catch((error) => { //Si hay algun error
             console.log("AXIOS - StatusCode", error.status);
             console.log("AXIOS", error);
+            renderTicket(req, res, []);
+        });
+};
+
+const ticketAdmin = (req, res) => {
+    const path = '/api/ticket';
+
+    axios.get(`${apiOptions.server}${path}`)
+        .then((response) =>{ //Si es exitoso
+            console.log("AXIOS", response.data);
+            renderTicketAdmin(req, res, response.data);
+        })
+        .catch((error) => { //Si hay algun error
+            console.log("AXIOS - StatusCode", error.status);
+            console.log("AXIOS", error);
+            renderTicket(req, res, []);
         });
 };
 
@@ -61,5 +89,6 @@ const deleteTicket = (req, res) => {
 
 module.exports = {
     ticket,
-    deleteTicket
+    deleteTicket,
+    ticketAdmin
 };

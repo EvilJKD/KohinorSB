@@ -5,8 +5,8 @@ import { environment } from 'src/environments/environment';
 import { Modulos } from 'src/app/interfaces/modulos';
 import { Tickets } from 'src/app/interfaces/tickets';
 import { Register } from 'src/app/interfaces/register';
-import { User } from '../user';
-import { AuthResponse } from '../authresponse';
+import { User } from '../interfaces/user';
+import { AuthResponse } from '../interfaces/authresponse';
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +32,10 @@ export class KohinorDataServiceService {
       .post(url, formData)
   }
   public login(user: User): Promise<AuthResponse>{
-    return this.makeAuthApiCall('login', user);
+    return this.makeAuthApiCall('api/login', user);
   }
   public register(user: User): Promise<AuthResponse>{
-    return this.makeAuthApiCall('register', user);
+    return this.makeAuthApiCall('api/registro', user);
   }
   private makeAuthApiCall(urlPath: string, user: User): Promise<AuthResponse>{
   const url: string = `${this.apiBaseUrl}/${urlPath}`;

@@ -57,7 +57,7 @@ const facturaSchema =  new mongoose.Schema({
 
 const Factura = new mongoose.model('factura',facturaSchema); //copliar el esquema en un modelo
 
-const factura = new Factura({
+/* const factura = new Factura({
     nombre: "Rai",
     apellido: "Apellido",
     email: "raidia@gmail.com",
@@ -72,5 +72,5 @@ const factura = new Factura({
     usuario: "61562d72dcf954049525116e"
 });
 
-factura.save()
+factura.save() */
 module.exports = Factura;

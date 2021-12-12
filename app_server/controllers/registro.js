@@ -12,7 +12,7 @@ const registro = (req, res) => {
     res.render('registro',{title: 'Registro '});
 };
 
-
+/* 
 const doAddUsers = (req, res) => {
     const path = '/api/users/';
 
@@ -33,9 +33,9 @@ const doAddUsers = (req, res) => {
         console.log('AXIOS - Req.Body', req.body);
     })
           
-}
+} */
 
 module.exports = {
-    registro,
-    doAddUsers
+    registro
+    /* doAddUsers */
 };

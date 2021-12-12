@@ -1,6 +1,6 @@
 /* GET ovrview. */
 const { response } = require('express');
-/* const request = require('request'); */
+const request = require('request');
 
 
 const axios = require('axios'); //Import de AXIOS
@@ -16,14 +16,16 @@ if (process.env.NODE_ENV === 'production') {
 
 
 /* renderizar home page. */
-const renderOverview = (req, res, responseBody1, responseBody2 ) => {
+const renderITUsers = (req, res, responseBody1, responseBody2 ) => {
     res.render('it_usrs', {
-        title: 'it_usrs',
-        objetoUsers: responseBody1,
-        objetoTicket: responseBody2
+        title: 'Overview - Cuenta IT',
+        usuario: `${req.user.nombre} ${req.user.apellido}`,
+        objetoTicket: responseBody1,
+        objetoUser: responseBody2
 
     });
 };
+//Tomando en cuenta la documentacion, se deben crean dos funciones que devuelvan la promesa de axios.
 
 const getTickets = () => {
     const path = '/api/ticket';
@@ -34,11 +36,11 @@ const getUsers = () => {
     return axios.get(`${apiOptions.server}${path}`);
 }
 
-const it_usrs =  (req, res) => {Promise.all([getTickets(), getUsers()])
+const itUsrs =  (req, res) => {Promise.all([getTickets(), getUsers()])
     .then((results) => {
         //Arreglo de resultados
         const tickets = results[0].data;
-        const users = results[1].data;
+        const users = results[1].data; 
 
         console.log("TICKETS", tickets);
         //Mapeo de los tickets para la tabla
@@ -64,17 +66,18 @@ const it_usrs =  (req, res) => {Promise.all([getTickets(), getUsers()])
         });
 
         //Renderizado de la vista
-        renderOverview(req, res, 
-            usersTable,
+        renderITUsers(req, res, 
             ticketTable,
+            usersTable
         );
     })
     .catch((error) => {
+        renderITUsers(req, res, [], []);
         console.log(error);
     })
 };
 module.exports = {
-    it_usrs
+    itUsrs
 };
 
 
