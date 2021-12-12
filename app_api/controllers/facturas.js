@@ -16,7 +16,7 @@ const facturaCreate=(req,res)=>{
         pais: req.body.pais, 
         listaModulos: req.body.listaModulos,
         numUsuarios: req.body.numUsuarios,
-        usuario: req.user._id
+        usuario: req.body.usuario
     }, (err, objetoFactura)=>{
         if(err){
             console.log('Error Factura', err);

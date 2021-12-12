@@ -1,5 +1,5 @@
 const request = require('request');
-
+const Swal = require('sweetalert2')
 const axios = require('axios');
 
 const apiOptions = {
@@ -17,7 +17,6 @@ const crearticket = (req, res, usuario) => {
 
 const doAddTicket = (req, res) => {
     const path = '/api/ticket/';
-
     axios.post(`${apiOptions.server}${path}`,{
         asunto: req.body.asunto,
         status: req.body.status,

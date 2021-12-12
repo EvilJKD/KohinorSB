@@ -26,8 +26,6 @@ block content
                         document.getElementById("resultado").innerHTML = user;
                         document.getElementById("valorUnitarioUser").innerHTML = 7;
                     }
-                        
-
                 .col-md-1
             .row
                 h5 Elige tus módulos 
@@ -41,24 +39,23 @@ block content
                                     h6
                                         b #{element.nombre}
                                 .col-md-2.d-flex.justify-content-center.align-items-center
-                                    form(action='#')
+                                    form(action='')
                                         div
-                                            input.x(type="checkbox" id=`{"id":"${element._id}", "nombre": "${element.nombre}", "img":"${element.img}","precio": ${element.precio} }` class="seleccionModulo")
+                                            input(type="checkbox" id=`{"id":"${element._id}", "nombre": "${element.nombre}", "img":"${element.img}","precio": ${element.precio} }` class="seleccionModulo")
                         
                 script(type='text/javascript').
                     var cboxes = document.getElementsByTagName("input");
                     
                         for (var i=0; i<cboxes.length; i++){
                             var valor = cboxes[i].checked;
-                                if(cboxes[i].className  == 'x'){
+                                if(cboxes[i].className  == 'seleccionModulo'){
                                     if(!cboxes[i].addEventListener){
-                                    cboxes[i].attachEvent("onclick", contar);
+                                        cboxes[i].attachEvent("onclick", contar);
                                     }else{
-                                    cboxes[i].addEventListener("click", contar, false);
+                                        cboxes[i].addEventListener("click", contar, false);
                                     }
                                 }
                         }
-                    var cont = 5;
                     function contar(){
                         var totales = "";
                         var contador = 1;
@@ -68,17 +65,16 @@ block content
                             for (var i=0; i < casillas.length; i++){
                                 var valor = casillas[i].checked;
                                 var clase = casillas[i].className;
-                                    if(clase == 'x'){
+                                    if(clase == 'seleccionModulo'){
                                         if(valor == true){
                                             totales = contador++;
                                             precioTotal += contTotal;
                                         }
                                     }
                             }
-                        document.getElementById("counter").innerHTML= totales
+                        document.getElementById("counter").innerHTML= totales;
                         document.getElementById("valorUnitarioModulos").innerHTML = 5;
                         document.getElementById("total").innerHTML = precioTotal + " USD";
-                        
                     }
         .col-md-4 
             p
@@ -108,7 +104,8 @@ block content
                     hr
                     .row 
                         .col-md-8 
-                            h5.text-left Total 
+                            h5.text-left Total
+                            p.text-left (Valor mostrado no incluye el total de # de usuarios) 
                         .col-md-4 
                             label#total.text-right $
                     hr

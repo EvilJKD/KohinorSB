@@ -42,19 +42,16 @@ block content
                             input#ciudad.form-control.infoPersona(type='text' name='ciudad' placeholder='Ciudad')
                         .col-md-6
                             select#pais.custom-select.form-control.infoPersona(name='pais')
-                                option(selected='') Pa&iacute;s
-                                option(value='1') One
-                                option(value='2') Two
-                                option(value='3') Three
+                                option(selected='' disabled='') Pa&iacute;s
                         .col-md-6
                             select#estado.custom-select.form-control.infoPersona(name='estado')
-                                option(selected='') Estado/Provincia
-                                option(value='1') One
-                                option(value='2') Two
-                                option(value='3') Three
+                                option(selected='' disabled='') Estado/Provincia
+                        .col-md-12
+                            input#direccion.form-control.infoPersona(type='string' name='usuario' placeholder='usuario' value=usuario readonly='')
                         .col-md-2
                             a.btn.btn-dark.bg-kohinor-2(href='/carrito') Atr&aacute;s
                         .col-md-7
                         .col-md-2
                             a.btn.btn-dark.bg-kohinor-2(href='/confirmar' onclick="guardarInfoPersona()") Continuar
+                        script(src='../scripts/restfulCountries.js')
             

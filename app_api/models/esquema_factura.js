@@ -51,6 +51,7 @@ const facturaSchema =  new mongoose.Schema({
     },
     usuario:{
         type: mongoose.Schema.ObjectId, ref: 'user',
+        required: true
     }
 
 });
@@ -69,7 +70,7 @@ const Factura = new mongoose.model('factura',facturaSchema); //copliar el esquem
     pais: "Estados Unidos",
     listaModulos: ["61562e9b53abf3120cd7fbac"],
     numUsuarios: 3,
-    usuario: "61562d72dcf954049525116e"
+    usuario: "61b53a876a74fc74d7a272dd"
 });
 
 factura.save() */

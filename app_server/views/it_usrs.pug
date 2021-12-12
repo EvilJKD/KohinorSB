@@ -35,19 +35,36 @@ block content
                                                     td.fecha= overview.fecha
                                                     td.asunto= overview.asunto
                                                     td.status= overview.status
-            .row
-                .col-md-4
-                    p 
-                        |        
-                    iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=9b41ab56-b643-418b-8096-8f418219291b&autoRefresh=60&theme=dark')
-                .col-md-4
-                    p 
-                        |
-                    iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=2c20918c-8689-4de2-8989-e3bc9154cc6d&autoRefresh=60&theme=dark')
-                .col-md-4
-                    p 
-                        |
-                    iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=3fb66133-6d0f-446a-b5bc-48ffc3e2a62f&autoRefresh=60&theme=dark')   
+        .row     
+            p 
+                |  
+            .col-md-12  
+                .fade-in
+                    .card
+                        .card-header
+                            i.c-icon.cil-justify-center
+                            b Usuarios
+                        .card-body
+                            #cphBody
+                                .table.table-responsive(style='overflow-x: auto;')
+                                    .thead-dark
+                                        div
+                                            table#cphBody.table.table-bordered.table-active.table-active.table-hover.table-striped(cellspacing='0' rules='all' border='1' style='border-collapse:collapse;')
+                                                thead
+                                                    tr(style='color:White;font-weight:bold;')
+                                                        th(scope='col') Nombre 
+                                                        th(scope='col') Apellido &uarr;&darr;
+                                                        th(scope='col') email  
+                                                tbody
+                                                    each users in objetoUser
+                                                        tr
+                                                            td.nombre= users.nombre
+                                                            td.apellido= users.apellido
+                                                            td.email= users.email
+        .d-flex.justify-content-around
+            iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=9b41ab56-b643-418b-8096-8f418219291b&autoRefresh=60&theme=dark')
+            iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=2c20918c-8689-4de2-8989-e3bc9154cc6d&autoRefresh=60&theme=dark')
+            iframe(style='background: #232728;border: none;border-radius: 10px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);' height='200' src='https://charts.mongodb.com/charts-kohinorsb-vcmsu/embed/charts?id=3fb66133-6d0f-446a-b5bc-48ffc3e2a62f&autoRefresh=60&theme=dark')   
             
             script(src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js')
             script(src='https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js')

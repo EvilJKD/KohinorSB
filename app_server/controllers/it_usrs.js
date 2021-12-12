@@ -41,6 +41,8 @@ const itUsrs =  (req, res) => {Promise.all([getTickets(), getUsers()])
         //Arreglo de resultados
         const tickets = results[0].data;
         const users = results[1].data; 
+        
+        console.log("Resultados", results);
 
         console.log("TICKETS", tickets);
         //Mapeo de los tickets para la tabla

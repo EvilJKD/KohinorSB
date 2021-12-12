@@ -1,6 +1,6 @@
 const { response } = require('express');
 const request = require('request');
-
+const Swal = require('sweetalert2')
 const axios = require('axios');
 
 // Definir las URLs para los ambientes de desarrollo y producción
@@ -68,12 +68,10 @@ const ticketAdmin = (req, res) => {
             renderTicket(req, res, []);
         });
 };
-
 const deleteTicket = (req, res) => {
     const path = `/api/ticket/${req.params.ticketid}`;
     console.log("ENTRO EN EL DELETE ticket");
-
-    axios.delete(`${apiOptions.server}${path}`) //Declaracion del path, se ejecuta la promesa
+    axios.delete(`${apiOptions.server}${path}`) //Declaracion del path, se ejecuta la promesa 
         .then((response) => { //Cuando el request es exitoso
             console.log('Axios Request', response);
             res.redirect('/ticket');
@@ -85,6 +83,7 @@ const deleteTicket = (req, res) => {
             })
         });
 }
+
 
 
 module.exports = {

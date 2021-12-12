@@ -22,6 +22,7 @@ let codPostal;
 let ciudad;
 let pais;
 let provincia;
+let usuario;
 
 //Funciones Planes
 const guardarNumUsuario = () => {
@@ -82,11 +83,11 @@ const guardarInfoPersona = () => {
     sessionStorage.setItem('ciudad', informacion[6].value);
     sessionStorage.setItem('pais', informacion[7].value);
     sessionStorage.setItem('provincia', informacion[8].value);
+    sessionStorage.setItem('usuario', informacion[9].value);
 }
 
 const crearFactura = () => {
     const path = `/api/factura`;
-
     axios.post(`${apiOptions.server}${path}`, {
             nombre: sessionStorage.getItem('nombre'),
             apellido: sessionStorage.getItem('apellido'),
@@ -98,7 +99,8 @@ const crearFactura = () => {
             provincia: sessionStorage.getItem('provincia'),
             pais: sessionStorage.getItem('pais'),
             listaModulos: JSON.parse(sessionStorage.getItem('propiedadComprar')),
-            numUsuarios: sessionStorage.getItem('numUsuarios')
+            numUsuarios: sessionStorage.getItem('numUsuarios'),
+            usuario: req.user._id
         }) //Primer parametro es el url del request y el segundo es el body con los parametros
         .then((response) => { //Si el request es exitoso
             console.log("AXIOS REQUEST --- Modulo EDITADO");
@@ -126,7 +128,8 @@ const crearFactura2 = () => {
         provincia: sessionStorage.getItem('provincia'),
         pais: sessionStorage.getItem('pais'),
         listaModulos: JSON.parse(sessionStorage.getItem('comprarModulos')).map(modulo => JSON.parse(modulo).id),
-        numUsuarios: sessionStorage.getItem('numUsuarios')
+        numUsuarios: sessionStorage.getItem('numUsuarios'),
+        usuario: sessionStorage.getItem('usuario')
     }).then(data => {
         console.log(data); // JSON data parsed by `data.json()` call
         sessionStorage.clear();
