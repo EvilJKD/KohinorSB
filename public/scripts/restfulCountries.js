@@ -77,3 +77,10 @@ const anadirEstados = (estados) => {
         selectEstado.appendChild(option);
     }
 }
+
+const limpiarEstados = () => {
+    let selectEstado = document.querySelector('#estado');
+    while(selectEstado.children.length > 0){
+        selectEstado.remove(selectEstado.children[0]);
+    }
+}
