@@ -8,7 +8,8 @@ const moduloCreate = (req, res) => {
     modulos.create({
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
-        precio: req.body.precio
+        precio: req.body.precio,
+        img: req.body.icono
     }, (err, objeto) => {
         if (err) {
             return res
@@ -96,6 +97,10 @@ const moduloUpdate = (req, res) => {
             objeto.nombre = req.body.nombre;
             objeto.descripcion = req.body.descripcion;
             objeto.precio = req.body.precio;
+            objeto.img = req.body.icono;
+            if (req.body.icono) {
+                objeto.img = req.body.icono;
+            }
             objeto.save((err, nuevoObj) => {
                 if (err) {
                     res
