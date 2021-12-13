@@ -55,7 +55,7 @@ const modulosFactura = () => {
         document.getElementById('cardModulo').innerHTML += `<div class="card col-md-13" >
                                                                 <div class="row">
                                                                     <div class="col-md-5">
-                                                                        <img src="${modulo.img}"" class="img-thumbnail" width="120px" height="120px">
+                                                                        <img src="Icon/Menu125/${modulo.img}" class="img-thumbnail" width="120px" height="120px">
                                                                     </div>
                                                                     <div class="col-md-4 d-flex justify-content-center align-items-center">
                                                                         <div class="card-body">
