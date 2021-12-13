@@ -13,8 +13,8 @@ import { AuthResponse } from '../interfaces/authresponse';
 })
 export class KohinorDataServiceService {
 
-  private apiBaseUrl = 'http://localhost:3000';
-  //private apiBaseUrl = environment.apiBaseUrl;
+  //private apiBaseUrl = 'http://localhost:3000';
+  private apiBaseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
 
