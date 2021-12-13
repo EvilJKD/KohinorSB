@@ -65,7 +65,7 @@ const ticketAdmin = (req, res) => {
         .catch((error) => { //Si hay algun error
             console.log("AXIOS - StatusCode", error.status);
             console.log("AXIOS", error);
-            renderTicket(req, res, []);
+            renderTicketAdmin(req, res, []);
         });
 };
 const deleteTicket = (req, res) => {
