@@ -1,6 +1,7 @@
 
 //Require de Axios
 const axios = require('axios');
+const fs = require('fs');
 
 const apiOptions = {
     server: 'http://localhost:3000' // servidor local - desarrollo
@@ -97,11 +98,13 @@ const createModulos = (req, res) => {
     axios.post(`${apiOptions.server}${path}`, {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            precio: req.body.precio
+            precio: req.body.precio,
+            icono: req.file.filename + '.' + req.file.mimetype.split('/')[1]
         }) //Primer parametro es el url del request y el segundo es el body con los parametros
         .then((response) => { //Si el request es exitoso
             console.log("AXIOS REQUEST --- Modulo CREADO");
             console.log(req.body);
+            fs.renameSync(req.file.path, req.file.path + '.' + req.file.mimetype.split('/')[1]);
             res.redirect('/modulos')
         })
         .catch((error) => { //Si es que hay algun error en el request
@@ -131,7 +134,13 @@ const getModuloAndDisplay = (req, res) => {
 const updateModulo = (req, res) => {
     const path = `/api/modulo/${req.params.moduloid}`;
 
-    axios.put(`${apiOptions.server}${path}`, {
+    axios.put(`${apiOptions.server}${path}`, req.file ? {
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio,
+            icono: req.file.filename + '.' + req.file.mimetype.split('/')[1]
+        }:
+        {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             precio: req.body.precio
@@ -139,6 +148,7 @@ const updateModulo = (req, res) => {
         .then((response) => { //Si el request es exitoso
             console.log("AXIOS REQUEST --- Modulo EDITADO");
             console.log(req.body);
+            fs.renameSync(req.file.path, req.file.path + '.' + req.file.mimetype.split('/')[1]);
             res.redirect('/modulos')
         })
         .catch((error) => { //Si es que hay algun error en el request

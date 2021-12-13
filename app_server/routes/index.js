@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const multer = require('multer'); //Import de Multer
+const upload = multer({ dest: 'public/Icon/Menu125' });
 
 const ctrlMain = require('../controllers/main');
 const crtAbout = require('../controllers/about'); //Controladores / About
@@ -61,10 +63,10 @@ router.route('/modulos')
     .get(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}),crtlFuncion.getModulos)
 router.route('/crearModulo')
     .get(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}),crtlFuncion.renderCreateView)
-    .post(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}),crtlFuncion.createModulos)
+    .post(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}), upload.single('icono'),crtlFuncion.createModulos)
 router.route('/editarModulo/:moduloid')
     .get(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}),crtlFuncion.getModuloAndDisplay)
-    .post(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}),crtlFuncion.updateModulo)
+    .post(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}),upload.single('icono'),crtlFuncion.updateModulo)
 router.route('/modulos/:moduloid')
     .get(passport.authenticate('jwt', {session: false, failureRedirect: '/login'}),crtlFuncion.deleteModulo);
 

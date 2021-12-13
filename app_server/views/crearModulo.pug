@@ -7,8 +7,12 @@ block content
         |Llene todos los campos a continuación
 
     .container-fluid.mx-0
-        form.g-3(action='' method='post' role='form')                          
+        form.g-3(action='' method='post' role='form' enctype='multipart/form-data')                          
             .row
+                .col-md-6
+                    label.-label(for='file')
+                    input#file(type='file' name='icono' accept="image/x-png,image/jpg,image/jpeg")
+                .col-md-6
                 .col-md-6
                     p Nombre
                         input#asunto.form-control(type='text' placeholder='Nombre' name='nombre' required='' value=nombre)
